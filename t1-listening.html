@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="test-title" content="Cambridge 21 Listening — Test 1" />
+<meta name="test-modal-selector" content="#resModal.open" />
+<meta name="test-score-selector" content="#mScore" />
 <title>Cambridge 21 Listening – Test 1 | pangea8.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -131,12 +133,13 @@
   .flow-arrow{color:var(--green);font-size:1.1rem;font-weight:700}
   .example-block{border:1px dashed var(--green-line);border-radius:8px;padding:10px 14px;margin:8px 0 14px;background:var(--green-tint);font-size:.86rem}
   /* ---- bottom nav ---- */
-  .botnav{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:6px;z-index:70}
-  .botnav .navbtn{min-width:44px;height:38px;border:1px solid var(--border);background:var(--panel);border-radius:9px;font:600 .85rem Inter;color:var(--muted);cursor:pointer;padding:0 14px;display:inline-flex;align-items:center;gap:5px}
+  .botnav{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:6px;z-index:70;padding:0 12px;overflow-x:auto}
+  .botnav .navbtn{flex:none;min-width:42px;height:38px;border:1px solid var(--border);background:var(--panel);border-radius:9px;font:600 .84rem Inter;color:var(--muted);cursor:pointer;padding:0 13px;display:inline-flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap}
   .botnav .navbtn:hover{border-color:var(--green);color:var(--green)}
   .botnav .navbtn.active{background:var(--green);color:#fff;border-color:var(--green)}
   .botnav .navbtn.wide{padding:0 16px}
   .botnav a.navbtn{text-decoration:none}
+  .nav-sep{flex:none;width:1px;height:22px;background:var(--border);margin:0 3px}
   /* modal */
   .modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.2s;padding:20px}
   .modal-ov.open{opacity:1;pointer-events:all}
@@ -193,12 +196,15 @@
   <div class="right" id="qPane"></div>
 </main>
 <nav class="botnav">
-  <button class="navbtn wide" onclick="submitAnswers()">Scores</button>
+  <button class="navbtn wide" onclick="submitAnswers()">Submit</button>
   <button class="navbtn" data-part="1" onclick="switchPart(1)">1</button>
   <button class="navbtn" data-part="2" onclick="switchPart(2)">2</button>
   <button class="navbtn" data-part="3" onclick="switchPart(3)">3</button>
   <button class="navbtn" data-part="4" onclick="switchPart(4)">4</button>
-  <a class="navbtn wide" href="t1-reading.html">Reading →</a>
+  <span class="nav-sep"></span>
+  <a class="navbtn" href="t1-reading.html">Reading</a>
+  <a class="navbtn" href="t1-writing.html">Writing</a>
+  <a class="navbtn" href="t1-speaking.html">Speaking</a>
 </nav>
 <div class="modal-ov" id="resModal"><div class="modal">
   <div style="font-size:1.8rem">🎧</div>

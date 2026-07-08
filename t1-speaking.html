@@ -17,6 +17,9 @@
   .back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap}
   .back:hover{border-color:var(--accent);color:var(--accent)}
   .top h1{font-family:'Source Serif 4',serif;font-size:1.02rem;font-weight:700;flex:1}
+  .skillnav{display:flex;gap:4px}
+  .skillnav a{font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 11px;white-space:nowrap}
+  .skillnav a:hover{border-color:var(--accent);color:var(--accent)}
   .tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:4px}
   .tab{border:none;background:transparent;font:600 .8rem Inter;color:var(--muted);padding:6px 13px;border-radius:6px;cursor:pointer}
   .tab.active{background:var(--accent);color:#fff}
@@ -63,6 +66,7 @@
     <a class="back" href="index.html">← Cambridge 21</a>
     <h1>Test 1 — Speaking</h1>
     <div class="tabs"><button class="tab active" data-p="1" onclick="switchPart(1)">Part 1</button><button class="tab" data-p="2" onclick="switchPart(2)">Part 2</button><button class="tab" data-p="3" onclick="switchPart(3)">Part 3</button></div>
+    <div class="skillnav"><a href="t1-listening.html">Listening</a><a href="t1-reading.html">Reading</a><a href="t1-writing.html">Writing</a></div>
   </div>
 </header>
 <main class="wrap">

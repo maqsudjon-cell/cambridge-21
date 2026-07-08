@@ -17,6 +17,9 @@
   .back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap}
   .back:hover{border-color:var(--accent);color:var(--accent)}
   .top h1{font-family:'Source Serif 4',serif;font-size:1.02rem;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .skillnav{display:flex;gap:4px}
+  .skillnav a{font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 11px;white-space:nowrap}
+  .skillnav a:hover{border-color:var(--accent);color:var(--accent)}
   .tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:4px}
   .tab{border:none;background:transparent;font:600 .82rem Inter;color:var(--muted);padding:6px 15px;border-radius:6px;cursor:pointer}
   .tab.active{background:var(--accent);color:#fff}
@@ -76,7 +79,7 @@
     <h1>Test 1 — Writing</h1>
     <div class="timer" id="timer" onclick="toggleTimer()" title="60 minutes — click to pause/resume">⏱ 60:00</div>
     <div class="tabs"><button class="tab active" data-task="1" onclick="switchTask(1)">Task 1</button><button class="tab" data-task="2" onclick="switchTask(2)">Task 2</button></div>
-    <a class="back" href="t1-reading.html" style="margin-left:auto">Reading →</a>
+    <div class="skillnav"><a href="t1-listening.html">Listening</a><a href="t1-reading.html">Reading</a><a href="t1-speaking.html">Speaking</a></div>
   </div>
 </header>
 <main>
