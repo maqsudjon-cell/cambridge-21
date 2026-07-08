@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="test-title" content="Cambridge 21 Writing — Test 1" />
+<title>Cambridge 21 Writing – Test 1 | pangea8.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#f8f7f4;--surface:#fff;--border:#e2ddd6;--border-light:#ede9e3;--text:#1a1714;--muted:#5a5550;--faint:#9a948e;--accent:#1e6b4a;--accent-light:#e8f4ef;--accent-hover:#155438;--amber:#b45309;--radius:10px;--radius-lg:14px;--shadow:0 1px 3px rgba(0,0,0,.06)}
+  @media(prefers-color-scheme:dark){:root{--bg:#14120f;--surface:#1e1a16;--border:#332d26;--border-light:#2a251f;--text:#f2ede6;--muted:#b8b0a6;--faint:#8a8177;--accent:#34d399;--accent-light:#12352a;--accent-hover:#5ee0ac;--amber:#f0a44a}}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+  .top{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+  .top-in{max-width:1180px;margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;gap:14px}
+  .back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap}
+  .back:hover{border-color:var(--accent);color:var(--accent)}
+  .top h1{font-family:'Source Serif 4',serif;font-size:1.02rem;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:4px}
+  .tab{border:none;background:transparent;font:600 .82rem Inter;color:var(--muted);padding:6px 15px;border-radius:6px;cursor:pointer}
+  .tab.active{background:var(--accent);color:#fff}
+  .wrap{max-width:1180px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .pane{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+  .pane-h{padding:13px 18px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+  .pane-h h2{font-family:'Source Serif 4',serif;font-size:1.05rem;font-weight:700}
+  .pane-b{padding:18px}
+  .task-badge{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);padding:3px 9px;border-radius:5px}
+  .prompt-box{border:1.5px solid var(--border);border-radius:var(--radius);padding:15px 17px;margin:12px 0;background:var(--bg);font-size:.96rem;line-height:1.65}
+  .prompt-box strong{font-weight:700}
+  .meta{font-size:.82rem;color:var(--faint);margin:10px 0}
+  .chart-wrap{margin:14px 0;text-align:center}
+  .chart-wrap svg{max-width:100%;height:auto}
+  .chart-title{font-weight:600;font-size:.9rem;margin-bottom:6px}
+  textarea{width:100%;min-height:440px;resize:vertical;border:1.5px solid var(--border);border-radius:var(--radius);padding:14px;font:400 .95rem/1.7 Inter;color:var(--text);background:var(--surface);outline:none}
+  textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+  .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .wc{font-size:.85rem;color:var(--muted)}
+  .wc b{color:var(--accent);font-weight:700}
+  .wc.short b{color:var(--amber)}
+  .saved{font-size:.76rem;color:var(--faint);font-style:italic}
+  .btn{border:none;border-radius:9px;font:600 .85rem Inter;padding:9px 18px;cursor:pointer;transition:all .15s}
+  .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover)}
+  .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  details.sample{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+  details.sample summary{padding:12px 16px;cursor:pointer;font-weight:600;font-size:.9rem;background:var(--bg);list-style:none}
+  details.sample summary::-webkit-details-marker{display:none}
+  details.sample summary::before{content:'▸ ';color:var(--accent)}
+  details.sample[open] summary::before{content:'▾ '}
+  .sample-body{padding:16px 18px;font-size:.92rem;line-height:1.7;border-top:1px solid var(--border-light)}
+  .sample-body p{margin-bottom:10px}
+  .band-pill{display:inline-block;font-size:.74rem;font-weight:700;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:20px;margin-left:8px}
+  .fb-card{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;background:var(--bg);display:none}
+  .fb-card.show{display:block}
+  .fb-card h3{font-family:'Source Serif 4',serif;font-size:1rem;margin-bottom:6px}
+  .fb-band{font-family:'Source Serif 4',serif;font-size:2rem;font-weight:700;color:var(--accent);line-height:1}
+  .fb-txt{font-size:.9rem;color:var(--muted);margin-top:8px;line-height:1.65}
+  .fb-note{font-size:.76rem;color:var(--faint);margin-top:10px;font-style:italic}
+  .spinner{width:16px;height:16px;border:2px solid var(--accent-light);border-top-color:var(--accent);border-radius:50%;display:inline-block;animation:spin .7s linear infinite;vertical-align:middle}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .taskpanel{display:none}.taskpanel.active{display:block}
+  @media(max-width:860px){.wrap{grid-template-columns:1fr}.top h1{font-size:.9rem}textarea{min-height:300px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="back" href="index.html">← Cambridge 21</a>
+    <h1>Test 1 — Writing</h1>
+    <div class="tabs"><button class="tab active" data-task="1" onclick="switchTask(1)">Task 1</button><button class="tab" data-task="2" onclick="switchTask(2)">Task 2</button></div>
+  </div>
+</header>
+<main>
+  <div class="taskpanel active" id="panel-1">
+    <div class="wrap">
+      <div class="pane">
+        <div class="pane-h"><h2>Writing Task 1</h2><span class="task-badge">~20 min</span></div>
+        <div class="pane-b" id="prompt-1"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-h"><h2>Your response</h2></div>
+        <div class="pane-b">
+          <textarea id="ta-1" spellcheck="false" placeholder="Write your Task 1 answer here (at least 150 words)…"></textarea>
+          <div class="toolbar">
+            <span class="wc" id="wc-1">Words: <b>0</b></span>
+            <span class="saved" id="saved-1"></span>
+            <span style="flex:1"></span>
+            <button class="btn btn-ghost" onclick="downloadPDF()">⬇ PDF</button>
+            <button class="btn btn-primary" id="fbbtn-1" onclick="getFeedback(1)">Get AI feedback</button>
+          </div>
+          <div class="fb-card" id="fb-1"><h3>AI Examiner <span class="fb-band" id="fbband-1"></span></h3><div class="fb-txt" id="fbtxt-1"></div><div class="fb-note">Estimated by the pangea8 AI examiner using IELTS descriptors — practice guidance, not an official score.</div></div>
+          <details class="sample"><summary>Model answer</summary><div class="sample-body" id="sample-1"></div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="taskpanel" id="panel-2">
+    <div class="wrap">
+      <div class="pane">
+        <div class="pane-h"><h2>Writing Task 2</h2><span class="task-badge">~40 min</span></div>
+        <div class="pane-b" id="prompt-2"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-h"><h2>Your response</h2></div>
+        <div class="pane-b">
+          <textarea id="ta-2" spellcheck="false" placeholder="Write your Task 2 answer here (at least 250 words)…"></textarea>
+          <div class="toolbar">
+            <span class="wc" id="wc-2">Words: <b>0</b></span>
+            <span class="saved" id="saved-2"></span>
+            <span style="flex:1"></span>
+            <button class="btn btn-ghost" onclick="downloadPDF()">⬇ PDF</button>
+            <button class="btn btn-primary" id="fbbtn-2" onclick="getFeedback(2)">Get AI feedback</button>
+          </div>
+          <div class="fb-card" id="fb-2"><h3>AI Examiner <span class="fb-band" id="fbband-2"></span></h3><div class="fb-txt" id="fbtxt-2"></div><div class="fb-note">Estimated by the pangea8 AI examiner using IELTS descriptors — practice guidance, not an official score.</div></div>
+          <details class="sample"><summary>Model answer</summary><div class="sample-body" id="sample-2"></div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const TEST = 1;
+const DATA = {"task1": {"promptText": "The graph gives information about the number of jobs in four sectors of the economy in the US between 1960 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.", "promptHtml": "<span class=\"task-badge\">Task 1</span><p class=\"meta\">You should spend about 20 minutes on this task. Write at least 150 words.</p><div class=\"prompt-box\">The graph below gives information about the number of jobs in four sectors of the economy in the US between 1960 and 2020.<br><br><strong>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</strong></div><div class=\"chart-wrap\"><div class=\"chart-title\">Number of jobs in four sectors of the economy in the US, 1960–2020</div><svg viewBox=\"0 0 520 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Inter,sans-serif\"><rect x=\"0\" y=\"0\" width=\"520\" height=\"300\" fill=\"none\"/><line x1=\"48\" y1=\"258.0\" x2=\"400\" y2=\"258.0\" stroke=\"var(--border)\" stroke-width=\"1\"/><text x=\"40\" y=\"262.0\" text-anchor=\"end\" font-size=\"10\" fill=\"var(--faint)\">0</text><line x1=\"48\" y1=\"209.6\" x2=\"400\" y2=\"209.6\" stroke=\"var(--border)\" stroke-width=\"1\"/><text x=\"40\" y=\"213.6\" text-anchor=\"end\" font-size=\"10\" fill=\"var(--faint)\">5</text><line x1=\"48\" y1=\"161.2\" x2=\"400\" y2=\"161.2\" stroke=\"var(--border)\" stroke-width=\"1\"/><text x=\"40\" y=\"165.2\" text-anchor=\"end\" font-size=\"10\" fill=\"var(--faint)\">10</text><line x1=\"48\" y1=\"112.8\" x2=\"400\" y2=\"112.8\" stroke=\"var(--border)\" stroke-width=\"1\"/><text x=\"40\" y=\"116.8\" text-anchor=\"end\" font-size=\"10\" fill=\"var(--faint)\">15</text><line x1=\"48\" y1=\"64.4\" x2=\"400\" y2=\"64.4\" stroke=\"var(--border)\" stroke-width=\"1\"/><text x=\"40\" y=\"68.4\" text-anchor=\"end\" font-size=\"10\" fill=\"var(--faint)\">20</text><line x1=\"48\" y1=\"16.0\" x2=\"400\" y2=\"16.0\" stroke=\"var(--border)\" stroke-width=\"1\"/><text x=\"40\" y=\"20.0\" text-anchor=\"end\" font-size=\"10\" fill=\"var(--faint)\">25</text><text x=\"48.0\" y=\"276\" text-anchor=\"middle\" font-size=\"10\" fill=\"var(--muted)\">1960</text><text x=\"165.3\" y=\"276\" text-anchor=\"middle\" font-size=\"10\" fill=\"var(--muted)\">1980</text><text x=\"282.7\" y=\"276\" text-anchor=\"middle\" font-size=\"10\" fill=\"var(--muted)\">2000</text><text x=\"400.0\" y=\"276\" text-anchor=\"middle\" font-size=\"10\" fill=\"var(--muted)\">2020</text><text x=\"224.0\" y=\"296\" text-anchor=\"middle\" font-size=\"10\" fill=\"var(--faint)\">Year</text><text transform=\"translate(12,137.0) rotate(-90)\" text-anchor=\"middle\" font-size=\"10\" fill=\"var(--faint)\">Jobs (millions)</text><polyline points=\"48.0,112.8 165.3,64.4 282.7,93.4 400.0,132.2\" fill=\"none\" stroke=\"#1e6b4a\" stroke-width=\"2.2\" stroke-dasharray=\"\"/><circle cx=\"48.0\" cy=\"112.8\" r=\"3\" fill=\"#1e6b4a\"/><circle cx=\"165.3\" cy=\"64.4\" r=\"3\" fill=\"#1e6b4a\"/><circle cx=\"282.7\" cy=\"93.4\" r=\"3\" fill=\"#1e6b4a\"/><circle cx=\"400.0\" cy=\"132.2\" r=\"3\" fill=\"#1e6b4a\"/><line x1=\"412\" y1=\"32\" x2=\"430\" y2=\"32\" stroke=\"#1e6b4a\" stroke-width=\"2.2\" stroke-dasharray=\"\"/><text x=\"434\" y=\"36\" font-size=\"10\" fill=\"var(--muted)\">Manufacturing</text><polyline points=\"48.0,199.9 165.3,161.2 282.7,112.8 400.0,103.1\" fill=\"none\" stroke=\"#1a4a7a\" stroke-width=\"2.2\" stroke-dasharray=\"\"/><circle cx=\"48.0\" cy=\"199.9\" r=\"3\" fill=\"#1a4a7a\"/><circle cx=\"165.3\" cy=\"161.2\" r=\"3\" fill=\"#1a4a7a\"/><circle cx=\"282.7\" cy=\"112.8\" r=\"3\" fill=\"#1a4a7a\"/><circle cx=\"400.0\" cy=\"103.1\" r=\"3\" fill=\"#1a4a7a\"/><line x1=\"412\" y1=\"52\" x2=\"430\" y2=\"52\" stroke=\"#1a4a7a\" stroke-width=\"2.2\" stroke-dasharray=\"\"/><text x=\"434\" y=\"56\" font-size=\"10\" fill=\"var(--muted)\">Retail</text><polyline points=\"48.0,199.9 165.3,209.6 282.7,229.0 400.0,238.6\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"2.2\" stroke-dasharray=\"6 4\"/><circle cx=\"48.0\" cy=\"199.9\" r=\"3\" fill=\"#b45309\"/><circle cx=\"165.3\" cy=\"209.6\" r=\"3\" fill=\"#b45309\"/><circle cx=\"282.7\" cy=\"229.0\" r=\"3\" fill=\"#b45309\"/><circle cx=\"400.0\" cy=\"238.6\" r=\"3\" fill=\"#b45309\"/><line x1=\"412\" y1=\"72\" x2=\"430\" y2=\"72\" stroke=\"#b45309\" stroke-width=\"2.2\" stroke-dasharray=\"6 4\"/><text x=\"434\" y=\"76\" font-size=\"10\" fill=\"var(--muted)\">Agriculture</text><polyline points=\"48.0,238.6 165.3,209.6 282.7,151.5 400.0,103.1\" fill=\"none\" stroke=\"#8b3a62\" stroke-width=\"2.2\" stroke-dasharray=\"2 4\"/><circle cx=\"48.0\" cy=\"238.6\" r=\"3\" fill=\"#8b3a62\"/><circle cx=\"165.3\" cy=\"209.6\" r=\"3\" fill=\"#8b3a62\"/><circle cx=\"282.7\" cy=\"151.5\" r=\"3\" fill=\"#8b3a62\"/><circle cx=\"400.0\" cy=\"103.1\" r=\"3\" fill=\"#8b3a62\"/><line x1=\"412\" y1=\"92\" x2=\"430\" y2=\"92\" stroke=\"#8b3a62\" stroke-width=\"2.2\" stroke-dasharray=\"2 4\"/><text x=\"434\" y=\"96\" font-size=\"10\" fill=\"var(--muted)\">Healthcare</text></svg></div>", "model": "<p>The line graph illustrates how many jobs, in millions, existed in four US economic sectors — manufacturing, retail, agriculture and healthcare — over a sixty-year period from 1960 to 2020.</p><p>Overall, the two service sectors, retail and healthcare, grew substantially and had become the largest employers by 2020, whereas the number of jobs in manufacturing and, especially, agriculture declined over the period.</p><p>In 1960, manufacturing was by far the biggest source of employment, providing 15 million jobs, and it climbed to a peak of 20 million in 1980. Thereafter it fell steadily, ending the period at around 13 million. Agriculture followed a consistently downward path, more than halving from 6 million jobs in 1960 to just 2 million in 2020.</p><p>The service sectors moved in the opposite direction. Retail employment rose from 6 million to 16 million, while healthcare showed the most dramatic growth of all, increasing more than sixfold from roughly 2.5 million in 1960 to about 16 million in 2020, when it drew level with retail as the joint-largest employer.</p>"}, "task2": {"promptText": "The best way to provide enough homes in large cities is to build tall apartment blocks. To what extent do you agree or disagree with this statement? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.", "promptHtml": "<span class=\"task-badge\">Task 2</span><p class=\"meta\">You should spend about 40 minutes on this task. Write at least 250 words.</p><div class=\"prompt-box\"><strong>The best way to provide enough homes in large cities is to build tall apartment blocks.</strong><br><br>To what extent do you agree or disagree with this statement?<br><br>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</div>", "model": "<p>As urban populations swell, cities face mounting pressure to house their residents. One proposed solution is the construction of tall apartment blocks. While I agree that high-rise housing is an efficient response to land shortages, I do not believe it is the single best answer, because its drawbacks must be managed carefully.</p><p>The central argument for tall buildings is that they make excellent use of scarce and expensive urban land. By building upwards, a city can accommodate hundreds of families on a plot that might otherwise hold only a handful of houses. This density also makes public transport, utilities and services cheaper to provide per resident, and it helps to limit urban sprawl, protecting surrounding farmland and green space. Cities such as Singapore and Hong Kong demonstrate how well-designed high-rise housing can shelter enormous populations on very little land.</p><p>Nevertheless, tall blocks bring real problems. Poorly built or badly maintained towers can become overcrowded and isolating, with little community life and limited access to gardens or play areas, which particularly affects children and the elderly. Concentrating too many people in one place can also strain local infrastructure. For these reasons, high-rise construction should be combined with other measures, such as converting empty buildings, improving transport so that people can live further out, and building medium-rise housing with shared green spaces.</p><p>In conclusion, I largely agree that tall apartment blocks are a sensible way to increase the housing supply in crowded cities, but they work best as part of a wider strategy rather than as a solution on their own.</p>"}};
+const FEEDBACK_ENDPOINT = 'https://pangeya-ai.vercel.app/api/essay-feedback';
+const LS = t => `c21_writing_t${TEST}_task${t}`;
+
+document.getElementById('prompt-1').innerHTML = DATA.task1.promptHtml;
+document.getElementById('prompt-2').innerHTML = DATA.task2.promptHtml;
+document.getElementById('sample-1').innerHTML = DATA.task1.model;
+document.getElementById('sample-2').innerHTML = DATA.task2.model;
+
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+function switchTask(t){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', +b.dataset.task===t));
+  document.querySelectorAll('.taskpanel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+t).classList.add('active');
+}
+function updateWC(t){
+  const n = words(document.getElementById('ta-'+t).value);
+  const min = t===1?150:250;
+  const el = document.getElementById('wc-'+t);
+  el.innerHTML = 'Words: <b>'+n+'</b>' + (n<min?' <span style="opacity:.7">/ '+min+' min</span>':'');
+  el.classList.toggle('short', n>0 && n<min);
+}
+let saveTimers = {};
+function bindTask(t){
+  const ta = document.getElementById('ta-'+t);
+  try { const saved = localStorage.getItem(LS(t)); if (saved) ta.value = saved; } catch(e){}
+  updateWC(t);
+  ta.addEventListener('input', ()=>{
+    updateWC(t);
+    clearTimeout(saveTimers[t]);
+    saveTimers[t] = setTimeout(()=>{
+      try { localStorage.setItem(LS(t), ta.value); } catch(e){}
+      const s = document.getElementById('saved-'+t);
+      s.textContent = 'Saved ✓ ' + new Date().toLocaleTimeString();
+    }, 500);
+  });
+}
+bindTask(1); bindTask(2);
+
+function getFeedback(t){
+  const ta = document.getElementById('ta-'+t);
+  const essay = ta.value.trim();
+  const btn = document.getElementById('fbbtn-'+t);
+  const card = document.getElementById('fb-'+t);
+  if (words(essay) < 20){ alert('Write at least 20 words before requesting feedback.'); return; }
+  btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Marking…';
+  const q = t===1 ? DATA.task1.promptText : DATA.task2.promptText;
+  const prompt =
+    'You are a strict, experienced IELTS Writing examiner. Mark the response below using the official IELTS band descriptors '+
+    '(Task Achievement/Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy). '+
+    'This is IELTS Academic Writing Task '+t+'. If the response is empty, off-topic, memorised or under 20 words, give band 1.0. '+
+    'Respond ONLY with JSON: {"task'+t+'":{"band":6.5,"comment":"3-5 sentence examiner comment with concrete strengths and improvements"}}\n\n'+
+    'QUESTION: '+q+'\n\nRESPONSE: '+essay;
+  fetch(FEEDBACK_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({essay: prompt})})
+    .then(r=>r.json())
+    .then(j=>{
+      const obj = j['task'+t] || j.task1 || j.task2 || j;
+      let band = obj && obj.band; band = Math.round(Number(band)*2)/2;
+      if (!band || isNaN(band)) throw new Error('no band');
+      document.getElementById('fbband-'+t).textContent = 'Band ' + band.toFixed(1);
+      document.getElementById('fbtxt-'+t).textContent = (obj.comment||'').trim() || 'No comment returned.';
+      card.classList.add('show');
+      try { localStorage.setItem(LS(t)+'_fb', JSON.stringify({band, comment:obj.comment})); } catch(e){}
+    })
+    .catch(e=>{ document.getElementById('fbband-'+t).textContent=''; document.getElementById('fbtxt-'+t).textContent='Could not reach the AI examiner right now. Your essay is saved — try again in a moment.'; card.classList.add('show'); })
+    .finally(()=>{ btn.disabled=false; btn.textContent='Get AI feedback'; });
+}
+// restore prior feedback
+[1,2].forEach(t=>{ try{ const f=JSON.parse(localStorage.getItem(LS(t)+'_fb')||'null'); if(f){ document.getElementById('fbband-'+t).textContent='Band '+Number(f.band).toFixed(1); document.getElementById('fbtxt-'+t).textContent=f.comment||''; document.getElementById('fb-'+t).classList.add('show'); } }catch(e){} });
+
+function downloadPDF(){
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:'pt', format:'a4'});
+  const M=48, W=595-2*M; let y=56;
+  doc.setFont('helvetica','bold'); doc.setFontSize(16); doc.setTextColor(30,107,74);
+  doc.text('Cambridge IELTS 21 — Test '+TEST+' Writing', M, y); y+=10;
+  doc.setDrawColor(30,107,74); doc.line(M,y,M+W,y); y+=24;
+  [1,2].forEach(t=>{
+    const q = t===1?DATA.task1.promptText:DATA.task2.promptText;
+    const txt = document.getElementById('ta-'+t).value.trim();
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(20,20,20);
+    doc.text('Writing Task '+t+'  ('+words(txt)+' words)', M, y); y+=16;
+    doc.setFont('helvetica','italic'); doc.setFontSize(9); doc.setTextColor(90,90,90);
+    doc.splitTextToSize(q, W).forEach(l=>{ if(y>790){doc.addPage();y=56;} doc.text(l,M,y); y+=12; }); y+=6;
+    doc.setFont('helvetica','normal'); doc.setFontSize(11); doc.setTextColor(20,20,20);
+    (txt||'(no answer written)').split(/\n+/).forEach(par=>{
+      doc.splitTextToSize(par, W).forEach(l=>{ if(y>790){doc.addPage();y=56;} doc.text(l,M,y); y+=15; }); y+=6;
+    });
+    y+=18;
+    if (t===1 && y>720){ doc.addPage(); y=56; }
+  });
+  doc.save('C21-Test'+TEST+'-Writing.pdf');
+}
+</script>
+<script src="https://maqsudjon-cell.github.io/ielts-hub/js/test-page-auto.js" defer></script>
+</body>
+</html>
