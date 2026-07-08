@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="test-title" content="Cambridge 21 Speaking — Test 2" />
+<title>Cambridge 21 Speaking – Test 2 | pangea8.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#ffffff;--surface:#fafafa;--border:#e5e7eb;--border-light:#eceeed;--text:#0a0a0a;--muted:#6b7280;--faint:#9ca3af;--accent:#047857;--accent-light:#eafaf3;--accent-soft:#d1fae5;--accent-hover:#035c43;--green-line:#10b981;--rec:#dc2626;--rec-light:#fef2f2;--radius:10px;--radius-lg:14px;--shadow:0 1px 3px rgba(0,0,0,.05)}
+  html[data-theme="dark"],body.theme-dark{--bg:#0c0e0d;--surface:#141817;--border:#242b28;--border-light:#1e2421;--text:#f1f5f3;--muted:#9aa6a1;--faint:#6b756f;--accent:#10b981;--accent-light:#0e2a22;--accent-soft:#0c3b2c;--accent-hover:#34d399;--green-line:#10b981;--rec:#f0928a;--rec-light:#2a1717}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0e0d;--surface:#141817;--border:#242b28;--border-light:#1e2421;--text:#f1f5f3;--muted:#9aa6a1;--faint:#6b756f;--accent:#10b981;--accent-light:#0e2a22;--accent-soft:#0c3b2c;--accent-hover:#34d399;--green-line:#10b981;--rec:#f0928a;--rec-light:#2a1717}}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+  .top{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+  .top-in{max-width:900px;margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;gap:14px}
+  .back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap}
+  .back:hover{border-color:var(--accent);color:var(--accent)}
+  .top h1{font-family:'Source Serif 4',serif;font-size:1.02rem;font-weight:700;flex:1}
+  .skillnav{display:flex;gap:4px}
+  .skillnav a{font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 11px;white-space:nowrap}
+  .skillnav a:hover{border-color:var(--accent);color:var(--accent)}
+  .tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:4px}
+  .tab{border:none;background:transparent;font:600 .8rem Inter;color:var(--muted);padding:6px 13px;border-radius:6px;cursor:pointer}
+  .tab.active{background:var(--accent);color:#fff}
+  .wrap{max-width:900px;margin:0 auto;padding:24px 20px 80px}
+  .intro{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+  .part{display:none}.part.active{display:block}
+  .part-head{font-family:'Source Serif 4',serif;font-size:1.4rem;font-weight:700;margin-bottom:4px}
+  .part-sub{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+  .topic{font-family:'Source Serif 4',serif;font-size:1.15rem;font-weight:700;margin:20px 0 10px;color:var(--accent)}
+  .cue{border:1.5px solid var(--green-line);border-radius:var(--radius);padding:18px 20px;margin:14px 0;background:var(--surface)}
+  .cue h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
+  .cue ul{margin:8px 0 8px 4px;list-style:none}
+  .cue ul li{padding:3px 0 3px 16px;position:relative}
+  .cue ul li::before{content:'–';position:absolute;left:0;color:var(--muted)}
+  .qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;box-shadow:var(--shadow)}
+  .qtext{font-size:.98rem;font-weight:500;margin-bottom:10px;display:flex;gap:10px}
+  .qtext .qn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent-light);color:var(--accent);font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .qctrls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .ibtn{border:1px solid var(--border);background:var(--bg);color:var(--muted);border-radius:8px;font:600 .78rem Inter;padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .15s}
+  .ibtn:hover{border-color:var(--accent);color:var(--accent)}
+  .ibtn.speaking{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+  .ibtn.rec{border-color:var(--rec);color:var(--rec);background:var(--rec-light)}
+  .ibtn.recording{background:var(--rec);color:#fff;border-color:var(--rec);animation:pulse 1.1s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+  .rec-dot{width:9px;height:9px;border-radius:50%;background:currentColor}
+  audio{height:32px;max-width:210px;vertical-align:middle}
+  .transcript{margin-top:10px;font-size:.88rem;color:var(--muted);background:var(--bg);border:1px solid var(--border-light);border-radius:8px;padding:9px 12px;display:none;white-space:pre-wrap}
+  .transcript.show{display:block}
+  .transcript .lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);display:block;margin-bottom:3px}
+  .prep{background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:.88rem;color:var(--text)}
+  .prep b{color:var(--accent)}
+  .autoflow{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:.85rem;color:var(--muted)}
+  .switch{position:relative;width:38px;height:22px;border-radius:11px;background:var(--border);cursor:pointer;transition:.15s;flex-shrink:0}
+  .switch.on{background:var(--accent)}
+  .switch::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.15s}
+  .switch.on::after{transform:translateX(16px)}
+  .tip{font-size:.8rem;color:var(--faint);margin-top:20px;padding:12px 14px;border:1px dashed var(--border);border-radius:8px}
+  @media(max-width:600px){.wrap{padding:18px 14px 60px}.top h1{font-size:.9rem}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="back" href="index.html">← Cambridge 21</a>
+    <h1>Test 2 — Speaking</h1>
+    <div class="tabs"><button class="tab active" data-p="1" onclick="switchPart(1)">Part 1</button><button class="tab" data-p="2" onclick="switchPart(2)">Part 2</button><button class="tab" data-p="3" onclick="switchPart(3)">Part 3</button></div>
+    <div class="skillnav"><a href="t2-listening.html">Listening</a><a href="t2-reading.html">Reading</a><a href="t2-writing.html">Writing</a></div>
+  </div>
+</header>
+<main class="wrap">
+  <p class="intro">The examiner reads each question aloud — tap <b>▶ Examiner</b> to hear it, then tap <b>● Record</b> to answer. Your recording and a live transcript are saved on this device so you can review them later.</p>
+  <div class="autoflow"><span class="switch" id="afSwitch" onclick="toggleAF()"></span> Auto-record after the examiner finishes speaking</div>
+  <div id="parts"></div>
+  <div class="tip">💡 Recordings are stored in your browser (they stay until you clear site data). Transcripts use your browser's speech recognition (Chrome and Safari) and may not be perfect — they are a study aid, not marking. For a real exam feel, answer Part 2 for 1–2 minutes without stopping.</div>
+</main>
+<script>
+const TEST = 2;
+const DATA = {"parts": [{"n": 1, "sub": "The examiner asks you about yourself, your home, work or studies and other familiar topics.", "groups": [{"topic": "Cities", "base": 1, "questions": ["How well do you know the capital city of your country?", "Do you think cities are exciting places to live?", "Why do some people dislike living in a city?", "If you could visit any city in the world, where would you go?"]}]}, {"n": 2, "sub": "You will talk about the topic for one to two minutes. You have one minute to think about what you are going to say and can make notes.", "cue": {"title": "Describe a time when you read or heard something that you thought was not true.", "say": ["where you read or heard this", "what you read or heard", "why you thought it was not true"], "tail": "And explain how you felt about reading or hearing this thing that you thought was not true.", "readAloud": "Describe a time when you read or heard something that you thought was not true. You should say: where you read or heard this; what you read or heard; why you thought it was not true; and explain how you felt about reading or hearing this thing that you thought was not true."}}, {"n": 3, "sub": "The examiner asks more abstract questions linked to the Part 2 topic.", "groups": [{"topic": "Honesty and children", "base": 1, "questions": ["Do you think children are more honest than adults?", "Why do adults tell children it's important to be honest?", "Do you think there are sometimes good reasons for adults not to tell children the truth?"]}, {"topic": "Honesty and advertising", "base": 4, "questions": ["Are there any claims in advertisements that are sometimes not true?", "Why do people still buy things even when they know advertisements aren't completely accurate?", "Do you think advertisements that are dishonest should be banned?"]}]}]};
+let autoFlow = false, mediaRec = null, chunks = [], curRec = null, recognition = null;
+
+/* ---------- IndexedDB for audio ---------- */
+let dbP = new Promise((res,rej)=>{ const r = indexedDB.open('c21speaking',1); r.onupgradeneeded=e=>{ e.target.result.createObjectStore('rec'); }; r.onsuccess=e=>res(e.target.result); r.onerror=e=>rej(e); });
+function idbPut(k,v){ return dbP.then(db=>new Promise((res,rej)=>{ const t=db.transaction('rec','readwrite'); t.objectStore('rec').put(v,k); t.oncomplete=()=>res(); t.onerror=rej; })); }
+function idbGet(k){ return dbP.then(db=>new Promise((res,rej)=>{ const t=db.transaction('rec','readonly'); const q=t.objectStore('rec').get(k); q.onsuccess=()=>res(q.result); q.onerror=rej; })); }
+
+function qKey(p,i){ return `t${TEST}_p${p}_q${i}`; }
+function trKey(p,i){ return `c21_spk_${qKey(p,i)}_tr`; }
+
+/* ---------- render ---------- */
+function render(){
+  const host = document.getElementById('parts');
+  host.innerHTML = DATA.parts.map(part => {
+    let inner = `<div class="part${part.n===1?' active':''}" id="part-${part.n}">
+      <div class="part-head">Part ${part.n}</div>
+      <div class="part-sub">${part.sub}</div>`;
+    if (part.cue){
+      inner += `<div class="prep"><b>Preparation:</b> You have 1 minute to prepare and can make notes. Then speak for 1–2 minutes. Tap ▶ Examiner to hear the topic.</div>
+      <div class="cue"><h3>${part.cue.title}</h3>${part.cue.say?('<p>You should say:</p><ul>'+part.cue.say.map(s=>`<li>${s}</li>`).join('')+'</ul>'):''}${part.cue.tail?`<p>${part.cue.tail}</p>`:''}</div>`;
+      inner += qBlock(part.n, 0, part.cue.readAloud || (part.cue.title));
+    }
+    (part.groups||[]).forEach(g=>{
+      inner += `<div class="topic">${g.topic}</div>`;
+      g.questions.forEach((q,idx)=>{ inner += qBlock(part.n, g.base+idx, q); });
+    });
+    inner += `</div>`;
+    return inner;
+  }).join('');
+  DATA.parts.forEach(part=>{
+    const qs = qList(part);
+    qs.forEach(({p,i})=>restoreQ(p,i));
+  });
+}
+function qList(part){
+  const out=[];
+  if (part.cue) out.push({p:part.n,i:0});
+  (part.groups||[]).forEach(g=>g.questions.forEach((q,idx)=>out.push({p:part.n,i:g.base+idx})));
+  return out;
+}
+function qBlock(p,i,text){
+  return `<div class="qcard" id="qc-${p}-${i}">
+    <div class="qtext">${p!==2?`<span class="qn">${i}</span>`:''}<span>${text}</span></div>
+    <div class="qctrls">
+      <button class="ibtn" onclick="speak(${p},${i},this)" data-say="${encodeURIComponent(text)}">▶ Examiner</button>
+      <button class="ibtn rec" id="rb-${p}-${i}" onclick="toggleRec(${p},${i})"><span class="rec-dot"></span> Record</button>
+      <span id="audio-${p}-${i}"></span>
+    </div>
+    <div class="transcript" id="tr-${p}-${i}"><span class="lbl">Your answer (transcript)</span><span id="trtxt-${p}-${i}"></span></div>
+  </div>`;
+}
+function switchPart(n){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',+b.dataset.p===n));
+  document.querySelectorAll('.part').forEach(p=>p.classList.remove('active'));
+  document.getElementById('part-'+n).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleAF(){ autoFlow=!autoFlow; document.getElementById('afSwitch').classList.toggle('on',autoFlow); }
+
+/* ---------- examiner TTS ---------- */
+let voices=[];
+function loadVoices(){ voices = speechSynthesis.getVoices(); }
+loadVoices(); if (speechSynthesis.onvoiceschanged!==undefined) speechSynthesis.onvoiceschanged=loadVoices;
+function pickVoice(){ return voices.find(v=>/en-GB/i.test(v.lang)&&/female|Kate|Serena|Stephanie|Google UK English Female/i.test(v.name)) || voices.find(v=>/en-GB/i.test(v.lang)) || voices.find(v=>/^en/i.test(v.lang)) || voices[0]; }
+function speak(p,i,btn){
+  speechSynthesis.cancel();
+  const text = decodeURIComponent(btn.dataset.say);
+  const u = new SpeechSynthesisUtterance(text);
+  const v = pickVoice(); if (v) u.voice=v; u.rate=.95; u.pitch=1;
+  btn.classList.add('speaking'); btn.textContent='▶ Speaking…';
+  u.onend = ()=>{ btn.classList.remove('speaking'); btn.textContent='▶ Examiner'; if(autoFlow && !curRec) toggleRec(p,i); };
+  u.onerror = ()=>{ btn.classList.remove('speaking'); btn.textContent='▶ Examiner'; };
+  speechSynthesis.speak(u);
+}
+
+/* ---------- recording ---------- */
+async function toggleRec(p,i){
+  const btn = document.getElementById(`rb-${p}-${i}`);
+  if (curRec && curRec.p===p && curRec.i===i){ stopRec(); return; }
+  if (curRec){ stopRec(); }
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+  catch(e){ alert('Microphone access is needed to record your answer. Please allow it and try again.'); return; }
+  chunks=[]; mediaRec = new MediaRecorder(stream);
+  mediaRec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); };
+  mediaRec.onstop=async ()=>{
+    stream.getTracks().forEach(t=>t.stop());
+    const blob = new Blob(chunks, {type:mediaRec.mimeType||'audio/webm'});
+    await idbPut(qKey(p,i), blob);
+    showAudio(p,i, URL.createObjectURL(blob));
+    curRec=null;
+  };
+  mediaRec.start();
+  curRec={p,i};
+  btn.classList.add('recording'); btn.innerHTML='<span class="rec-dot"></span> Stop';
+  startRecognition(p,i);
+}
+function stopRec(){
+  if (!curRec) return;
+  const {p,i}=curRec;
+  const btn=document.getElementById(`rb-${p}-${i}`);
+  btn.classList.remove('recording'); btn.innerHTML='<span class="rec-dot"></span> Record';
+  try{ mediaRec.stop(); }catch(e){}
+  if (recognition){ try{recognition.stop();}catch(e){} }
+}
+function showAudio(p,i,url){
+  document.getElementById(`audio-${p}-${i}`).innerHTML = `<audio controls src="${url}"></audio>`;
+}
+/* ---------- speech recognition transcript ---------- */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+function startRecognition(p,i){
+  if (!SR) return;
+  try { recognition = new SR(); } catch(e){ return; }
+  recognition.lang='en-US'; recognition.continuous=true; recognition.interimResults=true;
+  let finalTxt='';
+  const trEl=document.getElementById(`tr-${p}-${i}`), txtEl=document.getElementById(`trtxt-${p}-${i}`);
+  trEl.classList.add('show');
+  recognition.onresult=e=>{
+    let interim='';
+    for (let k=e.resultIndex;k<e.results.length;k++){
+      const t=e.results[k][0].transcript;
+      if (e.results[k].isFinal) finalTxt+=t+' '; else interim+=t;
+    }
+    txtEl.textContent = (finalTxt+interim).trim();
+  };
+  recognition.onend=()=>{ if(finalTxt.trim()){ try{localStorage.setItem(trKey(p,i), finalTxt.trim());}catch(e){} } };
+  try{ recognition.start(); }catch(e){}
+}
+/* ---------- restore ---------- */
+async function restoreQ(p,i){
+  try{ const tr=localStorage.getItem(trKey(p,i)); if(tr){ document.getElementById(`tr-${p}-${i}`).classList.add('show'); document.getElementById(`trtxt-${p}-${i}`).textContent=tr; } }catch(e){}
+  try{ const blob=await idbGet(qKey(p,i)); if(blob) showAudio(p,i,URL.createObjectURL(blob)); }catch(e){}
+}
+render();
+</script>
+<script src="https://maqsudjon-cell.github.io/ielts-hub/js/test-page-auto.js" defer></script>
+</body>
+</html>

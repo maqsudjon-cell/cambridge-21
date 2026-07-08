@@ -235,6 +235,15 @@ function toggleTheme(){ const r=document.documentElement; const d=r.getAttribute
 function badge(q){ return q.replace(/\//g, ','); }
 function renderTranscript(n){
   const host=document.getElementById('trBody');
+  const card=document.getElementById('trCard');
+  if(!TRANSCRIPTS[n]||!TRANSCRIPTS[n].length){
+    card.style.display='none';
+    document.querySelector('.wrap').style.gridTemplateColumns='minmax(0,720px)';
+    document.querySelector('.wrap').style.justifyContent='center';
+    return;
+  }
+  card.style.display='';
+  document.querySelector('.wrap').style.gridTemplateColumns='';
   host.innerHTML=(TRANSCRIPTS[n]||[]).map(u=>{
     let h=u.h.replace(/<sup class="tr-q">Q([^<]+)<\/sup>/g,(m,q)=>`<span class="tr-q">${badge(q)}</span>`);
     return `<div class="tr-turn" data-t="${u.t}" onclick="trSeek(${u.t})">${u.sp?`<span class="tr-sp">${u.sp}: </span>`:''}<span class="tr-tx">${h}</span></div>`;
