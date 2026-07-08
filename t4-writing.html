@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="test-title" content="Cambridge 21 Writing — Test 4" />
+<title>Cambridge 21 Writing – Test 4 | pangea8.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#ffffff;--surface:#fafafa;--border:#e5e7eb;--border-light:#eceeed;--text:#0a0a0a;--muted:#6b7280;--faint:#9ca3af;--accent:#047857;--accent-light:#eafaf3;--accent-soft:#d1fae5;--accent-hover:#035c43;--green-line:#10b981;--amber:#b45309;--red:#dc2626;--radius:10px;--radius-lg:14px;--shadow:0 1px 3px rgba(0,0,0,.05)}
+  html[data-theme="dark"],body.theme-dark{--bg:#0c0e0d;--surface:#141817;--border:#242b28;--border-light:#1e2421;--text:#f1f5f3;--muted:#9aa6a1;--faint:#6b756f;--accent:#10b981;--accent-light:#0e2a22;--accent-soft:#0c3b2c;--accent-hover:#34d399;--green-line:#10b981;--amber:#f0a44a;--red:#f0928a}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0e0d;--surface:#141817;--border:#242b28;--border-light:#1e2421;--text:#f1f5f3;--muted:#9aa6a1;--faint:#6b756f;--accent:#10b981;--accent-light:#0e2a22;--accent-soft:#0c3b2c;--accent-hover:#34d399;--green-line:#10b981;--amber:#f0a44a;--red:#f0928a}}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+  .top{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+  .top-in{max-width:1180px;margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;gap:14px}
+  .back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap}
+  .back:hover{border-color:var(--accent);color:var(--accent)}
+  .top h1{font-family:'Source Serif 4',serif;font-size:1.02rem;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .skillnav{display:flex;gap:4px}
+  .skillnav a{font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 11px;white-space:nowrap}
+  .skillnav a:hover{border-color:var(--accent);color:var(--accent)}
+  .tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:4px}
+  .tab{border:none;background:transparent;font:600 .82rem Inter;color:var(--muted);padding:6px 15px;border-radius:6px;cursor:pointer}
+  .tab.active{background:var(--accent);color:#fff}
+  .wrap{max-width:1180px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .pane{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+  .pane-h{padding:13px 18px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+  .pane-h h2{font-family:'Source Serif 4',serif;font-size:1.05rem;font-weight:700}
+  .pane-b{padding:18px}
+  .task-badge{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);padding:3px 9px;border-radius:5px}
+  .prompt-box{border:1.5px solid var(--green-line);border-radius:var(--radius);padding:15px 17px;margin:12px 0;background:var(--surface);font-size:.96rem;line-height:1.65}
+  .timer{font:700 .95rem/1 'Source Serif 4',serif;color:var(--accent);background:var(--accent-light);border:1.5px solid var(--green-line);border-radius:9px;padding:8px 13px;cursor:pointer;white-space:nowrap;letter-spacing:.02em;user-select:none}
+  .timer.amber{color:var(--amber);border-color:var(--amber);background:transparent}
+  .timer.red{color:var(--red);border-color:var(--red);background:transparent;animation:tflash 1s infinite}
+  .timer.paused{opacity:.55}
+  @keyframes tflash{0%,100%{opacity:1}50%{opacity:.5}}
+  .prompt-box strong{font-weight:700}
+  .meta{font-size:.82rem;color:var(--faint);margin:10px 0}
+  .chart-wrap{margin:14px 0;text-align:center}
+  .chart-wrap svg{max-width:100%;height:auto}
+  .chart-title{font-weight:600;font-size:.9rem;margin-bottom:6px}
+  textarea{width:100%;min-height:440px;resize:vertical;border:1.5px solid var(--border);border-radius:var(--radius);padding:14px;font:400 .95rem/1.7 Inter;color:var(--text);background:var(--surface);outline:none}
+  textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+  .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .wc{font-size:.85rem;color:var(--muted)}
+  .wc b{color:var(--accent);font-weight:700}
+  .wc.short b{color:var(--amber)}
+  .saved{font-size:.76rem;color:var(--faint);font-style:italic}
+  .btn{border:none;border-radius:9px;font:600 .85rem Inter;padding:9px 18px;cursor:pointer;transition:all .15s}
+  .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover)}
+  .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  details.sample{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+  details.sample summary{padding:12px 16px;cursor:pointer;font-weight:600;font-size:.9rem;background:var(--bg);list-style:none}
+  details.sample summary::-webkit-details-marker{display:none}
+  details.sample summary::before{content:'▸ ';color:var(--accent)}
+  details.sample[open] summary::before{content:'▾ '}
+  .sample-body{padding:16px 18px;font-size:.92rem;line-height:1.7;border-top:1px solid var(--border-light)}
+  .sample-body p{margin-bottom:10px}
+  .band-pill{display:inline-block;font-size:.74rem;font-weight:700;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:20px;margin-left:8px}
+  .fb-card{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;background:var(--bg);display:none}
+  .fb-card.show{display:block}
+  .fb-card h3{font-family:'Source Serif 4',serif;font-size:1rem;margin-bottom:6px}
+  .fb-band{font-family:'Source Serif 4',serif;font-size:2rem;font-weight:700;color:var(--accent);line-height:1}
+  .fb-txt{font-size:.9rem;color:var(--muted);margin-top:8px;line-height:1.65}
+  .fb-note{font-size:.76rem;color:var(--faint);margin-top:10px;font-style:italic}
+  .spinner{width:16px;height:16px;border:2px solid var(--accent-light);border-top-color:var(--accent);border-radius:50%;display:inline-block;animation:spin .7s linear infinite;vertical-align:middle}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .taskpanel{display:none}.taskpanel.active{display:block}
+  @media(max-width:860px){.wrap{grid-template-columns:1fr}.top h1{font-size:.9rem}textarea{min-height:300px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="back" href="index.html">← Cambridge 21</a>
+    <h1>Test 4 — Writing</h1>
+    <div class="timer" id="timer" onclick="toggleTimer()" title="60 minutes — click to pause/resume">⏱ 60:00</div>
+    <div class="tabs"><button class="tab active" data-task="1" onclick="switchTask(1)">Task 1</button><button class="tab" data-task="2" onclick="switchTask(2)">Task 2</button></div>
+    <div class="skillnav"><a href="t4-listening.html">Listening</a><a href="t4-reading.html">Reading</a><a href="t4-speaking.html">Speaking</a></div>
+  </div>
+</header>
+<main>
+  <div class="taskpanel active" id="panel-1">
+    <div class="wrap">
+      <div class="pane">
+        <div class="pane-h"><h2>Writing Task 1</h2><span class="task-badge">~20 min</span></div>
+        <div class="pane-b" id="prompt-1"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-h"><h2>Your response</h2></div>
+        <div class="pane-b">
+          <textarea id="ta-1" spellcheck="false" placeholder="Write your Task 1 answer here (at least 150 words)…"></textarea>
+          <div class="toolbar">
+            <span class="wc" id="wc-1">Words: <b>0</b></span>
+            <span class="saved" id="saved-1"></span>
+            <span style="flex:1"></span>
+            <button class="btn btn-ghost" onclick="downloadPDF()">⬇ PDF</button>
+            <button class="btn btn-primary" id="fbbtn-1" onclick="getFeedback(1)">Get AI feedback</button>
+          </div>
+          <div class="fb-card" id="fb-1"><h3>AI Examiner <span class="fb-band" id="fbband-1"></span></h3><div class="fb-txt" id="fbtxt-1"></div><div class="fb-note">Estimated by the pangea8 AI examiner using IELTS descriptors — practice guidance, not an official score.</div></div>
+          <details class="sample"><summary>Model answer</summary><div class="sample-body" id="sample-1"></div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="taskpanel" id="panel-2">
+    <div class="wrap">
+      <div class="pane">
+        <div class="pane-h"><h2>Writing Task 2</h2><span class="task-badge">~40 min</span></div>
+        <div class="pane-b" id="prompt-2"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-h"><h2>Your response</h2></div>
+        <div class="pane-b">
+          <textarea id="ta-2" spellcheck="false" placeholder="Write your Task 2 answer here (at least 250 words)…"></textarea>
+          <div class="toolbar">
+            <span class="wc" id="wc-2">Words: <b>0</b></span>
+            <span class="saved" id="saved-2"></span>
+            <span style="flex:1"></span>
+            <button class="btn btn-ghost" onclick="downloadPDF()">⬇ PDF</button>
+            <button class="btn btn-primary" id="fbbtn-2" onclick="getFeedback(2)">Get AI feedback</button>
+          </div>
+          <div class="fb-card" id="fb-2"><h3>AI Examiner <span class="fb-band" id="fbband-2"></span></h3><div class="fb-txt" id="fbtxt-2"></div><div class="fb-note">Estimated by the pangea8 AI examiner using IELTS descriptors — practice guidance, not an official score.</div></div>
+          <details class="sample"><summary>Model answer</summary><div class="sample-body" id="sample-2"></div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const TEST = 4;
+const DATA = {"task1": {"promptText": "The chart and table show the results of a survey of library users at a university: a pie chart of the categories of library users and a table of library user satisfaction (%). Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.", "promptHtml": "<span class=\"task-badge\">Task 1</span><p class=\"meta\">You should spend about 20 minutes on this task. Write at least 150 words.</p><div class=\"prompt-box\">The chart and table below show the results of a survey of library users at a university.<br><br><strong>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</strong></div><div class=\"chart-wrap\"><img src=\"img/library.png\" alt=\"Pie chart of categories of library users and table of user satisfaction\" style=\"max-width:100%;border:1px solid var(--border);border-radius:8px;background:#fff\"></div>", "model": "<p>The pie chart shows the different categories of people who use a university library, while the table gives their levels of satisfaction with five aspects of the library's service.</p><p>Overall, students, and especially full-time undergraduates, make up the great majority of library users, and satisfaction is generally high, with the helpfulness of staff rated most positively and the availability of journals and reliability of wi-fi rated least positively.</p><p>According to the chart, full-time undergraduates form by far the largest group of users at 44%, followed by full-time postgraduates at 25%. Part-time postgraduates account for 16%, while distance-learning students and academic staff make up the smallest proportions, at just 8% and 7% respectively.</p><p>Turning to satisfaction, staff helpfulness was rated most highly, with 95% of users very satisfied and none dissatisfied. Opening hours were also well regarded (65% very satisfied, none dissatisfied). In contrast, the resources and technology fared less well: 20% of users were not satisfied with the availability of journals and 19% were dissatisfied with the reliability of the wi-fi, the two weakest areas overall.</p>"}, "task2": {"promptText": "Some people argue that primary schools focus too much on formal learning. To what extent do you agree with this opinion? How important do you think it is for children to play as well as learn in the primary school classroom? Write at least 250 words.", "promptHtml": "<span class=\"task-badge\">Task 2</span><p class=\"meta\">You should spend about 40 minutes on this task. Write at least 250 words.</p><div class=\"prompt-box\"><strong>Some people argue that primary schools focus too much on formal learning.</strong><br><br>To what extent do you agree with this opinion?<br><br><strong>How important do you think it is for children to play as well as learn in the primary school classroom?</strong></div>", "model": "<p>It is sometimes claimed that primary schools place too great an emphasis on formal, academic learning. I largely agree with this view, and I believe that giving young children opportunities to play alongside their studies is extremely important for their development.</p><p>There is certainly a strong case that many primary schools have become overly focused on formal instruction. Under pressure to raise test scores, schools increasingly devote lessons to reading, writing and arithmetic delivered through worksheets and examinations, sometimes from a very early age. While these skills are essential, an exclusive focus on them can leave little time for the creative, physical and social activities that young children also need, and may make school feel stressful and dull rather than enjoyable.</p><p>Play, in my opinion, is a vital part of a young child's education rather than a distraction from it. Through play, children develop their imagination, learn to cooperate, share and resolve conflicts, and build the confidence to try new things. Play-based activities can also teach academic content very effectively: counting games, for instance, make numbers meaningful, while role-play and storytelling build vocabulary and communication skills. In this way, learning and play reinforce each other rather than competing.</p><p>In conclusion, I agree that many primary schools concentrate too heavily on formal learning. Because play supports children's emotional, social and even academic growth, I believe it should have a central place in the primary classroom, balanced sensibly with more structured study.</p>"}};
+const FEEDBACK_ENDPOINT = 'https://pangeya-ai.vercel.app/api/essay-feedback';
+const LS = t => `c21_writing_t${TEST}_task${t}`;
+
+document.getElementById('prompt-1').innerHTML = DATA.task1.promptHtml;
+document.getElementById('prompt-2').innerHTML = DATA.task2.promptHtml;
+document.getElementById('sample-1').innerHTML = DATA.task1.model;
+document.getElementById('sample-2').innerHTML = DATA.task2.model;
+
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+function switchTask(t){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', +b.dataset.task===t));
+  document.querySelectorAll('.taskpanel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+t).classList.add('active');
+}
+function updateWC(t){
+  const n = words(document.getElementById('ta-'+t).value);
+  const min = t===1?150:250;
+  const el = document.getElementById('wc-'+t);
+  el.innerHTML = 'Words: <b>'+n+'</b>' + (n<min?' <span style="opacity:.7">/ '+min+' min</span>':'');
+  el.classList.toggle('short', n>0 && n<min);
+}
+let saveTimers = {};
+function bindTask(t){
+  const ta = document.getElementById('ta-'+t);
+  try { const saved = localStorage.getItem(LS(t)); if (saved) ta.value = saved; } catch(e){}
+  updateWC(t);
+  ta.addEventListener('input', ()=>{
+    updateWC(t);
+    clearTimeout(saveTimers[t]);
+    saveTimers[t] = setTimeout(()=>{
+      try { localStorage.setItem(LS(t), ta.value); } catch(e){}
+      const s = document.getElementById('saved-'+t);
+      s.textContent = 'Saved ✓ ' + new Date().toLocaleTimeString();
+    }, 500);
+  });
+}
+bindTask(1); bindTask(2);
+
+/* ---- 60-minute exam timer (persists per test, pause/resume) ---- */
+const TKEY = 'c21_writing_t'+TEST+'_secs';
+let tSecs = 3600, tPaused = false, tInt = null;
+try { const s = parseInt(localStorage.getItem(TKEY)); if (!isNaN(s) && s>=0 && s<=3600) tSecs = s; } catch(e){}
+function fmtT(s){ const m=Math.floor(s/60), ss=s%60; return '⏱ '+String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0'); }
+function paintTimer(){ const el=document.getElementById('timer'); el.textContent = tSecs<=0 ? "⏱ Time's up" : fmtT(tSecs);
+  el.classList.toggle('amber', tSecs<=600 && tSecs>300); el.classList.toggle('red', tSecs<=300); el.classList.toggle('paused', tPaused); }
+function tickTimer(){ if(tPaused||tSecs<=0)return; tSecs--; try{localStorage.setItem(TKEY,String(tSecs));}catch(e){} paintTimer(); if(tSecs<=0){ clearInterval(tInt); } }
+function toggleTimer(){ if(tSecs<=0){ tSecs=3600; tPaused=false; } else { tPaused=!tPaused; } paintTimer(); }
+paintTimer(); tInt = setInterval(tickTimer, 1000);
+
+function getFeedback(t){
+  const ta = document.getElementById('ta-'+t);
+  const essay = ta.value.trim();
+  const btn = document.getElementById('fbbtn-'+t);
+  const card = document.getElementById('fb-'+t);
+  if (words(essay) < 20){ alert('Write at least 20 words before requesting feedback.'); return; }
+  btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Marking…';
+  const q = t===1 ? DATA.task1.promptText : DATA.task2.promptText;
+  const prompt =
+    'You are a strict, experienced IELTS Writing examiner. Mark the response below using the official IELTS band descriptors '+
+    '(Task Achievement/Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy). '+
+    'This is IELTS Academic Writing Task '+t+'. If the response is empty, off-topic, memorised or under 20 words, give band 1.0. '+
+    'Respond ONLY with JSON: {"task'+t+'":{"band":6.5,"comment":"3-5 sentence examiner comment with concrete strengths and improvements"}}\n\n'+
+    'QUESTION: '+q+'\n\nRESPONSE: '+essay;
+  fetch(FEEDBACK_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({essay: prompt})})
+    .then(r=>r.json())
+    .then(j=>{
+      const obj = j['task'+t] || j.task1 || j.task2 || j;
+      let band = obj && obj.band; band = Math.round(Number(band)*2)/2;
+      if (!band || isNaN(band)) throw new Error('no band');
+      document.getElementById('fbband-'+t).textContent = 'Band ' + band.toFixed(1);
+      document.getElementById('fbtxt-'+t).textContent = (obj.comment||'').trim() || 'No comment returned.';
+      card.classList.add('show');
+      try { localStorage.setItem(LS(t)+'_fb', JSON.stringify({band, comment:obj.comment})); } catch(e){}
+    })
+    .catch(e=>{ document.getElementById('fbband-'+t).textContent=''; document.getElementById('fbtxt-'+t).textContent='Could not reach the AI examiner right now. Your essay is saved — try again in a moment.'; card.classList.add('show'); })
+    .finally(()=>{ btn.disabled=false; btn.textContent='Get AI feedback'; });
+}
+// restore prior feedback
+[1,2].forEach(t=>{ try{ const f=JSON.parse(localStorage.getItem(LS(t)+'_fb')||'null'); if(f){ document.getElementById('fbband-'+t).textContent='Band '+Number(f.band).toFixed(1); document.getElementById('fbtxt-'+t).textContent=f.comment||''; document.getElementById('fb-'+t).classList.add('show'); } }catch(e){} });
+
+function downloadPDF(){
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:'pt', format:'a4'});
+  const M=48, W=595-2*M; let y=56;
+  doc.setFont('helvetica','bold'); doc.setFontSize(16); doc.setTextColor(30,107,74);
+  doc.text('Cambridge IELTS 21 — Test '+TEST+' Writing', M, y); y+=10;
+  doc.setDrawColor(30,107,74); doc.line(M,y,M+W,y); y+=24;
+  [1,2].forEach(t=>{
+    const q = t===1?DATA.task1.promptText:DATA.task2.promptText;
+    const txt = document.getElementById('ta-'+t).value.trim();
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(20,20,20);
+    doc.text('Writing Task '+t+'  ('+words(txt)+' words)', M, y); y+=16;
+    doc.setFont('helvetica','italic'); doc.setFontSize(9); doc.setTextColor(90,90,90);
+    doc.splitTextToSize(q, W).forEach(l=>{ if(y>790){doc.addPage();y=56;} doc.text(l,M,y); y+=12; }); y+=6;
+    doc.setFont('helvetica','normal'); doc.setFontSize(11); doc.setTextColor(20,20,20);
+    (txt||'(no answer written)').split(/\n+/).forEach(par=>{
+      doc.splitTextToSize(par, W).forEach(l=>{ if(y>790){doc.addPage();y=56;} doc.text(l,M,y); y+=15; }); y+=6;
+    });
+    y+=18;
+    if (t===1 && y>720){ doc.addPage(); y=56; }
+  });
+  doc.save('C21-Test'+TEST+'-Writing.pdf');
+}
+</script>
+<script src="https://maqsudjon-cell.github.io/ielts-hub/js/test-page-auto.js" defer></script>
+</body>
+</html>

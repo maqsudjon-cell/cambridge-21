@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="test-title" content="Cambridge 21 Reading — Test 4" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambridge 21 Reading – Test 4 | pangea8.com</title>
+<style>
+:root{--navy:#047857;--navy-dark:#035a44;--accent:#047857;--accent-hover:#035a44;--accent-soft:#d1fae5;--bg:#fff;--surface:#fff;--surface-alt:#fafaf9;--text:#0a0a0a;--muted:#6b7280;--border:#e5e7eb;--border-light:#f1f3f5;--qnum-border:#047857;--ok:#047857;--ok-soft:#d1fae5;--bad:#b42318;--bad-soft:#fdecea;--warn:#f59e0b;--hl:#FFE066;--hlb:#c8a800;--font-scale:1;--line-scale:1;--topbar-h:58px;--footer-h:60px}
+body.theme-dark{--navy:#10B981;--navy-dark:#059669;--bg:#0a0a0a;--surface:#111111;--surface-alt:#161616;--text:#fafafa;--muted:#a1a1aa;--border:#1f1f1f;--border-light:#2a2a2a;--accent:#10B981;--accent-hover:#34d399;--accent-soft:#064e3b;--qnum-border:#10B981;--ok:#34d399;--ok-soft:#064e3b;--bad:#f0928a;--bad-soft:#3a1f1d;--hl:#6b5c10;--hlb:#8a7414}
+body.theme-sepia{--navy:#047857;--navy-dark:#035a44;--bg:#f4ece0;--surface:#faf6ef;--surface-alt:#efe7da;--text:#3c3226;--muted:#6b5e50;--border:#d8cab6;--border-light:#e2d7c5;--accent:#047857;--accent-hover:#035a44;--accent-soft:#cce8d8;--qnum-border:#047857}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
+body{font-family:Arial,Helvetica,sans-serif;font-size:calc(16px*var(--font-scale));line-height:calc(1.5*var(--line-scale));color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+button,input,select{font-family:inherit}button{cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:2px;padding:10px 18px;font-size:14px;font-weight:700;transition:.12s}
+.btn:hover{background:var(--surface-alt)}.btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.primary:hover{background:var(--navy-dark)}
+.btn.danger{color:#fff;background:var(--bad);border-color:var(--bad)}.btn.danger:hover{filter:brightness(.92)}
+.screen{display:none}.screen.active{display:block}
+#screen-test.active{height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.center{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;background:linear-gradient(180deg,#f7f9fc,#e9edf4)}
+body.theme-dark .center{background:linear-gradient(180deg,#13182a,#0d1120)}body.theme-sepia .center{background:linear-gradient(180deg,#f4ece0,#e9dcc7)}
+.card{width:100%;max-width:880px;background:var(--surface);border:1px solid var(--border);border-radius:2px;box-shadow:0 12px 24px rgba(17,24,39,.1);padding:34px}
+.brand-row{display:inline-flex;align-items:center;gap:9px;color:var(--navy);font-weight:800;margin-bottom:14px}
+.tg-dot{width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:13px}
+.landing-title{font-size:34px;color:var(--navy);margin-bottom:10px;letter-spacing:-.5px}
+.landing-desc{color:var(--muted);font-size:17px;max-width:760px;margin-bottom:22px}
+.type-row{display:flex;gap:10px;margin-bottom:22px}
+.type-btn{padding:10px 22px;border:1.5px solid var(--border);border-radius:2px;font-size:14px;font-weight:700;background:var(--surface);color:var(--muted);transition:.15s}
+.type-btn.active{border-color:var(--navy);background:var(--navy);color:#fff}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.info-box{background:var(--surface-alt);border:1px solid var(--border);border-radius:2px;padding:16px;text-align:center}
+.info-box strong{display:block;color:var(--navy);font-size:22px;margin-bottom:3px}
+.rules{margin:16px 0 26px;padding-left:20px}.rules li{margin:9px 0}
+.action-row{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+.topbar{height:var(--topbar-h);flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:var(--surface);border-bottom:1px solid var(--border-light);position:relative;z-index:40}
+.tb-left{display:flex;align-items:center;gap:11px}.tb-logo{font-size:21px;font-weight:900;color:var(--navy);letter-spacing:.5px}.tb-id{font-size:14px;font-weight:700;color:var(--muted)}
+.tb-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.tg-pill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:800;font-size:14px;padding:8px 18px;border-radius:22px;transition:.2s;white-space:nowrap}
+.tg-pill:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.18)}.tg-pill svg{width:18px;height:18px;fill:#fff;flex-shrink:0}
+.tb-right{display:flex;align-items:center;gap:6px}
+.timer{font-size:16px;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:.5px;padding:6px 12px;border-radius:20px;background:var(--surface-alt);border:1px solid var(--border);color:var(--text);margin-right:4px}
+.timer.warn{color:#fff;background:var(--warn);border-color:var(--warn)}.timer.danger{color:#fff;background:var(--bad);border-color:var(--bad);animation:flash 1s infinite}
+@keyframes flash{50%{opacity:.45}}
+.icon-btn{width:42px;height:42px;border:none;background:transparent;color:var(--text);border-radius:2px;display:inline-flex;align-items:center;justify-content:center;transition:.15s}
+.icon-btn:hover{background:var(--surface-alt)}.icon-btn svg{width:22px;height:22px;fill:currentColor}
+.tmain{flex:1;display:flex;overflow:hidden;min-height:0}
+.pp{flex:1;display:flex;flex-direction:column;background:var(--surface);overflow:hidden;min-width:260px}
+.pphdr{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--surface-alt)}
+.pptitle{font-size:13px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.5px}.ppql{font-size:12px;color:var(--muted)}
+.pbody{flex:1;overflow-y:auto;padding:24px 26px 36px;font-size:calc(15.5px*var(--font-scale));line-height:calc(1.8*var(--line-scale))}
+.pbody h2{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.3}.pbody p{margin-bottom:14px}
+.pl{font-weight:800;color:var(--navy);margin-right:6px}
+mark.uhl{background:var(--hl);padding:0;border-radius:1px;cursor:pointer;color:inherit}
+.hl-pop{position:fixed;z-index:120;display:none;align-items:center;gap:6px;border:1px solid var(--border);border-radius:2px;background:var(--surface);box-shadow:0 8px 24px rgba(15,23,42,.2);padding:5px}
+.hl-pop.show{display:flex}
+.hl-pop button{border:none;border-radius:2px;background:var(--hl);color:#3d2c00;font-size:12px;font-weight:800;padding:7px 10px;white-space:nowrap}
+.hl-pop button.remove{background:var(--bad);color:#fff}
+.rszr{width:14px;background:var(--border-light);cursor:col-resize;flex-shrink:0;transition:background .15s;position:relative;touch-action:none}
+.rszr::before{content:'';position:absolute;top:50%;left:50%;width:4px;height:46px;border-radius:2px;background:var(--accent);opacity:.5;transform:translate(-50%,-50%)}
+.rszr:hover,.rszr.dragging{background:var(--accent-soft)}.rszr:hover::before,.rszr.dragging::before{opacity:1}
+.qp{flex:1;display:flex;flex-direction:column;background:var(--bg);overflow:hidden;min-width:260px}
+.qphdr{padding:9px 16px;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0}
+.qphdr h3{font-size:calc(13px*var(--font-scale));font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.5px}.qphdr p{font-size:calc(12px*var(--font-scale));color:var(--muted)}
+.qbody{flex:1;overflow-y:auto;padding:16px;font-size:calc(15px*var(--font-scale));line-height:calc(1.55*var(--line-scale))}
+.qgrp{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;margin-bottom:14px}
+.qtbadge{display:inline-block;font-size:calc(10px*var(--font-scale));font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);background:var(--accent-soft);border-radius:1px;padding:3px 9px;margin-bottom:9px}
+.qinstr{font-size:calc(14px*var(--font-scale));line-height:calc(1.55*var(--line-scale));color:var(--text);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border-light)}
+.qinstr strong{color:var(--navy)}.qinstr em{color:var(--muted)}
+.qi{padding:11px 0;border-bottom:1px solid var(--border-light)}.qi:last-child{border-bottom:none}
+.qrow{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.qbdg{width:24px;height:24px;min-width:24px;border:1.6px solid var(--qnum-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:calc(13px*var(--font-scale));font-weight:800;color:var(--text);flex-shrink:0}
+.qtxt{font-size:calc(15px*var(--font-scale));line-height:calc(1.6*var(--line-scale));color:var(--text);flex:1;padding-top:2px}
+.opts{display:flex;flex-direction:column;gap:6px;padding-left:34px}
+.olbl{display:flex;align-items:center;gap:9px;padding:8px 11px;border:1.5px solid var(--border);border-radius:2px;font-size:calc(14px*var(--font-scale));color:var(--text);background:var(--surface);transition:.12s}
+.olbl:hover{border-color:var(--accent);background:var(--surface-alt)}
+.olbl input{accent-color:var(--accent);width:15px;height:15px;flex-shrink:0}
+.olbl.sel{border-color:var(--accent);background:var(--accent-soft)}
+.olbl.good{border-color:var(--ok);background:var(--ok-soft)}.olbl.bad{border-color:var(--bad);background:var(--bad-soft)}
+.cbnote{font-size:calc(12px*var(--font-scale));color:var(--accent);font-weight:700;padding-left:34px;margin-bottom:6px}
+.ainput{display:block;width:calc(100% - 34px);margin-left:34px;padding:8px 12px;border:1.5px solid var(--border);border-radius:2px;font-size:calc(15px*var(--font-scale));outline:none;background:var(--surface);color:var(--text);transition:.12s}
+.ainput:focus{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.ainput.good{border-color:var(--ok);background:var(--ok-soft)}.ainput.bad{border-color:var(--bad);background:var(--bad-soft)}
+.gap-input{display:inline-block;vertical-align:baseline;min-width:120px;width:clamp(110px,16vw,200px);padding:2px 6px;margin:0 4px;border:0;border-bottom:2px solid var(--accent);border-radius:0;font-size:inherit;line-height:1.25;outline:none;background:transparent;color:var(--text);text-align:center}
+.gap-input:focus{background:var(--accent-soft)}
+.gap-input.good{border-bottom-color:var(--ok);background:var(--ok-soft)}.gap-input.bad{border-bottom-color:var(--bad);background:var(--bad-soft)}
+.ahint{font-size:calc(12px*var(--font-scale));color:var(--muted);padding-left:34px;margin-top:4px}
+.hsel{display:block;width:calc(100% - 34px);margin-left:34px;padding:8px 11px;border:1.5px solid var(--border);border-radius:2px;font-size:calc(14px*var(--font-scale));background:var(--surface);color:var(--text);outline:none;transition:.12s}
+.hsel:focus{border-color:var(--accent)}
+.hsel.good{border-color:var(--ok);background:var(--ok-soft)}.hsel.bad{border-color:var(--bad);background:var(--bad-soft)}
+.hsel-inline{display:inline-block;width:auto;min-width:210px;margin:6px 0 0 0}
+.listbox{background:var(--surface-alt);border:1px solid var(--border);border-radius:2px;padding:13px;margin-bottom:14px}
+.listbox-l{font-size:calc(10px*var(--font-scale));font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px}
+.listbox-i{font-size:calc(13px*var(--font-scale));color:var(--text);padding:3px 0;line-height:calc(1.45*var(--line-scale))}.listbox-i b{color:var(--navy)}
+.ends-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;padding:8px 0;border-bottom:1px solid var(--border-light)}
+.ends-row:last-child{border-bottom:none}
+.ends-stem{flex:1;font-size:calc(15px*var(--font-scale));line-height:calc(1.5*var(--line-scale))}
+.wbank{display:flex;flex-wrap:wrap;gap:8px;padding:11px 13px;background:var(--surface-alt);border:1px solid var(--border);border-radius:2px;margin-bottom:14px}
+.wbl{width:100%;font-size:calc(10px*var(--font-scale));font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:3px}
+.wtile{padding:6px 13px;border:1.5px solid var(--accent);border-radius:2px;font-size:calc(13px*var(--font-scale));font-weight:600;color:var(--accent);background:var(--surface);transition:.12s;user-select:none;cursor:grab}
+.wtile:active{cursor:grabbing}.wtile:hover{background:var(--accent);color:#fff}.wtile.dragging{opacity:.55;background:var(--accent);color:#fff}
+.wtile.wsel{background:var(--accent);color:#fff}.wtile.wused{opacity:.3;pointer-events:none}
+.sumtxt{font-size:calc(15px*var(--font-scale));line-height:calc(2.3*var(--line-scale));color:var(--text)}
+.blank{display:inline-flex;align-items:center;justify-content:center;min-width:96px;height:28px;border:1.5px dashed var(--accent);margin:0 4px;padding:0 9px;transition:.12s;font-size:calc(14px*var(--font-scale));font-weight:700;color:var(--text);vertical-align:middle;border-radius:2px;cursor:pointer}
+.blank:hover,.blank.dragover{background:var(--accent-soft);box-shadow:0 0 0 2px var(--accent-soft)}
+.blank.filled{border-style:solid;background:var(--accent-soft)}
+.blank .bn{font-size:11px;color:var(--muted);font-weight:700;margin-right:5px}
+.blank.good{border-color:var(--ok);background:var(--ok-soft)}.blank.bad{border-color:var(--bad);background:var(--bad-soft)}
+.corr{display:inline-block;margin-left:6px;padding:1px 7px;border:1px solid var(--ok);border-radius:2px;background:var(--ok-soft);color:var(--ok);font-size:calc(12px*var(--font-scale));font-weight:700;vertical-align:middle}
+.footer{height:var(--footer-h);flex-shrink:0;display:flex;align-items:stretch;background:var(--surface);border-top:1px solid var(--border);z-index:40}
+.parts-bar{flex:1;display:flex;align-items:stretch;overflow:hidden}
+.part-cell{display:flex;align-items:center;border-right:1px solid var(--border);background:var(--surface);transition:.12s;position:relative}
+.part-cell.collapsed{flex:1;justify-content:center;gap:7px;padding:0 14px;font-size:14px;min-width:120px;cursor:pointer}
+.part-cell.collapsed:hover{background:var(--surface-alt)}.part-cell.collapsed .pc-label{font-weight:700;color:var(--text)}.part-cell.collapsed .pc-count{color:var(--muted)}
+.part-cell.active-part{flex:none;padding:0 12px;gap:4px}
+.pc-active-label{font-weight:800;color:var(--text);padding:0 10px 0 4px;white-space:nowrap}
+.qnav{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;height:100%}.qnav::-webkit-scrollbar{display:none}
+.qbtn{min-width:30px;height:38px;border:1.6px solid transparent;background:transparent;color:var(--text);border-radius:2px;font-size:14px;font-weight:500;flex-shrink:0;position:relative;padding:0 7px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px}
+.qbtn::before{content:'';position:absolute;top:0;left:-1px;right:-1px;height:3px;background:#d7dbe2}
+.qbtn.answered::before{background:var(--ok)}.qbtn.answered{color:var(--accent)}
+.qbtn.active{border-color:var(--qnum-border);font-weight:800}.qbtn.active::before{background:var(--accent)}
+.qbtn.res-correct::before{background:var(--ok)}.qbtn.res-correct{color:var(--ok)}
+.qbtn.res-wrong::before{background:var(--bad)}.qbtn.res-wrong{color:var(--bad)}
+.footer-tools{display:flex;align-items:stretch;flex-shrink:0}
+.nav-arrow{width:54px;border:none;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;transition:.12s}
+.nav-arrow:hover{background:var(--navy-dark)}.nav-arrow:disabled{opacity:.35;cursor:not-allowed}.nav-arrow svg{width:24px;height:24px;fill:#fff}
+.check-btn{width:72px;border:none;background:var(--surface-alt);color:var(--accent);display:flex;align-items:center;justify-content:center;transition:.12s;border-left:1px solid var(--border)}
+.check-btn:hover{background:var(--accent);color:#fff}.check-btn svg{width:24px;height:24px;fill:currentColor}
+.settings{position:fixed;top:var(--topbar-h);right:0;width:min(300px,100vw);max-height:calc(100vh - var(--topbar-h));overflow-y:auto;background:var(--surface);border-left:1px solid var(--border);box-shadow:-4px 0 16px rgba(0,0,0,.1);padding:18px;z-index:60;display:none}
+.settings.open{display:block}
+.settings h3{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:16px}
+.set-group{margin-bottom:16px}.set-group label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px}
+.set-group input[type=range]{width:100%;accent-color:var(--accent)}
+.swatches{display:flex;gap:9px}.swatch{width:38px;height:38px;border-radius:2px;border:2px solid var(--border);transition:.15s}
+.swatch:hover,.swatch.active{border-color:var(--accent)}.sw-light{background:#fff}.sw-sepia{background:#f4ece0}.sw-dark{background:#13182a}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:100}
+.modal.show{display:flex}
+.modal-card{background:var(--surface);border-radius:2px;padding:28px 30px;max-width:440px;width:90%;box-shadow:0 12px 40px rgba(0,0,0,.3);text-align:center}
+.modal-card h2{color:var(--navy);margin-bottom:10px}.modal-card p{color:var(--muted);margin-bottom:22px}.modal-actions{display:flex;gap:10px;justify-content:center}
+.scroll-body{min-height:100vh;padding:80px 24px 32px;background:var(--bg);overflow-y:auto}
+.wide{max-width:1100px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:2px;box-shadow:0 10px 24px rgba(17,24,39,.08);padding:26px}
+.rev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 22px}
+.rev-stat{background:var(--surface-alt);border:1px solid var(--border);border-radius:2px;padding:16px;text-align:center}
+.rev-stat strong{display:block;font-size:26px;margin-bottom:3px}
+.rev-stat.g strong{color:var(--ok)}.rev-stat.o strong{color:var(--warn)}.rev-stat.n strong{color:var(--navy)}
+.rev-stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.rev-sec{margin-bottom:18px}.rev-plbl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px}
+.rev-grid{display:flex;flex-wrap:wrap;gap:6px}
+.rqt{width:36px;height:36px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;cursor:pointer;transition:.12s}
+.rqt.ans{background:var(--navy);border:2px solid var(--navy);color:#fff}.rqt.unans{background:var(--surface);border:2px solid #fca5a5;color:var(--bad)}
+.score-hero{display:grid;grid-template-columns:240px 1fr;gap:18px;margin-bottom:20px}
+.band-card{background:var(--navy);color:#fff;border-radius:2px;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.band-card .band{font-size:64px;font-weight:900;line-height:1}.band-card span{font-size:13px;opacity:.85;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{background:var(--surface-alt);border:1px solid var(--border);border-radius:2px;padding:16px}.stat strong{display:block;font-size:22px;color:var(--navy);margin-top:3px}
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.pcard{background:var(--surface-alt);border:1px solid var(--border);border-radius:2px;padding:16px;text-align:center}
+.pcardn{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:6px}.pcard strong{font-size:24px;color:var(--navy)}.pcard .of{font-size:13px;color:var(--muted)}
+.ans-review{display:grid;gap:8px;margin-top:14px}
+.ans-row{display:grid;grid-template-columns:54px 1fr 1fr 50px;gap:10px;align-items:center;border:1px solid var(--border);border-radius:2px;padding:10px;background:var(--surface)}
+.ans-row.correct{background:var(--ok-soft);border-color:#bbf7d0}.ans-row.wrong{background:var(--bad-soft);border-color:#fecdd3}.ans-row .muted{color:var(--muted);font-style:italic}
+.tick{font-weight:900;text-align:center;font-size:20px}.tick.g{color:var(--ok)}.tick.b{color:var(--bad)}
+@media(max-width:900px){.tmain{flex-direction:column}.pp,.qp{flex:none;height:50%}.rszr{display:none}.info-grid,.score-hero,.stats,.pcards,.rev-stats{grid-template-columns:1fr}.ans-row{grid-template-columns:1fr}.part-cell.collapsed{min-width:90px;padding:0 8px}}
+::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;left:10px;top:8px;z-index:5000;font:600 12px Inter,sans-serif;color:var(--navy);text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:5px 11px">← Cambridge 21</a>
+<div id="screen-landing" class="screen active"><div class="center"><div class="card">
+  <div class="brand-row"><span class="tg-dot">&#9654;</span> pangea8.com</div>
+  <h1 class="landing-title">Cambridge IELTS 21 — Test 4 Reading</h1>
+  <p class="landing-desc">A computer-delivered IELTS Reading platform: three passages, forty questions, answer review and band-score results.</p>
+  <div class="type-row"><button class="type-btn active" id="btn-acad" onclick="setType('academic')">Academic</button><button class="type-btn" id="btn-gen" onclick="setType('general')">General Training</button></div>
+  <button class="btn primary" onclick="goInstr()">Start Test</button>
+  <div class="info-grid"><div class="info-box"><strong>60</strong> minutes</div><div class="info-box"><strong>40</strong> questions</div><div class="info-box"><strong>3</strong> passages</div></div>
+</div></div></div>
+<div id="screen-instructions" class="screen"><div class="center"><div class="card">
+  <div class="brand-row"><span class="tg-dot">&#9654;</span> pangea8.com</div>
+  <h1 class="landing-title">Reading Test Instructions</h1>
+  <p class="landing-desc">Read carefully before you begin. The 60-minute timer starts when you click <strong>Begin Test</strong>.</p>
+  <ul class="rules">
+    <li>Read <strong>3 passages</strong> and answer <strong>40 questions</strong> in <strong>60 minutes</strong>.</li>
+    <li>The passage is on the <strong>left</strong>; questions on the <strong>right</strong>. Drag the centre divider to resize.</li>
+    <li>Select text, then click the floating <strong>Highlight</strong> button. Click a highlight to remove it.</li>
+    <li>Use the <strong>Next &rarr;</strong> arrow or a question number in the footer to move. Switch passages with the passage cells.</li>
+    <li>Spell-check is <strong>disabled</strong> on inputs, as in the real exam.</li>
+    <li>The timer turns <strong style="color:var(--warn)">orange at 10 min</strong> and <strong style="color:var(--bad)">flashes red at 5 min</strong>. Auto-submits at 0:00.</li>
+    <li>After the last question, a <strong>Review screen</strong> lets you return before final submission.</li>
+  </ul>
+  <div class="action-row"><button class="btn" onclick="showScreen('screen-landing')">Back</button><button class="btn primary" onclick="startTest()">Begin Test</button></div>
+</div></div></div>
+<div id="screen-test" class="screen">
+  <header class="topbar">
+    <div class="tb-left"><span class="tb-logo">IELTS</span><span class="tb-id" id="hdr-type">Academic Reading</span></div>
+    <div class="tb-center"></div>
+    <div class="tb-right">
+      <span class="timer" id="timer">60:00</span>
+      <button id="fsBtn" class="icon-btn" title="Fullscreen"><svg id="fsIcon" viewBox="0 0 16 16"><path id="fsPath" d="M1.5 1h4a.5.5 0 0 1 0 1H2v3.5a.5.5 0 0 1-1 0v-4a.5.5 0 0 1 .5-.5zm9 0h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V2h-3.5a.5.5 0 0 1 0-1zm-9 9a.5.5 0 0 1 .5.5V14h3.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5zm13 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1 0-1H14v-3.5a.5.5 0 0 1 .5-.5z"/></svg></button>
+      <button id="setToggle" class="icon-btn" title="Display settings"><svg viewBox="0 0 16 16"><path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg></button>
+    </div>
+  </header>
+  <div class="tmain">
+    <div class="pp" id="pp"><div class="pphdr"><div><div class="pptitle" id="pp-title">Passage 1</div><div class="ppql" id="pp-qr">Questions 1&ndash;13</div></div></div><div class="pbody" id="pbody"></div></div>
+    <div class="rszr" id="rszr"></div>
+    <div class="qp" id="qp"><div class="qphdr"><h3 id="qp-title">Questions 1&ndash;13</h3><p id="qp-pname">Passage 1</p></div><div class="qbody" id="qbody"></div></div>
+  </div>
+  <footer class="footer">
+    <div class="parts-bar" id="partsBar"></div>
+    <div class="footer-tools">
+      <button class="nav-arrow" id="nextBtn" onclick="nextQ()"><svg viewBox="0 0 16 16"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg></button>
+      <button class="check-btn" id="checkBtn" onclick="showReview()"><svg viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></button>
+    </div>
+  </footer>
+</div>
+<div class="hl-pop" id="hlPop"><button type="button" id="hlApply">Highlight</button><button type="button" class="remove" id="hlRemove">Remove</button></div>
+<aside class="settings" id="settings">
+  <h3>Display Settings</h3>
+  <div class="set-group"><label>Font Size</label><input type="range" id="fontScale" min="0.85" max="1.3" step="0.05" value="1"></div>
+  <div class="set-group"><label>Line Spacing</label><input type="range" id="lineScale" min="1" max="1.5" step="0.05" value="1"></div>
+  <div class="set-group"><label>Background</label><div class="swatches"><button class="swatch sw-light active" data-theme="light"></button><button class="swatch sw-sepia" data-theme="sepia"></button><button class="swatch sw-dark" data-theme="dark"></button></div></div>
+  <div class="set-group"><button class="btn danger" id="resetAnswers" style="width:100%">Reset Answers</button></div>
+  <div class="set-group" style="display:flex;gap:8px"><button class="btn" id="setReset">Reset</button><button class="btn" id="setClose">Close</button></div>
+</aside>
+<div id="screen-review" class="screen"><div class="scroll-body"><div class="wide">
+  <h1 style="color:var(--navy);margin-bottom:8px">Review Your Answers</h1>
+  <p style="color:var(--muted)">Click any question number to return and change it.</p>
+  <div class="rev-stats" id="rev-stats"></div><div id="rev-passes"></div>
+  <div class="action-row" style="margin-top:8px"><button class="btn" onclick="backToTest()">Back to Test</button><button class="btn primary" onclick="showSubModal()">Submit Final Answers</button></div>
+</div></div></div>
+<div id="screen-results" class="screen"><div class="scroll-body"><div class="wide" id="resultsContent"></div></div></div>
+<div class="modal" id="modal"><div class="modal-card"><h2>Submit your answers?</h2><p id="modal-p"></p><div class="modal-actions"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="submitTest()">Submit</button></div></div></div>
+<script>
+/* ================================================================
+   AUTHORING AREA — edit ONLY below, in this order:
+     1) PASSAGES   2) QUESTIONS   3) ANSWERS
+   ================================================================ */
+
+
+/* ---------- 1) PASSAGES ---------- */
+const PASSAGES = {
+1:{title:"The spread of the water hyacinth in Kenya",qr:"Questions 1–13",html:`
+  <h2>The problems and benefits created by the spread of the water hyacinth in Kenya</h2>
+  <p>Water hyacinth (<em>Eichhornia crassipes</em>), an aquatic plant native to South America, first appeared in countries in Africa in the early 1900s. Scientists there called it the 'world's worst aquatic weed', after it spread from the southernmost tip of Africa in the early 1900s and started obstructing major dams and rivers.</p>
+  <p>In east Africa the plant arrived with Belgian colonists in Rwanda, who liked the look of its glossy leaves and delicate purple flowers floating in their ponds. But by the 1980s, it had 'escaped' out of the country via the Kagera river and made its way downstream to Lake Victoria. There, with no natural predators and perfect temperature conditions, the plant began spreading in the open water, blocking fishing routes and providing a new habitat for disease-carrying mosquitoes.</p>
+  <p>For the women who smoke fish from the lake to sell it has meant declining income, as the boats that once brought the fish to shore by the hundreds struggle to navigate through the mass of plants. But water hyacinth isn't their only headache. In order to smoke the fish that they buy, they must gather huge quantities of firewood, sometimes walking as far as 10km each way to collect enough to complete their work. And each day as they cook, they breathe in the thick, grey smoke. About three out of four families in Kenya depend on wood or charcoal to cook their daily meals, and the rate is even higher in rural areas, Kenya's latest demographic and health survey shows. Using solid fuels like these for cooking increases indoor pollution. The World Health Organization estimates that about 14,300 Kenyans die annually as a result of indoor air pollution – most of which is caused by cooking and heating sources.</p>
+  <p>Some years ago, on the shores of Lake Victoria, huge piles of water hyacinth that villagers had taken out of the water in an attempt to clear it were a common sight. But buried in those decaying waxy leaves was a renewable energy gold mine. It turns out the floating plant isn't just good at spreading – its foliage also contains a high ratio of carbon to nitrogen. It's a magic combination that has captivated researchers' imaginations since as early as the 1980s when, across the world, they began to explore its potential as a biofuel. Just about 4kg of the dried plant would be enough to cater for a large family's daily energy needs, early research predicted.</p>
+  <p>In 2014, Nigerian academics announced they had got better yields of biofuel gas when they mixed the plant with chicken manure. A few years later, Kenyan scientists confirmed what their Nigerian peers and others had already found: manure worked to improve the process of converting the weed into gas.</p>
+  <p>In 2018, the technology came to a village on the shore of Lake Victoria, called Dunga. The project promised a two-for-one solution to the dual menaces of the water hyacinth and dependence on firewood. The community received a pair of donated biogas digesters – machines that would transform a mix of water hyacinth and cow dung into biogas for cooking.</p>
+  <p>The digesters work a bit like a stomach. The mixture goes in one end – think of it as a mouth – and over the next 20 to 30 days, it goes through a fermentation process and breaks down, giving off gas that comes out the other end. From there, the clean-burning gas is passed through pipes to the point of use, just like traditional domestic gas. In Dunga, the machines produce enough gas to serve about 60% of the village's population. It is used in domestic stoves and for other household tasks such as purifying water and incubating chicks.</p>
+  <p>The project is testing whether biogas can provide an effective alternative to firewood and charcoal in rural Kenyan communities. Results indicate that the programme seems to be working. The women who smoke the lake fish are already getting sick less often. Besides, they don't have to devote a lot of time every day to gathering firewood, which is a great relief. As a result, they're able to make more money for their families from other enterprises.</p>
+  <p>Kanyiva Muindi is an epidemiologist and air pollution research fellow at the African Population and Health Research Centre in Nairobi. She says families who switch to the smokeless cooking method could expect fewer respiratory diseases. Women, young girls and children are particularly vulnerable because they are the ones who cook in the kitchen or outside over fires.</p>
+  <p>How much better the biogas stoves will be for the community's health still needs more research, says Dominic Kahumbu Wanjihia, Biogas International's chief executive. But unless the price of the machines drops, it's pretty clear that most communities will never be able to afford any, since they sell for about $750.</p>
+  <p>Kanyiva says affordability is a challenge worth addressing, given the huge health and environmental dangers posed by 'dirty' fuels such as wood, charcoal and kerosene. If biogas could become affordable on a large scale, she says it 'would be life-changing for millions on the African continent and beyond'.</p>`},
+
+2:{title:"How could multilingualism benefit India's poorest schoolchildren?",qr:"Questions 14–26",html:`
+  <h2>How could multilingualism benefit India's poorest schoolchildren?</h2>
+  <p>The crowded and bustling streets of Delhi teem with life. Stop to listen and, above the din of rickshaws and buses, you'll hear a multitude of languages, as more than 20 million people go about their daily lives. Many were born and raised here, and many millions more have recently made India's capital their home, having moved from surrounding neighbourhoods, cities and states or across the country, often in the hope of gaining better jobs and a better life. Some arrive speaking fluent Hindi, the dominant language in Delhi (and the official language of government), but many arrive speaking any number of India's 22 officially recognised languages, let alone the hundreds of regional languages in a country of more than 1.3 billion people.</p>
+  <p>A team of researchers led by Professor Ianthi Tsimpli of Cambridge University is currently working on a project collecting data on 1,000 primary-age children in Delhi and the cities of Hyderabad and Bihar. The overriding aim of the four-year project, called 'Multilingualism and Multiliteracy', is to find out why in a country where multilingualism is so common (more than 255 million people in India speak at least two languages, and nearly 90 million speak three or more languages), the many benefits of speaking more than one language, observed in schools in Europe for instance, do not apply to many of India's schoolchildren.</p>
+  <p>'Each year across India, 600,000 children are tested, and year after year over 50% of children in Standard 5 [ten-year-olds] cannot read a Standard 2 [seven-year-olds] task fluently, and just under 50% of them cannot solve a Standard 2 subtraction task,' says Tsimpli. She explains that low educational achievement can lead to many of these students dropping out of school – a problem disproportionately affecting female students.</p>
+  <p>Tsimpli and her colleagues are investigating whether these low learning outcomes could be caused by an Indian school system where the language that children are taught in often differs from the language used at home. The research project, which focuses on 8 to 11-year-old schoolchildren in rural and urban areas, collects data on whether the schoolchildren live in slum* or non-slum areas. Many of the children have moved from remote, rural areas to urban areas. They are so poor they have to live in slums and, as a result of migration, they may speak languages that are different from the regional language.</p>
+  <p>Having already tested 1,000 children, the researchers will now embark on retesting them. They intend to look not only at test results, but also at variables such as the standard of schooling, the environment and the teaching practices themselves. It's possible that one of the causes of low performance is the lack of pupil-centred teaching methods; in many Indian primary schools the teacher dominates and there is little room for independent learning.</p>
+  <p>Although the findings are at a preliminary stage, Tsimpli and her team have found that the medium of instruction used in schools, especially English, may hold back those children who have little familiarity with, or exposure to, the language before starting school and outside of school life. According to Tsimpli, most of the evidence from this and other projects shows that English instruction for children from low socio-economic areas might not be the best way for them to learn, at least in the first three years of primary education.</p>
+  <p>'What we would recommend for everyone, not just low socio-economic status children, would be to start learning in the language they feel comfortable learning in … English can still be used, but perhaps not as the medium of instruction in primary schools. It could, for example, be one of the subjects that are being taught alongside other subjects. We are not suggesting that English be withdrawn – that ship has sailed – but we perhaps have to think more about learner needs. There is perhaps too much uniformity in teaching and less tailoring to the children's language abilities and needs,' says Tsimpli.</p>
+  <p>While the preliminary results show there is no difference in general intelligence among boys and girls from slum areas versus those from urban poor backgrounds, an unanticipated finding has been that children from slum backgrounds do not seem to lag behind children from other urban poor backgrounds – and in some cases outperform them (e.g. in numeracy and literacy tasks). According to the researchers, this unexpected finding may be down to the life experiences of children growing up in slums. They are likely to mature faster and come into closer contact with the numeracy skills essential for day-to-day survival.</p>
+  <p>The project has already caught the attention of government ministers, who are keen to use the findings of the study to inform and adjust school policy in Delhi and the wider state. 'They are as keen as us to understand how the challenging context of deprivation can be attenuated when focusing on the languages children learn and use while at school. Our findings don't mean you're doomed if you're poor. It may be that these low learning outcomes are because of the way education is provided in India, with a huge focus on Hindi and English as the mediums of instruction, to the potential detriment of children unfamiliar with those languages,' explains Tsimpli.</p>
+  <p>'Language is central to the way knowledge is transferred – so the medium of instruction is obviously hugely influential. We hope to … show that problem solving, numeracy and literacy can and do improve in children who are educated in a language they know. The trick may be to bridge school skills with life skills and make use of the richness of a child's life experience to help them learn in the most effective ways possible,' says Tsimpli.</p>
+  <p style="font-size:12px;color:var(--muted)">*slum: a very densely populated area in which the infrastructure is incomplete and services inadequate or non-existent</p>`},
+
+3:{title:"The Globemakers",qr:"Questions 27–40",html:`
+  <h2>The Globemakers: The Curious Story of an Ancient Craft</h2>
+  <p><em>A review of Peter Bellerby's book</em> The Globemakers</p>
+  <p>In 2008, Peter Bellerby, who lived in London, wanted to give his father a model globe for his eightieth birthday. What seemed simple enough to start with triggered an almost obsessive, decade-long journey, marked by a series of obstacles that would have deterred anyone less determined. It ended with his establishing the world's only bespoke globemaking company.</p>
+  <p>The first surprise in <em>The Globemakers</em>, Bellerby's account of this impulsive enterprise, is that obtaining such a globe was not simply a matter of a quick online order and a repressed sigh at the shipping costs. After all, contrary to stubbornly held popular views of our ancestors' geographical ignorance, we have known that the world is spherical since at least the 6th century BCE. The ancient Greek philosopher Plato in his work <em>Phaedo</em> likened it to a leather ball, while the accolade of producing the first recorded globe goes to the ancient Greek philosopher Crates of Mallus, who is said to have made one in around 150 BCE. Surely, Bellerby reasoned, a good-quality globe wouldn't be difficult to find.</p>
+  <p>Nearly two millennia later, however, it seemed that the art of globemaking had been largely forgotten. Bellerby came across shoddy commercial versions designed for school classrooms and genuine antiques in auction houses that would have bust his budget. Even his trips to Morocco and India, where surely the knowledge of artisan cartographers* had been preserved, drew a blank.</p>
+  <p>Not one to be easily thwarted, Bellerby decided to make his own good-quality globe. In the process, almost everything that could possibly go wrong did so. Even the shape of the Earth posed a problem, as it is not quite a perfect sphere, but oblate (slightly flattened at the poles). Having decided to compromise and opt for two half-spherical pieces that could be fitted together, he was unable to discover anyone capable of casting moulds with sufficient accuracy to ensure that he would not be left with two half-spheres that were not quite the same circumference. Even after he eventually resolved this issue, extracting these from the moulds resulted in piles of cracked plaster of Paris** and clouds of choking dust in the workshop he had set up at the rear of his house.</p>
+  <p>This series of abortive experiments taught Bellerby a lot about the challenges of making globes, which he communicates here to the reader. Finding just the right way to prise the globes from the mould – a high-end air compressor finally did the trick – and locating the right paper and inks with which to make the gores (the sections of flat sheet mapping that are pasted onto the spherical globe) without the ink seeping out to create a mushy, unreadable mess took months and an alarming chunk out of his bank balance. Bellerby's frustration at the painstaking process of attaching the gores to the globe surface – after having found a glue with precisely the right adhesive qualities – is palpable. Right at the end of the process, he learnt that the paper had stretched slightly and so the final one overlapped the first by a centimetre (which may not seem a great deal, but when that represents 2 per cent of the Earth's diameter, it's equivalent to obliterating the Himalayas or wiping out Chile).</p>
+  <p>Bellerby's account of the technical challenges of globe production is interspersed with a series of interludes on great globemakers of the past and cartographic history in general. Purists might wish for more map-making details, but Bellerby clearly found a kindred spirit in Martin Behaim. He was the Nuremberg entrepreneur who in 1492 created the Erdapfel, the world's oldest surviving globe, beautifully finished by a workshop of painters and other craftsmen, only to find that the explorer Christopher Columbus had stumbled upon the Americas the very same year, rendering his masterpiece instantly out of date. Something of Bellerby's unflinching ambition is reflected in the even more heroic efforts of the Italian cartographer Vincenzo Coronelli, who, in the seventeenth century, created two globes for Louis XIV of France. It took him twenty years to complete the monstrous pair, whose vast bulk – each with a diameter of around four metres – can still be admired in the National Library of France in Paris.</p>
+  <p>Although a celebration of the revival of an ancient craft, Bellerby's book is also a lament for the fading away of centuries-old traditions. When he embarked on his globemaking odyssey, he struggled to find artisans with the skills to make the right moulds for the globes or foundries that could shape the meridians (the metal frames which girdle globes) in just the right way. Although he finally located the right craftsmen, some simply dropping in, serendipitously, to his workshop (by now in more suitable premises than his back room), many of these have now retired or passed away.</p>
+  <p>Bellerby's father finally did receive his eightieth birthday present, albeit two years late. Bellerby went on to found a company which now turns out over six hundred globes a year for customers who can have their own tiny village marked or more unusual requests fulfilled. His book, beautifully illustrated with photographs of the various stages of his venture and a few illustrations of historic globes and maps, is hardly a blueprint for commercial success. But it is more than enough to stir up admiration for the craftsmanship of the great mapmakers of the past and the obsessive determination of a modern successor who revived their almost moribund art.</p>
+  <p style="font-size:12px;color:var(--muted)">*cartographer: someone involved in the science or practice of drawing maps<br>**plaster of Paris: a quick-setting plaster consisting of a fine white powder that hardens when moistened and allowed to dry</p>`}
+};
+
+const GROUPS = {
+  g1:{type:"True / False / Not Given",instr:"Do the following statements agree with the information given in Reading Passage 1? Write <strong>TRUE</strong>, <strong>FALSE</strong> or <strong>NOT GIVEN</strong>."},
+  g2:{type:"Flow-chart Completion",instr:"Complete the flow-chart — <strong>Generating biogas for domestic use in Dunga</strong>. Choose <strong>NO MORE THAN TWO WORDS</strong> from the passage for each answer."},
+  g3:{type:"Note Completion",instr:"Complete the notes — <strong>Cooking with biogas in Dunga</strong>. Choose <strong>ONE WORD ONLY</strong> from the passage for each answer."},
+  g4:{type:"Summary Completion",instr:"Complete the summary — <strong>Multilingualism in Delhi</strong> — using the list of words, <strong>A–J</strong>, below.<br><br><strong>A</strong> basic outlook &nbsp; <strong>B</strong> employment opportunities &nbsp; <strong>C</strong> wealthy visitors &nbsp; <strong>D</strong> distant country &nbsp; <strong>E</strong> primary objective &nbsp; <strong>F</strong> similar advantages &nbsp; <strong>G</strong> thriving economy &nbsp; <strong>H</strong> nearby district &nbsp; <strong>I</strong> dense population &nbsp; <strong>J</strong> new immigrants"},
+  g5:{type:"Yes / No / Not Given",instr:"Do the following statements agree with the claims of the writer in Reading Passage 2? Write <strong>YES</strong>, <strong>NO</strong> or <strong>NOT GIVEN</strong>."},
+  g6:{type:"Multiple Choice",instr:"Choose the correct letter, <strong>A, B, C</strong> or <strong>D</strong>."},
+  g7:{type:"Summary Completion",instr:"Complete the summary — <strong>A birthday gift</strong> — using the list of words, <strong>A–J</strong>, below.<br><br><strong>A</strong> educational use &nbsp; <strong>B</strong> rare materials &nbsp; <strong>C</strong> inferior makes &nbsp; <strong>D</strong> product exchange markets &nbsp; <strong>E</strong> necessary skills &nbsp; <strong>F</strong> international &nbsp; <strong>G</strong> challenging task &nbsp; <strong>H</strong> memorable object &nbsp; <strong>I</strong> internet purchase &nbsp; <strong>J</strong> numerous problems"},
+  g8:{type:"Yes / No / Not Given",instr:"Do the following statements agree with the claims of the writer in Reading Passage 3? Write <strong>YES</strong>, <strong>NO</strong> or <strong>NOT GIVEN</strong>."},
+  g9:{type:"Multiple Choice",instr:"Choose the correct letter, <strong>A, B, C</strong> or <strong>D</strong>."}
+};
+const HEADINGS = [];
+const ENDINGS = [];
+
+const QUESTIONS = [
+  {id:1,p:1,g:'g1',type:'tfng',text:"Water hyacinth was introduced as a decorative plant in east Africa."},
+  {id:2,p:1,g:'g1',type:'tfng',text:"Fishermen took some water hyacinth plants to Lake Victoria."},
+  {id:3,p:1,g:'g1',type:'tfng',text:"It is now difficult to force boats through the thick water hyacinth on Lake Victoria."},
+  {id:4,p:1,g:'g1',type:'tfng',text:"Chemicals produced by the water hyacinth plants are affecting the numbers of fish in Lake Victoria."},
+  {id:5,p:1,g:'g1',type:'tfng',text:"Cooking with charcoal has been proved to be even worse for people's health than cooking with wood."},
+  {id:6,p:1,g:'g1',type:'tfng',text:"People found it impossible to remove much water hyacinth from Lake Victoria."},
+  {id:7,p:1,g:'g1',type:'tfng',text:"Scientists started investigating the possibility of using water hyacinth to generate biogas in the last century."},
+
+  {id:8,p:1,g:'g2',type:'gap',text:"First, place water hyacinth together with some ___ into a digester."},
+  {id:9,p:1,g:'g2',type:'gap',text:"Leave the mixture until the ___ is completed."},
+  {id:10,p:1,g:'g2',type:'gap',text:"Capture the gas emitted by the digester and use ___ to transport it to individual homes."},
+
+  {id:11,p:1,g:'g3',type:'gap',text:"Benefits: no need for them to spend so much ___ collecting fuel."},
+  {id:12,p:1,g:'g3',type:'gap',text:"they can focus on different tasks that bring in ___ ."},
+  {id:13,p:1,g:'g3',type:'gap',text:"Drawbacks: the ___ of the digesters is beyond the reach of most villages."},
+
+  {id:14,p:2,g:'g4',type:'info',text:"The city of Delhi has a ___ .",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:15,p:2,g:'g4',type:'info',text:"Some people have spent their entire life in Delhi, while others are ___ .",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:16,p:2,g:'g4',type:'info',text:"Whether they have come from a ___ or have travelled from the other side of India…",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:17,p:2,g:'g4',type:'info',text:"…they have all come in search of things such as improved ___ .",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:18,p:2,g:'g4',type:'info',text:"The ___ of the research is to discover why multilingual Indian schoolchildren…",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:19,p:2,g:'g4',type:'info',text:"…do not experience ___ to those that multilingual schoolchildren in Europe experience.",opts:['A','B','C','D','E','F','G','H','I','J']},
+
+  {id:20,p:2,g:'g5',type:'ynng',text:"Ten-year-old Indian schoolchildren tend to perform better in literacy tests than in numeracy tests."},
+  {id:21,p:2,g:'g5',type:'ynng',text:"Tsimpli had problems convincing some female students to take part in the study."},
+  {id:22,p:2,g:'g5',type:'ynng',text:"Tsimpli and her team wanted to know if there is a connection between poor academic performance and being taught in an unfamiliar language."},
+  {id:23,p:2,g:'g5',type:'ynng',text:"The researchers have decided against investigating the impact teaching methodology may have on learning outcomes."},
+
+  {id:24,p:2,g:'g6',type:'mcq',text:"What point does the writer make about primary schools in India in the sixth paragraph?",opts:["A) Exposure to English outside of school is of limited benefit.","B) Children learn English more easily when they are well motivated.","C) Poor children may be disadvantaged further by being instructed in English.","D) There is little consistency across schools with regard to instruction in English."]},
+  {id:25,p:2,g:'g6',type:'mcq',text:"What is Tsimpli suggesting when she uses the phrase 'that ship has sailed'?",opts:["A) The findings of the report may be of little help to some Indian schoolchildren.","B) Instruction in English could be better adapted to the needs of schoolchildren.","C) Schools have had limited success in teaching English as a separate subject.","D) It is too late to remove English completely as a language of instruction in schools."]},
+  {id:26,p:2,g:'g6',type:'mcq',text:"In the eighth paragraph, what do we learn has surprised researchers?",opts:["A) Boys and girls from low socio-economic groups have similar general intelligence levels.","B) The age at which children move into a slum does not affect their academic performance.","C) Slum children and children from other urban poor backgrounds have similar life experiences.","D) The literacy and numeracy skills of slum children are not lower than those of children from other urban poor backgrounds."]},
+
+  {id:27,p:3,g:'g7',type:'info',text:"Peter Bellerby's plan to give his father a globe was an unexpectedly ___ …",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:28,p:3,g:'g7',type:'info',text:"…for which he had to overcome ___ .",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:29,p:3,g:'g7',type:'info',text:"He soon learnt that a straightforward ___ would not be possible.",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:30,p:3,g:'g7',type:'info',text:"Some ___ that had been intended for…",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:31,p:3,g:'g7',type:'info',text:"…that had been intended for ___ were available.",opts:['A','B','C','D','E','F','G','H','I','J']},
+  {id:32,p:3,g:'g7',type:'info',text:"He even travelled to places where people might still have the ___ .",opts:['A','B','C','D','E','F','G','H','I','J']},
+
+  {id:33,p:3,g:'g8',type:'ynng',text:"The assumption today that people in the past knew very little about geography is correct."},
+  {id:34,p:3,g:'g8',type:'ynng',text:"Plato was criticised for saying the world was shaped like a leather ball."},
+  {id:35,p:3,g:'g8',type:'ynng',text:"The globe made by Crates of Mallus was an accurate representation of the known world."},
+  {id:36,p:3,g:'g8',type:'ynng',text:"Bellerby assumed he would have few problems locating a well-made globe."},
+
+  {id:37,p:3,g:'g9',type:'mcq',text:"When Bellerby had to attach the gores to the globe surface,",opts:["A) he decided it was best to work quickly.","B) he became aware of an unexpected issue.","C) he was worried about the quality of his materials.","D) he nearly gave up the whole project."]},
+  {id:38,p:3,g:'g9',type:'mcq',text:"The reviewer mentions other globe makers of the past because",opts:["A) Bellerby was particularly inspired by them.","B) their achievements are not widely known.","C) Bellerby had something in common with each of them.","D) their difficulties could have been avoided."]},
+  {id:39,p:3,g:'g9',type:'mcq',text:"What point is made about Bellerby in the seventh paragraph?",opts:["A) He had long working relationships with numerous craftsmen.","B) He understands the lack of interest in traditional crafts.","C) He appreciates the importance of careful planning.","D) He regrets the loss of many globe-making skills."]},
+  {id:40,p:3,g:'g9',type:'mcq',text:"What does the reviewer say about Bellerby's book in the final paragraph?",opts:["A) It does not tell you how to create a profitable business.","B) It overlooks some important mapmakers.","C) It fails to discuss the future of globe-making.","D) It does not give enough details about individual customers."]}
+];
+
+const ANSWERS = {
+  1:"True", 2:"False", 3:"True", 4:"Not Given", 5:"Not Given", 6:"False", 7:"True",
+  8:"cow dung", 9:["fermentation","fermentation process"], 10:"pipes",
+  11:"time", 12:"money", 13:"price",
+  14:"I", 15:"J", 16:"H", 17:"B", 18:"E", 19:"F",
+  20:"No", 21:"Not Given", 22:"Yes", 23:"No",
+  24:"C", 25:"D", 26:"D",
+  27:"G", 28:"J", 29:"I", 30:"C", 31:"A", 32:"E",
+  33:"No", 34:"Not Given", 35:"Not Given", 36:"Yes",
+  37:"B", 38:"C", 39:"D", 40:"A"
+};
+
+
+/* ================================================================
+   END OF AUTHORING AREA — engine below (do not edit)
+   ================================================================ */
+const S={testType:'academic',passage:1,question:1,answers:{},phtml:{},timerSecs:3600,timerInt:null,startTime:null,endTime:null,deadline:null,selWord:null,submitted:false,hlRange:null,hlMark:null};
+
+function $(i){return document.getElementById(i)}
+function esc(v){return String(v==null?'':v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function PD(id){return PASSAGES[id]}
+function getQsP(p){return QUESTIONS.filter(q=>q.p===p)}
+function allIds(){const ids=[];QUESTIONS.forEach(q=>{if(q.type==='multi'||q.type==='sumgap'||q.type==='sumdrag'){for(let n=q.from;n<=q.to;n++)ids.push(n)}else if(q.type==='multi-child'){}else ids.push(q.id)});return [...new Set(ids)].sort((a,b)=>a-b)}
+function pOf(n){for(const q of QUESTIONS){if(q.type==='multi'||q.type==='sumgap'||q.type==='sumdrag'){if(n>=q.from&&n<=q.to)return q.p}else if(q.id===n)return q.p}return 1}
+function multiBlockFor(n){return QUESTIONS.find(q=>q.type==='multi'&&n>=q.from&&n<=q.to)}
+function isAns(id){const a=S.answers[id];if(a===undefined||a===null||a==='')return false;if(Array.isArray(a))return a.length>0;return true}
+function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active')}
+function setType(t){S.testType=t;$('btn-acad').classList.toggle('active',t==='academic');$('btn-gen').classList.toggle('active',t==='general')}
+function goInstr(){showScreen('screen-instructions')}
+
+function startTest(){showScreen('screen-test');$('hdr-type').textContent=(S.testType==='academic'?'Academic':'General Training')+' Reading';S.timerSecs=3600;S.startTime=Date.now();S.deadline=S.startTime+3600000;S.passage=1;S.question=allIds()[0];renderP(1);renderQs(1);renderPartsBar();updateNav();startTimer();window.addEventListener('beforeunload',warnL)}
+function warnL(e){e.preventDefault();e.returnValue=''}
+function syncTimer(){
+  if(S.submitted||!S.deadline)return;
+  S.timerSecs=Math.max(0,Math.ceil((S.deadline-Date.now())/1000));
+  renderTimer();
+  if(S.timerSecs<=0){
+    clearInterval(S.timerInt);
+    S.endTime=S.deadline;
+    window.removeEventListener('beforeunload',warnL);
+    showResults();
+  }
+}
+function startTimer(){clearInterval(S.timerInt);S.timerInt=setInterval(syncTimer,1000);syncTimer()}
+function renderTimer(){const m=String(Math.floor(Math.abs(S.timerSecs)/60)).padStart(2,'0'),s=String(Math.abs(S.timerSecs)%60).padStart(2,'0'),el=$('timer');el.textContent=m+':'+s;el.className='timer';if(S.timerSecs<=300)el.classList.add('danger');else if(S.timerSecs<=600)el.classList.add('warn')}
+document.addEventListener('visibilitychange',syncTimer);
+window.addEventListener('focus',syncTimer);
+
+function saveP(){S.phtml[S.passage]=$('pbody').innerHTML}
+function renderP(id){$('pbody').innerHTML=S.phtml[id]||PD(id).html;$('pp-title').textContent='Passage '+id;$('pp-qr').textContent=PD(id).qr}
+
+function renderQs(pid){
+  $('qp-title').textContent=PD(pid).qr;
+  $('qp-pname').textContent='Passage '+pid+': '+PD(pid).title;
+  const qs=getQsP(pid),grps={},order=[];
+  qs.forEach(q=>{if(!grps[q.g]){grps[q.g]=[];order.push(q.g)}grps[q.g].push(q)});
+  let html='';
+  order.forEach(gk=>{
+    const grp=grps[gk],meta=GROUPS[gk];
+    html+='<div class="qgrp" id="grp-'+gk+'"><div class="qtbadge">'+esc(meta.type)+'</div><div class="qinstr">'+meta.instr+'</div>';
+    if(grp.some(q=>q.type==='heads')&&HEADINGS.length){html+='<div class="listbox"><div class="listbox-l">List of Headings</div>';HEADINGS.forEach(h=>{html+='<div class="listbox-i"><b>'+h.n+'.</b> '+esc(h.t)+'</div>'});html+='</div>'}
+    if(grp.some(q=>q.type==='ends')){html+='<div class="listbox"><div class="listbox-l">Endings</div>';ENDINGS.forEach(e=>{html+='<div class="listbox-i"><b>'+e.n+'.</b> '+esc(e.t)+'</div>'});html+='</div>'}
+    grp.forEach(q=>{html+=renderQI(q)});
+    html+='</div>';
+  });
+  $('qbody').innerHTML=html;
+  attachListeners();
+  if(S.submitted)markReviewColours();
+}
+
+function renderQI(q){
+  if(q.type==='multi-child')return '';
+  if(q.type==='multi')return renderMulti(q);
+  if(q.type==='sumgap'||q.type==='sumdrag')return renderSummary(q);
+  if(q.type==='gap')return renderGap(q);
+  if(q.type==='ends')return renderEnds(q);
+  let html='<div class="qi" id="qi-'+q.id+'"><div class="qrow"><div class="qbdg">'+q.id+'</div><div class="qtxt">'+esc(q.text)+'</div></div>';
+  if(q.type==='tfng')html+=renderRadio(q.id,['True','False','Not Given']);
+  else if(q.type==='ynng')html+=renderRadio(q.id,['Yes','No','Not Given']);
+  else if(q.type==='mcq')html+=renderRadio(q.id,q.opts);
+  else if(q.type==='info'){const v=S.answers[q.id]||'';html+='<div class="opts"><select class="hsel" data-q="'+q.id+'" onchange="saveA('+q.id+',this.value)"><option value="">\u2014 Select paragraph \u2014</option>';q.opts.forEach(o=>{html+='<option value="'+o+'"'+(v===o?' selected':'')+'>'+o+'</option>'});html+='</select></div>'}
+  else if(q.type==='heads'){const v=S.answers[q.id]||'';html+='<div class="opts"><select class="hsel" data-q="'+q.id+'" onchange="saveA('+q.id+',this.value)"><option value="">\u2014 Select heading \u2014</option>';HEADINGS.forEach(h=>{html+='<option value="'+h.n+'"'+(v===h.n?' selected':'')+'>'+h.n+'. '+esc(h.t)+'</option>'});html+='</select></div>'}
+  else if(q.type==='short'){const v=S.answers[q.id]||'';html+='<input class="ainput" type="text" value="'+esc(v)+'" placeholder="Type your answer..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-q="'+q.id+'" oninput="saveA('+q.id+',this.value)" />';if(q.hint)html+='<div class="ahint">'+esc(q.hint)+'</div>'}
+  html+='</div>';return html;
+}
+
+function renderGap(q){
+  const v=S.answers[q.id]||'';
+  const input='<input class="gap-input" type="text" value="'+esc(v)+'" aria-label="Question '+q.id+'" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-q="'+q.id+'" oninput="saveA('+q.id+',this.value)" />';
+  const body=esc(q.text).replace(/_{2,}/,input);
+  return '<div class="qi" id="qi-'+q.id+'"><div class="qrow"><div class="qbdg">'+q.id+'</div><div class="qtxt">'+body+'</div></div></div>';
+}
+function renderRadio(qId,opts){let html='<div class="opts">';opts.forEach(o=>{const val=/^[A-E]\)/.test(o)?o[0]:o;const sel=S.answers[qId]===val;html+='<label class="olbl'+(sel?' sel':'')+'"><input type="radio" name="q'+qId+'" value="'+val+'" '+(sel?'checked':'')+' onchange="saveA('+qId+',\''+val+'\')" />'+esc(o)+'</label>'});return html+'</div>'}
+function renderMulti(q){
+  const ids=[];for(let n=q.from;n<=q.to;n++)ids.push(n);
+  const chosen=ids.map(n=>S.answers[n]).filter(Boolean);
+  let html='<div class="qi" id="qi-'+q.from+'"><div class="qrow"><div class="qbdg">'+q.from+'\u2013'+q.to+'</div><div class="qtxt">'+esc(q.prompt)+'</div></div>';
+  html+='<div class="cbnote">Choose '+(q.pick||2)+' answers</div><div class="opts">';
+  q.opts.forEach(o=>{const letter=o[0];const sel=chosen.includes(letter);html+='<label class="olbl'+(sel?' sel':'')+'"><input type="checkbox" name="m'+q.from+'-'+q.to+'" value="'+letter+'" '+(sel?'checked':'')+' onchange="saveMulti('+q.from+','+q.to+',\''+letter+'\',this.checked)" />'+esc(o)+'</label>'});
+  html+='</div></div>';return html;
+}
+function renderEnds(q){
+  const v=S.answers[q.id]||'';
+  const usedElsewhere=new Set(QUESTIONS.filter(x=>x.type==='ends'&&x.id!==q.id).map(x=>S.answers[x.id]).filter(Boolean));
+  let opts='<option value="">\u2014 Select ending \u2014</option>';
+  ENDINGS.forEach(e=>{const dis=usedElsewhere.has(e.n)&&v!==e.n;opts+='<option value="'+e.n+'"'+(v===e.n?' selected':'')+(dis?' disabled':'')+'>'+e.n+'. '+esc(e.t)+'</option>'});
+  return '<div class="ends-row" id="qi-'+q.id+'"><div class="qbdg">'+q.id+'</div><div class="ends-stem">'+esc(q.stem)+'<br><select class="hsel hsel-inline" data-q="'+q.id+'" onchange="saveEnd('+q.id+',this.value)">'+opts+'</select></div></div>';
+}
+function renderSummary(q){
+  const ids=[];for(let n=q.from;n<=q.to;n++)ids.push(n);
+  let html='<div class="qi" id="qi-'+q.from+'">';
+  if(q.type==='sumdrag'){
+    html+='<div class="wbank" id="wbank-'+q.from+'"><div class="wbl">Word Bank \u2014 drag a word to a gap (or click a word, then a gap)</div>';
+    (q.words||[]).forEach(w=>{const used=ids.some(n=>S.answers[n]===w);html+='<span class="wtile'+(used?' wused':'')+'" draggable="'+(!used)+'" data-word="'+esc(w)+'" data-block="'+q.from+'" onclick="selWord('+q.from+',this.dataset.word)" ondragstart="dragWord(event)" ondragend="dragEnd(event)">'+esc(w)+'</span>'});
+    html+='</div>';
+  }
+  let body=esc(q.text);
+  ids.forEach(n=>{
+    const v=S.answers[n]||'';
+    let cell;
+    if(q.type==='sumdrag'){
+      cell='<span class="blank'+(v?' filled':'')+'" data-blk="'+n+'" data-block="'+q.from+'" onclick="clickBlank('+n+','+q.from+')" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)" ondrop="dropWord(event,'+n+','+q.from+')"><span class="bn">'+n+'</span>'+(v?esc(v):'')+'</span>';
+    }else{
+      cell='<input class="gap-input" type="text" value="'+esc(v)+'" aria-label="Question '+n+'" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-q="'+n+'" oninput="saveA('+n+',this.value)" />';
+    }
+    body=body.split('['+n+']').join(cell);
+  });
+  html+='<div class="sumtxt">'+body+'</div>';
+  if(q.hint)html+='<div class="ahint" style="padding-left:0;margin-top:8px">'+esc(q.hint)+'</div>';
+  html+='</div>';return html;
+}
+
+function attachListeners(){
+  document.querySelectorAll('.olbl input[type=radio]').forEach(inp=>{inp.addEventListener('change',function(){document.querySelectorAll('input[name="'+this.name+'"]').forEach(r=>r.closest('.olbl').classList.toggle('sel',r.checked));refreshFooter()})});
+}
+function saveA(qId,val){if(S.submitted)return;S.answers[qId]=val;refreshFooter()}
+function saveEnd(qId,val){if(S.submitted)return;S.answers[qId]=val;renderQs(S.passage);refreshFooter();const el=$('qi-'+qId);if(el)el.scrollIntoView({block:'nearest'})}
+function saveMulti(from,to,letter,checked){
+  if(S.submitted)return;
+  const blk=QUESTIONS.find(q=>q.type==='multi'&&q.from===from);const pick=(blk&&blk.pick)||2;
+  const ids=[];for(let n=from;n<=to;n++)ids.push(n);
+  let chosen=ids.map(n=>S.answers[n]).filter(Boolean);
+  if(checked){
+    if(chosen.length>=pick){const inp=document.querySelector('input[name="m'+from+'-'+to+'"][value="'+letter+'"]');if(inp){inp.checked=false;inp.closest('.olbl').classList.remove('sel')}return}
+    chosen.push(letter);
+  }else{chosen=chosen.filter(l=>l!==letter)}
+  chosen.sort();
+  ids.forEach((n,i)=>{S.answers[n]=chosen[i]||''});
+  document.querySelectorAll('input[name="m'+from+'-'+to+'"]').forEach(c=>c.closest('.olbl').classList.toggle('sel',c.checked));
+  refreshFooter();
+}
+
+/* summary drag/click */
+function selWord(block,w){if(S.submitted)return;S.selWord={block:Number(block),word:w};document.querySelectorAll('#wbank-'+block+' .wtile').forEach(t=>t.classList.toggle('wsel',t.dataset.word===w&&!t.classList.contains('wused')))}
+function clickBlank(n,block){if(S.submitted)return;if(S.answers[n]){S.answers[n]='';S.selWord=null;renderQs(S.passage);refreshFooter();return}if(S.selWord&&S.selWord.block===Number(block)){placeWord(n,S.selWord.word);S.selWord=null}}
+function placeWord(n,w){const blk=QUESTIONS.find(q=>q.type==='sumdrag'&&n>=q.from&&n<=q.to);if(!blk)return;for(let k=blk.from;k<=blk.to;k++){if(S.answers[k]===w)S.answers[k]=''}S.answers[n]=w;renderQs(S.passage);refreshFooter()}
+function dragWord(e){if(S.submitted){e.preventDefault();return}const t=e.currentTarget;e.dataTransfer.setData('text/plain',JSON.stringify({block:t.dataset.block,word:t.dataset.word}));e.dataTransfer.effectAllowed='move';t.classList.add('dragging')}
+function dragEnd(e){e.currentTarget.classList.remove('dragging')}
+function allowDrop(e){if(S.submitted)return;e.preventDefault();e.currentTarget.classList.add('dragover');e.dataTransfer.dropEffect='move'}
+function leaveDrop(e){e.currentTarget.classList.remove('dragover')}
+function dropWord(e,n,block){e.preventDefault();e.currentTarget.classList.remove('dragover');try{const d=JSON.parse(e.dataTransfer.getData('text/plain'));if(String(d.block)===String(block))placeWord(n,d.word)}catch(_){}}
+
+/* footer */
+function renderPartsBar(){
+  const bar=$('partsBar');bar.innerHTML='';
+  [1,2,3].forEach(p=>{
+    if(p===S.passage){const cell=document.createElement('div');cell.className='part-cell active-part';cell.innerHTML='<span class="pc-active-label">Passage '+p+'</span><div class="qnav" id="qnav"></div>';bar.appendChild(cell)}
+    else{const ids=allIds().filter(n=>pOf(n)===p),ans=ids.filter(isAns).length;const cell=document.createElement('button');cell.className='part-cell collapsed';cell.innerHTML='<span class="pc-label">Passage '+p+'</span><span class="pc-count">'+ans+' of '+ids.length+'</span>';cell.addEventListener('click',()=>switchP(p));bar.appendChild(cell)}
+  });
+  renderQnav();
+}
+function renderQnav(){const nav=$('qnav');if(!nav)return;nav.innerHTML='';allIds().filter(n=>pOf(n)===S.passage).forEach(n=>{const b=document.createElement('button');b.className='qbtn';b.textContent=n;b.dataset.q=n;b.addEventListener('click',()=>goToQ(n));nav.appendChild(b)});refreshFooter()}
+function refreshFooter(){
+  document.querySelectorAll('.qbtn').forEach(b=>{const n=Number(b.dataset.q);b.classList.toggle('answered',isAns(n));b.classList.toggle('active',n===S.question)});
+  const cells=document.querySelectorAll('.part-cell.collapsed');let idx=0;
+  [1,2,3].forEach(p=>{if(p===S.passage)return;const cell=cells[idx++];if(!cell)return;const ids=allIds().filter(n=>pOf(n)===p);cell.querySelector('.pc-count').textContent=ids.filter(isAns).length+' of '+ids.length});
+  if(S.submitted)document.querySelectorAll('.qbtn').forEach(b=>{const n=Number(b.dataset.q);b.classList.toggle('res-correct',chk(n));b.classList.toggle('res-wrong',!chk(n))});
+}
+function switchP(pid){saveP();S.passage=pid;renderP(pid);renderQs(pid);const f=allIds().filter(n=>pOf(n)===pid)[0];if(f)S.question=f;renderPartsBar();updateNav()}
+function goToQ(n){const p=pOf(n);if(p!==S.passage){saveP();S.passage=p;renderP(p);renderQs(p);renderPartsBar()}S.question=n;refreshFooter();updateNav();const el=$('qi-'+n)||document.querySelector('[data-q="'+n+'"]')||document.querySelector('[data-blk="'+n+'"]');if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'nearest'}),50)}
+function nextQ(){const ids=allIds();const idx=ids.indexOf(S.question);if(idx<ids.length-1)goToQ(ids[idx+1]);else showReview()}
+function updateNav(){const last=allIds().slice(-1)[0];$('nextBtn').disabled=(S.question>=last&&S.submitted)}
+
+/* highlighter */
+function hlRoot(node){if(!node)return null;const el=node.nodeType===Node.TEXT_NODE?node.parentElement:node;if(!el||el.closest('input,textarea,select,button,.hl-pop,.topbar,.footer,.settings,.modal'))return null;return el.closest('#pbody,#qbody')}
+function hideHLPop(){const pop=$('hlPop');if(pop)pop.classList.remove('show');S.hlRange=null;S.hlMark=null}
+function posHLPop(rect){const pop=$('hlPop');if(!pop||!rect)return;pop.classList.add('show');const top=Math.max(8,rect.top-pop.offsetHeight-8);const left=Math.min(window.innerWidth-pop.offsetWidth-8,Math.max(8,rect.left+(rect.width-pop.offsetWidth)/2));pop.style.top=top+'px';pop.style.left=left+'px'}
+function showSelectionHL(){const sel=window.getSelection();if(!sel||sel.isCollapsed||!sel.toString().trim()){hideHLPop();return}const range=sel.getRangeAt(0),root=hlRoot(range.commonAncestorContainer);if(!root){hideHLPop();return}S.hlRange=range.cloneRange();S.hlMark=null;$('hlApply').style.display='inline-block';$('hlRemove').style.display='none';posHLPop(range.getBoundingClientRect())}
+function showRemoveHL(mark){S.hlRange=null;S.hlMark=mark;$('hlApply').style.display='none';$('hlRemove').style.display='inline-block';posHLPop(mark.getBoundingClientRect())}
+function unwrapHL(mark){const p=mark.parentNode;if(!p)return;while(mark.firstChild)p.insertBefore(mark.firstChild,mark);p.removeChild(mark);p.normalize();saveP()}
+function highlightRange(range){const root=hlRoot(range.commonAncestorContainer);if(!root)return;const nodes=[];const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){if(!node.nodeValue.trim()||node.parentElement.closest('mark.uhl,input,textarea,select,button,.hl-pop'))return NodeFilter.FILTER_REJECT;return range.intersectsNode(node)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});while(walker.nextNode())nodes.push(walker.currentNode);nodes.reverse().forEach(node=>{const start=node===range.startContainer?range.startOffset:0;const end=node===range.endContainer?range.endOffset:node.nodeValue.length;if(start>=end)return;const seg=node.splitText(start);seg.splitText(end-start);const mark=document.createElement('mark');mark.className='uhl';seg.parentNode.insertBefore(mark,seg);mark.appendChild(seg)});window.getSelection().removeAllRanges();saveP()}
+$('hlApply').addEventListener('mousedown',e=>e.preventDefault());
+$('hlRemove').addEventListener('mousedown',e=>e.preventDefault());
+$('hlApply').addEventListener('click',()=>{if(S.hlRange)highlightRange(S.hlRange);hideHLPop()});
+$('hlRemove').addEventListener('click',()=>{if(S.hlMark)unwrapHL(S.hlMark);hideHLPop()});
+document.addEventListener('mouseup',function(e){const mark=e.target.closest&&e.target.closest('mark.uhl');if(mark){showRemoveHL(mark);return}setTimeout(showSelectionHL,0)});
+document.addEventListener('mousedown',function(e){if(!e.target.closest||(!e.target.closest('.hl-pop')&&!e.target.closest('mark.uhl')))hideHLPop()});
+document.addEventListener('scroll',hideHLPop,true);
+
+/* resizer */
+(function(){const rszr=$('rszr'),left=document.querySelector('.pp'),right=document.querySelector('.qp');let x0,lw;
+  rszr.addEventListener('pointerdown',e=>{x0=e.clientX;lw=left.getBoundingClientRect().width;rszr.classList.add('dragging');rszr.setPointerCapture(e.pointerId);document.addEventListener('pointermove',mv);document.addEventListener('pointerup',up)});
+  function mv(e){const dx=e.clientX-x0,total=left.parentElement.getBoundingClientRect().width-rszr.getBoundingClientRect().width,nw=Math.min(Math.max(lw+dx,240),total-240);left.style.flex='none';left.style.width=nw+'px';right.style.flex='1'}
+  function up(e){rszr.classList.remove('dragging');try{rszr.releasePointerCapture(e.pointerId)}catch(_e){}document.removeEventListener('pointermove',mv);document.removeEventListener('pointerup',up)}
+})();
+
+/* review */
+function showReview(){
+  saveP();const ids=allIds();const ans=ids.filter(isAns).length,unans=ids.length-ans;
+  $('rev-stats').innerHTML='<div class="rev-stat g"><strong>'+ans+'</strong><span>Answered</span></div><div class="rev-stat o"><strong>'+unans+'</strong><span>Unanswered</span></div><div class="rev-stat n"><strong>'+ids.length+'</strong><span>Total</span></div>';
+  let html='';[1,2,3].forEach(p=>{html+='<div class="rev-sec"><div class="rev-plbl">Passage '+p+' \u2014 '+esc(PD(p).title)+'</div><div class="rev-grid">';ids.filter(n=>pOf(n)===p).forEach(n=>{html+='<div class="rqt '+(isAns(n)?'ans':'unans')+'" onclick="revGoQ('+n+')" title="Q'+n+'">'+n+'</div>'});html+='</div></div>'});
+  $('rev-passes').innerHTML=html;showScreen('screen-review');
+}
+function backToTest(){showScreen('screen-test');renderP(S.passage);renderQs(S.passage);renderPartsBar();updateNav()}
+function revGoQ(n){showScreen('screen-test');const p=pOf(n);S.passage=p;renderP(p);renderQs(p);S.question=n;renderPartsBar();updateNav();setTimeout(()=>{const el=$('qi-'+n)||document.querySelector('[data-q="'+n+'"]');if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'})},100)}
+function showSubModal(){const ids=allIds();const u=ids.filter(n=>!isAns(n)).length;$('modal-p').textContent=u>0?'You have '+u+' unanswered question'+(u!==1?'s':'')+'. They will be marked incorrect. Once you submit, your answers are locked \u2014 you can still review your mistakes afterwards.':'All questions answered. Once you submit, your answers are locked \u2014 you can still review your mistakes afterwards.';$('modal').classList.add('show')}
+function closeModal(){$('modal').classList.remove('show')}
+function submitTest(){closeModal();clearInterval(S.timerInt);window.removeEventListener('beforeunload',warnL);S.endTime=Date.now();showResults()}
+
+/* answer checking */
+function normalize(s){return String(s==null?'':s).trim().toLowerCase().replace(/\s+/g,' ').replace(/^(a|an|the)\s+/,'').replace(/[.,;:!?'"()]/g,'').replace(/our\b/g,'or').replace(/ise\b/g,'ize').replace(/isation\b/g,'ization').replace(/re\b/g,'er').replace(/ll/g,'l')}
+function chk(n){
+  const key=ANSWERS[n];if(key==null)return false;
+  if(multiBlockFor(n)){const blk=multiBlockFor(n);const cs=new Set();for(let k=blk.from;k<=blk.to;k++)cs.add(String(ANSWERS[k]||'').toUpperCase());const gs=new Set();for(let k=blk.from;k<=blk.to;k++){const a=S.answers[k];if(a)gs.add(String(a).toUpperCase())}return gs.size===cs.size&&[...gs].every(x=>cs.has(x))}
+  const q=QUESTIONS.find(x=>x.id===n);
+  const isLetter=q&&['mcq','info','heads','ends'].includes(q.type);
+  const user=S.answers[n];
+  if(isLetter)return String(user||'').toUpperCase()===String(key).toUpperCase();
+  const alts=String(key).split('/').map(normalize);
+  return alts.includes(normalize(user));
+}
+
+function showResults(){
+  S.submitted=true;const ids=allIds();let score=0;ids.forEach(n=>{if(chk(n))score++});
+  const bandV=getBand(score);
+  const taken=S.endTime?Math.floor((S.endTime-S.startTime)/1000):3600-S.timerSecs;
+  const tm=String(Math.floor(taken/60)).padStart(2,'0'),ts=String(taken%60).padStart(2,'0');
+  let pcards='';[1,2,3].forEach(p=>{const pn=ids.filter(n=>pOf(n)===p);const ps=pn.filter(chk).length;pcards+='<div class="pcard"><div class="pcardn">Passage '+p+'</div><strong>'+ps+'</strong><span class="of"> / '+pn.length+'</span></div>'});
+  let rows='';[1,2,3].forEach(p=>{ids.filter(n=>pOf(n)===p).forEach(n=>{const ok=chk(n);const ua=S.answers[n];const ustr=Array.isArray(ua)?ua.join(', '):(ua||'');rows+='<div class="ans-row '+(ok?'correct':'wrong')+'"><strong>Q'+n+'</strong><span>'+(ustr?'Your answer: <strong>'+esc(ustr)+'</strong>':'<span class="muted">No answer</span>')+'</span><span>Correct: <strong>'+esc(ANSWERS[n])+'</strong></span><span class="tick '+(ok?'g':'b')+'">'+(ok?'\u2713':'\u2717')+'</span></div>'})});
+  $('resultsContent').innerHTML='<h1 style="color:var(--navy);margin-bottom:16px">Reading Test Results</h1>'+
+    '<div class="score-hero"><div class="band-card"><span>Band Score</span><div class="band">'+bandV+'</div></div>'+
+    '<div class="stats"><div class="stat">Raw score<strong>'+score+' / '+ids.length+'</strong></div><div class="stat">Time taken<strong>'+tm+':'+ts+'</strong></div><div class="stat">Passages<strong>3</strong></div><div class="stat">Questions<strong>'+ids.length+'</strong></div></div></div>'+
+    '<div class="pcards">'+pcards+'</div>'+
+    '<h2 style="color:var(--navy)">Full Answer Review</h2><div class="ans-review">'+rows+'</div>'+
+    '<div class="action-row" style="margin-top:24px"><button class="btn" onclick="reviewTest()">Review Test &amp; Passages</button><button class="btn primary" onclick="restart()">Restart</button></div>';
+  showScreen('screen-results');
+}
+function getBand(raw){for(const[lo,hi,b]of BANDS)if(raw>=lo&&raw<=hi)return b;return'2.0'}
+const BANDS=[[39,40,'9.0'],[37,38,'8.5'],[35,36,'8.0'],[33,34,'7.5'],[30,32,'7.0'],[27,29,'6.5'],[23,26,'6.0'],[19,22,'5.5'],[15,18,'5.0'],[13,14,'4.5'],[10,12,'4.0'],[8,9,'3.5'],[6,7,'3.0'],[4,5,'2.5'],[0,3,'2.0']];
+
+function reviewTest(){showScreen('screen-test');$('checkBtn').style.display='none';renderP(S.passage);renderQs(S.passage);renderPartsBar();markReviewColours()}
+function markReviewColours(){
+  document.querySelectorAll('#qbody input,#qbody select').forEach(el=>el.disabled=true);
+  allIds().filter(n=>pOf(n)===S.passage).forEach(n=>{
+    const ok=chk(n);
+    const gi=document.querySelector('.gap-input[data-q="'+n+'"]');if(gi)gi.classList.add(ok?'good':'bad');
+    const ai=document.querySelector('.ainput[data-q="'+n+'"]');if(ai)ai.classList.add(ok?'good':'bad');
+    const se=document.querySelector('.hsel[data-q="'+n+'"]');if(se)se.classList.add(ok?'good':'bad');
+    const bl=document.querySelector('.blank[data-blk="'+n+'"]');if(bl)bl.classList.add(ok?'good':'bad');
+    const chosen=document.querySelector('input[name="q'+n+'"]:checked');if(chosen){const l=chosen.closest('.olbl');if(l)l.classList.add(ok?'good':'bad')}
+    if(!ok){const host=document.querySelector('.gap-input[data-q="'+n+'"],.ainput[data-q="'+n+'"],.hsel[data-q="'+n+'"],.blank[data-blk="'+n+'"]');if(host&&host.parentNode&&!host.parentNode.querySelector('.corr')){const tag=document.createElement('span');tag.className='corr';tag.textContent='\u2713 '+ANSWERS[n];host.insertAdjacentElement('afterend',tag)}}
+  });
+  QUESTIONS.filter(q=>q.type==='multi').forEach(q=>{const correct=[];for(let k=q.from;k<=q.to;k++)correct.push(String(ANSWERS[k]||'').toUpperCase());document.querySelectorAll('input[name="m'+q.from+'-'+q.to+'"]').forEach(c=>{const l=c.closest('.olbl');if(c.checked)l.classList.add(correct.includes(c.value.toUpperCase())?'good':'bad');else if(correct.includes(c.value.toUpperCase()))l.classList.add('good')})});
+}
+
+/* settings */
+function applyScale(f,l){document.documentElement.style.setProperty('--font-scale',f);document.documentElement.style.setProperty('--line-scale',l)}
+function applyTheme(t){document.body.classList.remove('theme-dark','theme-sepia');if(t==='dark')document.body.classList.add('theme-dark');if(t==='sepia')document.body.classList.add('theme-sepia');document.querySelectorAll('.swatch').forEach(s=>s.classList.toggle('active',s.dataset.theme===t))}
+$('setToggle').addEventListener('click',()=>$('settings').classList.toggle('open'));
+$('setClose').addEventListener('click',()=>$('settings').classList.remove('open'));
+$('fontScale').addEventListener('input',e=>applyScale(e.target.value,$('lineScale').value));
+$('lineScale').addEventListener('input',e=>applyScale($('fontScale').value,e.target.value));
+$('setReset').addEventListener('click',()=>{$('fontScale').value=1;$('lineScale').value=1;applyScale(1,1);applyTheme('light')});
+document.querySelectorAll('.swatch').forEach(s=>s.addEventListener('click',()=>applyTheme(s.dataset.theme)));
+$('resetAnswers').addEventListener('click',()=>{if(S.submitted)return;if(confirm('Reset all your answers?')){S.answers={};renderQs(S.passage);renderPartsBar();$('settings').classList.remove('open')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('settings').classList.remove('open')});
+
+/* fullscreen */
+(function(){const btn=$('fsBtn'),path=$('fsPath');
+  const ENTER="M1.5 1h4a.5.5 0 0 1 0 1H2v3.5a.5.5 0 0 1-1 0v-4a.5.5 0 0 1 .5-.5zm9 0h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V2h-3.5a.5.5 0 0 1 0-1zm-9 9a.5.5 0 0 1 .5.5V14h3.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5zm13 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1 0-1H14v-3.5a.5.5 0 0 1 .5-.5z";
+  const EXIT="M5.5 0a.5.5 0 0 1 .5.5v4A.5.5 0 0 1 5.5 5h-4a.5.5 0 0 1 0-1H5V.5a.5.5 0 0 1 .5-.5zm5 0a.5.5 0 0 1 .5.5V4h3.5a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 10 4.5v-4a.5.5 0 0 1 .5-.5zM0 10.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V11H.5a.5.5 0 0 1-.5-.5zm10 0a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5H11v3.5a.5.5 0 0 1-1 0v-4z";
+  function upd(){path.setAttribute('d',document.fullscreenElement?EXIT:ENTER);btn.title=document.fullscreenElement?'Exit fullscreen':'Fullscreen'}
+  btn.addEventListener('click',()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen().catch(()=>{});else document.exitFullscreen().catch(()=>{})});
+  document.addEventListener('fullscreenchange',upd);
+})();
+function restart(){location.reload()}
+
+/* smoke tests (console only) */
+(function(){const out=[];const A=(n,c)=>out.push({n,c:!!c});const ids=allIds();
+  A('40 ids',ids.length===40);A('1..40 no gaps',ids[0]===1&&ids[39]===40&&ids.every((v,i)=>v===i+1));
+  A('answers=40',Object.keys(ANSWERS).length===40);
+  let missing=[];for(let i=1;i<=40;i++)if(ANSWERS[i]===undefined)missing.push(i);A('all answers present',missing.length===0);
+  A('3 passages',Object.keys(PASSAGES).length===3);
+  const ends=QUESTIONS.filter(q=>q.type==='ends');A('ends<=endings',ends.length<=ENDINGS.length);
+  const fail=out.filter(o=>!o.c);if(fail.length)console.error('READING SMOKE FAIL',fail,'missing',missing);else console.info('Reading smoke passed ('+out.length+' checks)');
+})();
+</script>
+<!-- IELTS Hub: name modal + footer + auto score-logging. One line per page, forever. -->
+<script src="https://maqsudjon-cell.github.io/ielts-hub/js/test-page-auto.js" defer></script>
+</body>
+</html>
