@@ -3,926 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cambridge 21 — Test 1 Listening</title>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="test-title" content="Cambridge 21 Listening — Test 1" />
+<title>Cambridge 21 Listening – Test 1 | pangea8.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #f8f7f4; --surface: #fff; --border: #e2ddd6; --border-light: #ede9e3;
-    --text-primary: #1a1714; --text-secondary: #5a5550; --text-muted: #9a948e;
-    --accent: #1e6b4a; --accent-light: #e8f4ef; --accent-hover: #155438;
-    --red: #c0392b; --red-light: #fdf0ef;
-    --blue: #1a4a7a; --blue-light: #eef3f9;
-    --gold: #8b6914; --gold-light: #fdf8ee;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-    --radius: 8px; --radius-lg: 12px;
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#ffffff;--panel:#fafafa;--panel2:#f4f6f5;--border:#e5e7eb;--line:#eceeed;
+    --text:#0a0a0a;--muted:#6b7280;--faint:#9ca3af;
+    --green:#047857;--green-d:#035c43;--green-soft:#d1fae5;--green-tint:#eafaf3;--green-line:#10b981;
+    --hl:#c9f2df;--radius:10px;--shadow:0 1px 3px rgba(0,0,0,.05);--nav-h:60px;
   }
-  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
-  .site-header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
-  .header-inner { max-width: 920px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
-  .header-title { font-family: 'Source Serif 4', serif; font-size: 1.05rem; font-weight: 600; white-space: nowrap; display: flex; align-items: center; gap: 10px; }
-  .header-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: var(--radius); font-family: inherit; font-size: 0.8rem; font-weight: 500; cursor: pointer; border: none; transition: all 0.18s; white-space: nowrap; }
-  .btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
-  .btn-ghost:hover { background: var(--bg); color: var(--text-primary); }
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-primary:hover { background: var(--accent-hover); }
-  .progress-pill { font-size: 0.78rem; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px; }
-  .progress-pill span { color: var(--accent); font-weight: 600; }
-  .mode-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 4px; color: #fff; background: var(--accent); }
-  .mode-badge.sim { background: var(--red); }
-  .page-wrap { max-width: 920px; margin: 0 auto; padding: 24px 24px 80px; }
-  .page-heading { margin-bottom: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
-  .page-heading h1 { font-family: 'Source Serif 4', serif; font-size: 1.7rem; font-weight: 600; margin-bottom: 4px; }
-  .page-heading p { color: var(--text-muted); font-size: 0.85rem; }
-  .start-banner { background: var(--accent); color: #fff; padding: 22px 24px; border-radius: var(--radius-lg); margin-bottom: 24px; text-align: center; box-shadow: var(--shadow-md); }
-  .start-banner h3 { font-family: 'Source Serif 4', serif; font-size: 1.25rem; margin-bottom: 6px; }
-  .start-banner p { font-size: 0.85rem; opacity: 0.92; margin-bottom: 14px; }
-  .btn-start { background: #fff; color: var(--accent); border: none; padding: 11px 36px; border-radius: var(--radius); font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: transform 0.15s; }
-  .btn-start:hover { transform: scale(1.04); }
-  .now-playing, .review-banner { position: sticky; top: 60px; z-index: 90; color: #fff; padding: 9px 24px; font-size: 0.85rem; font-weight: 600; display: none; align-items: center; justify-content: space-between; gap: 10px; box-shadow: var(--shadow-sm); }
-  .now-playing { background: linear-gradient(90deg, var(--accent), #2a9870); }
-  .now-playing.show, .review-banner.show { display: flex; }
-  .review-banner { background: linear-gradient(90deg, #b48a00, var(--gold)); }
-  .pulse { display: inline-block; width: 10px; height: 10px; background: #ffd633; border-radius: 50%; animation: pulse 1.2s infinite; margin-right: 8px; }
-  @keyframes pulse { 0%,100%{opacity:0.5;transform:scale(1);} 50%{opacity:1;transform:scale(1.3);} }
-  .audio-sticky { position: sticky; top: 60px; z-index: 95; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12px 16px; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; box-shadow: var(--shadow-sm); }
-  .audio-sticky audio { flex: 1; min-width: 280px; height: 36px; }
-  .audio-label { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; }
-  .audio-label strong { color: var(--accent); }
-  .speed-row { display: inline-flex; align-items: center; gap: 4px; }
-  .speed-row .label { font-size: 0.72rem; color: var(--text-muted); margin-right: 4px; }
-  .speed-btn { border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary); border-radius: 4px; padding: 4px 10px; font-size: 0.75rem; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-  .speed-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .speed-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .part-tabs { display: flex; gap: 4px; margin-bottom: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 6px; }
-  .part-tab { flex: 1; padding: 9px 6px; text-align: center; cursor: pointer; border-radius: 7px; font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); transition: all 0.15s; border: none; background: transparent; font-family: inherit; }
-  .part-tab:hover { background: var(--bg); }
-  .part-tab.active { background: var(--accent); color: #fff; }
-  .part-tab small { display: block; font-size: 0.68rem; opacity: 0.8; margin-top: 2px; font-weight: 500; }
-  .part-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 24px; overflow: hidden; box-shadow: var(--shadow-sm); display: none; }
-  .part-section.active { display: block; }
-  .part-header { padding: 14px 22px; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 12px; background: #fafaf8; flex-wrap: wrap; }
-  .part-badge { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; background: var(--accent); padding: 3px 10px; border-radius: 4px; }
-  .part-range { font-size: 0.8rem; color: var(--text-muted); font-style: italic; }
-  .part-body { padding: 22px; }
-  .section-title { font-family: 'Source Serif 4', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 4px; }
-  .instruction { font-size: 0.95rem; color: var(--text-primary); margin-bottom: 14px; line-height: 1.55; font-weight: 500; }
-  .instruction strong { color: var(--text-primary); font-weight: 700; }
-  .q-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 18px 0 10px; }
-  .data-table-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 14px 0; background: #fff; }
-  .data-table-title { background: var(--accent); color: #fff; text-align: center; padding: 10px 16px; font-family: 'Source Serif 4', serif; font-size: 1rem; font-weight: 600; }
-  .data-table { width: 100%; border-collapse: collapse; }
-  .data-table th { background: var(--accent-light); color: var(--accent); padding: 9px 12px; text-align: left; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
-  .data-table td { padding: 12px; font-size: 0.85rem; vertical-align: middle; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); }
-  .data-table td:first-child { font-weight: 600; color: var(--text-primary); width: 38%; }
-  .data-table tr:last-child td { border-bottom: none; }
-  .data-table .static-val { font-style: italic; color: var(--text-muted); }
-  .data-table.compact td:first-child { width: auto; }
-  .data-table ul { list-style: none; padding-left: 4px; }
-  .data-table ul li { padding: 3px 0; font-size: 0.84rem; }
-  .data-table ul li::before { content: "•"; color: var(--accent); margin-right: 6px; }
-  input[type="text"].ans-input { border: 1.5px solid var(--border); border-radius: 5px; padding: 4px 9px; font-family: inherit; font-size: 0.85rem; color: var(--text-primary); background: #fff; outline: none; width: 130px; transition: border-color 0.15s; vertical-align: middle; }
-  input[type="text"].ans-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30,107,74,0.1); }
-  input[type="text"].ans-input.correct { border-color: var(--accent); background: var(--accent-light); }
-  input[type="text"].ans-input.incorrect { border-color: var(--red); background: var(--red-light); }
-  .qnum-prefix { display: inline-flex; align-items: center; justify-content: center; min-width: 26px; height: 22px; background: var(--accent); color: #fff; border-radius: 4px; padding: 2px 7px; font-size: 0.72rem; font-weight: 700; margin-right: 5px; }
-  .mcq-group { margin: 12px 0 18px; }
-  .mcq-question { font-size: 0.92rem; margin-bottom: 8px; line-height: 1.5; font-weight: 600; color: var(--text-primary); }
-  .mcq-question .qnum { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: var(--accent-light); color: var(--accent); border-radius: 50%; font-size: 0.74rem; font-weight: 700; margin-right: 8px; }
-  .mcq-options { display: flex; flex-direction: column; gap: 6px; }
-  .mcq-option { display: flex; align-items: flex-start; gap: 9px; padding: 7px 11px; border: 1.5px solid var(--border); border-radius: 7px; cursor: pointer; transition: all 0.15s; font-size: 0.85rem; color: var(--text-secondary); background: var(--bg); }
-  .mcq-option:hover { border-color: var(--accent); background: var(--accent-light); color: var(--text-primary); }
-  .mcq-option input[type="radio"] { display: none; }
-  .mcq-radio { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; margin-top: 1px; position: relative; display: flex; align-items: center; justify-content: center; }
-  .mcq-option.selected { border-color: var(--accent); background: var(--accent-light); color: var(--text-primary); }
-  .mcq-option.selected .mcq-radio { border-color: var(--accent); background: var(--accent); }
-  .mcq-option.selected .mcq-radio::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #fff; position: absolute; }
-  .opt-letter { font-weight: 600; color: var(--text-muted); min-width: 14px; font-size: 0.78rem; }
-  .mcq-option.selected .opt-letter { color: var(--accent); }
-  .check-group { margin: 12px 0 18px; }
-  .check-group-hint { font-size: 0.78rem; color: var(--text-muted); font-style: italic; margin-bottom: 8px; }
-  .check-option { display: flex; align-items: flex-start; gap: 9px; padding: 7px 11px; border: 1.5px solid var(--border); border-radius: 7px; cursor: pointer; transition: all 0.15s; font-size: 0.85rem; color: var(--text-secondary); background: var(--bg); margin-bottom: 6px; }
-  .check-option:hover { border-color: var(--accent); background: var(--accent-light); color: var(--text-primary); }
-  .check-option input[type="checkbox"] { display: none; }
-  .check-box { width: 16px; height: 16px; border-radius: 3px; border: 2px solid var(--border); flex-shrink: 0; margin-top: 1px; position: relative; display: flex; align-items: center; justify-content: center; }
-  .check-option.selected { border-color: var(--accent); background: var(--accent-light); color: var(--text-primary); }
-  .check-option.selected .check-box { border-color: var(--accent); background: var(--accent); }
-  .check-option.selected .check-box::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; line-height: 1; }
-  .check-option.selected .opt-letter { color: var(--accent); }
-  .example-block { background: var(--bg); border: 1px dashed var(--border); border-radius: var(--radius); padding: 12px 16px; margin: 8px 0 18px; }
-  .example-block .ex-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 4px; }
-  .example-block .ex-q { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 4px; }
-  .example-block .ex-a { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-  .sa-row { margin: 0 0 14px; line-height: 1.55; }
-  .sa-row .sa-input { display: block; margin-top: 6px; }
-  .sent-row { margin: 0 0 12px; line-height: 1.7; font-size: 0.92rem; color: var(--text-primary); }
-  .img-wrap { display: flex; flex-direction: column; align-items: center; margin: 16px 0 14px; gap: 8px; }
-  .img-wrap img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow-sm); }
-  .img-caption { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
-  .label-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin: 8px 0 12px; }
-  .label-row .label-item { display: flex; align-items: center; gap: 8px; }
-  .label-row .label-item label { font-size: 0.88rem; font-weight: 600; color: var(--text-primary); min-width: 230px; }
-  .letter-bank { border: 1px solid var(--border); border-radius: var(--radius); background: #fafaf8; padding: 10px 14px; margin: 6px 0 12px; }
-  .letter-bank .row { padding: 4px 0; font-size: 0.86rem; }
-  .letter-bank .row strong { color: var(--accent); font-weight: 700; margin-right: 6px; min-width: 18px; display: inline-block; }
-  .flowchart { display: flex; flex-direction: column; align-items: center; margin: 14px 0; gap: 6px; }
-  .flow-step { background: #fff; border: 2px solid var(--border); border-radius: var(--radius); padding: 14px 20px; min-width: 75%; max-width: 100%; text-align: center; font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); box-shadow: var(--shadow-sm); }
-  .flow-arrow { width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 14px solid var(--accent); margin: 2px 0; }
-  .flow-step.heading { background: var(--accent-light); border-color: var(--accent); font-weight: 600; }
-  .notes-card { background: var(--gold-light); border: 1px solid #e8d8a0; border-radius: var(--radius); padding: 16px 20px; margin: 14px 0; }
-  .notes-card h4 { font-family: 'Source Serif 4', serif; font-size: 1rem; font-weight: 600; text-align: center; margin-bottom: 12px; }
-  .notes-card h5 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); margin: 14px 0 6px; border-bottom: 1px solid #e8d8a0; padding-bottom: 4px; }
-  .notes-card ul { list-style: none; padding-left: 6px; }
-  .notes-card ul li { padding: 5px 0; font-size: 0.92rem; color: var(--text-primary); line-height: 1.65; }
-  .notes-card ul li::before { content: "•"; color: var(--gold); margin-right: 6px; }
-  .notes-card ul ul { padding-left: 20px; margin: 4px 0; }
-  .notes-card ul ul li::before { content: "–"; color: var(--text-muted); }
-  .notes-card p { font-size: 0.92rem; color: var(--text-primary); line-height: 1.7; margin: 6px 0; }
-  .submit-wrap { text-align: center; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--border); }
-  .btn-submit { padding: 12px 38px; font-size: 0.95rem; border-radius: var(--radius); background: var(--accent); color: #fff; border: none; font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px rgba(30,107,74,0.25); }
-  .btn-submit:hover { background: var(--accent-hover); }
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 200; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-  .modal-overlay.open { opacity: 1; pointer-events: all; }
-  .modal { background: var(--surface); border-radius: var(--radius-lg); padding: 32px 36px; max-width: 420px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-  .modal-score { font-family: 'Source Serif 4', serif; font-size: 3.2rem; font-weight: 600; color: var(--accent); line-height: 1; margin-bottom: 4px; }
-  .modal-total { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 14px; }
-  .modal-band { display: inline-block; background: var(--accent-light); color: var(--accent); font-weight: 600; font-size: 0.88rem; padding: 6px 18px; border-radius: 20px; margin-bottom: 18px; }
-  .modal-close { padding: 9px 20px; border-radius: var(--radius); background: var(--bg); border: 1px solid var(--border); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; }
-  .modal-close:hover { background: var(--surface); border-color: var(--accent); color: var(--text-primary); }
-  .mode-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-  .mode-overlay.open { opacity: 1; pointer-events: all; }
-  .mode-modal { background: var(--surface); border-radius: var(--radius-lg); max-width: 760px; width: 100%; padding: 32px 30px; box-shadow: 0 25px 70px rgba(0,0,0,0.25); }
-  .mode-modal h2 { font-family: 'Source Serif 4', serif; font-size: 1.55rem; font-weight: 600; text-align: center; margin-bottom: 6px; }
-  .mode-modal p.lead { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
-  .mode-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .mode-card { border: 2px solid var(--border); border-radius: var(--radius); padding: 22px 18px; cursor: pointer; transition: all 0.15s; background: var(--bg); }
-  .mode-card:hover { border-color: var(--accent); background: var(--accent-light); transform: translateY(-2px); }
-  .mode-card.simulation:hover { border-color: var(--red); background: var(--red-light); }
-  .mode-card .icon { font-size: 1.8rem; margin-bottom: 8px; }
-  .mode-card h3 { font-family: 'Source Serif 4', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
-  .mode-card .tagline { font-size: 0.76rem; color: var(--text-muted); margin-bottom: 10px; font-style: italic; }
-  .mode-card ul { list-style: none; }
-  .mode-card ul li { padding: 4px 0 4px 20px; font-size: 0.8rem; color: var(--text-secondary); position: relative; line-height: 1.5; }
-  .mode-card ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-  .mode-card.simulation ul li::before { content: "●"; color: var(--red); }
-  .script-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 300; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s; padding: 20px; }
-  .script-modal-overlay.open { opacity: 1; pointer-events: all; }
-  .script-modal { background: var(--surface); border-radius: var(--radius-lg); max-width: 820px; width: 100%; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 70px rgba(0,0,0,0.25); overflow: hidden; }
-  .script-modal-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: #fafaf8; }
-  .script-modal-header h2 { font-family: 'Source Serif 4', serif; font-size: 1.2rem; font-weight: 600; }
-  .script-modal-close-x { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); cursor: pointer; font-size: 1rem; }
-  .script-modal-body { padding: 22px 26px; overflow-y: auto; flex: 1; }
-  .answer-row { display: grid; grid-template-columns: 60px 1fr 1fr; gap: 12px; padding: 9px 13px; border: 1px solid var(--border-light); border-radius: var(--radius); margin-bottom: 7px; align-items: center; background: var(--surface); }
-  .answer-row.correct { border-color: var(--accent); background: var(--accent-light); }
-  .answer-row.incorrect { border-color: var(--red); background: var(--red-light); }
-  .answer-row.empty { border-color: var(--border); background: var(--bg); opacity: 0.75; }
-  .answer-q { font-family: 'Source Serif 4', serif; font-size: 0.95rem; font-weight: 600; color: var(--text-muted); }
-  .answer-your, .answer-correct { font-size: 0.85rem; }
-  .answer-label { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; }
-  .answer-value { color: var(--text-primary); font-weight: 500; }
-  .answer-row.correct .answer-your .answer-value { color: var(--accent); }
-  .answer-row.incorrect .answer-your .answer-value { color: var(--red); text-decoration: line-through; }
-  .answer-row .answer-correct .answer-value { color: var(--accent); font-weight: 600; }
-  .answer-value.empty-val { color: var(--text-muted); font-style: italic; }
-  .summary-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; padding: 14px; background: linear-gradient(135deg, var(--accent-light), #fff); border: 1px solid var(--border); border-radius: var(--radius-lg); }
-  .stat-item { text-align: center; }
-  .stat-value { font-family: 'Source Serif 4', serif; font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
-  .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-top: 2px; font-weight: 500; }
-  .stat-correct .stat-value { color: var(--accent); }
-  .stat-wrong .stat-value { color: var(--red); }
-  .stat-band .stat-value { color: var(--gold); }
-  ::selection { background: #b8e0cf; }
-  .highlighted { background: #fef08a; border-radius: 2px; padding: 0; margin: 0; cursor: pointer; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-  .highlighted:hover { background: #ffe85a; outline: 1px dashed #d4b94e; }
-  #hl-popup { position: absolute; display: none; z-index: 1500; background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 0; font-size: 0.75rem; font-weight: 600; box-shadow: 0 3px 14px rgba(0,0,0,0.18); user-select: none; white-space: nowrap; overflow: hidden; }
-  #hl-popup .hl-btn { display: inline-block; padding: 6px 12px; cursor: pointer; transition: background 0.15s; }
-  #hl-popup .hl-btn.highlight { background: #fef08a; color: #4d3d00; }
-  #hl-popup .hl-btn.highlight:hover { background: #ffe85a; }
-  #hl-popup .hl-btn.clear { background: #f5f5f5; color: var(--text-secondary); border-left: 1px solid var(--border); }
-  #hl-popup .hl-btn.clear:hover { background: var(--red-light); color: var(--red); }
-  body.sim-mode .audio-sticky { display: none !important; }
-  body.sim-mode .submit-wrap { display: none !important; }
-  body.sim-mode.test-started .start-banner { display: none; }
-  body.practice-mode .start-banner { display: none; }
-  body.sim-mode:not(.test-started) .part-section,
-  body.sim-mode:not(.test-started) .part-tabs { display: none !important; }
-  @media (max-width: 600px) {
-    .header-inner { padding: 8px 14px; height: auto; flex-wrap: wrap; }
-    .page-wrap { padding: 18px 14px 60px; }
-    .part-body { padding: 16px 14px; }
-    .header-title { font-size: 0.92rem; }
-    .mode-cards { grid-template-columns: 1fr; }
-    .data-table td:first-child { width: auto; }
-    .label-row { grid-template-columns: 1fr; }
-    .flow-step { min-width: 100%; }
+  html[data-theme="dark"],body.theme-dark{
+    --bg:#0c0e0d;--panel:#141817;--panel2:#171c1a;--border:#242b28;--line:#1e2421;
+    --text:#f1f5f3;--muted:#9aa6a1;--faint:#6b756f;
+    --green:#10b981;--green-d:#34d399;--green-soft:#0c3b2c;--green-tint:#0e2a22;--green-line:#10b981;--hl:#0f4433;
   }
-
-    .transcript-box { margin-top: 32px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fafafa; }
-    .transcript-box summary { padding: 12px 16px; cursor: pointer; font-weight: 600; font-size: 0.95rem; background: #f0f0f0; }
-
-  .transcript-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-top: 26px; box-shadow: var(--shadow-sm); overflow: hidden; }
-  .transcript-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px; cursor: pointer; background: #fafaf8; flex-wrap: wrap; }
-  .transcript-head h2 { font-family: 'Source Serif 4', serif; font-size: 1.05rem; font-weight: 600; flex: 1; white-space: nowrap; }
-  .tr-note { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
-  .tr-toggle { border: 1px solid var(--border); background: var(--surface); color: var(--text-secondary); border-radius: 6px; padding: 5px 14px; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: inherit; }
-  .tr-toggle:hover { border-color: var(--accent); color: var(--accent); }
-  .transcript-card.open .transcript-head { border-bottom: 1px solid var(--border-light); }
-  .transcript-body { display: none; max-height: 480px; overflow-y: auto; padding: 14px 20px 18px; position: relative; }
-  .transcript-card.open .transcript-body { display: block; }
-  .tr-turn { display: grid; grid-template-columns: 86px 1fr; gap: 10px; padding: 7px 10px; border-radius: 7px; margin-bottom: 2px; cursor: pointer; border-left: 3px solid transparent; transition: background 0.15s; }
-  .tr-turn:hover { background: var(--bg); }
-  .tr-turn.active { background: var(--accent-light); border-left-color: var(--accent); }
-  .tr-sp { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text-muted); text-transform: uppercase; padding-top: 4px; }
-  .tr-turn.active .tr-sp { color: var(--accent); }
-  .tr-tx { font-size: 0.9rem; line-height: 1.65; color: var(--text-primary); }
-  .tr-ans { border-bottom: 2px solid var(--accent); font-weight: 600; }
-  .tr-q { color: var(--accent); font-weight: 700; font-size: 0.68em; margin-left: 1px; }
-  body.sim-mode:not(.test-submitted) .transcript-card { display: none !important; }
-  @media (max-width: 600px) { .tr-turn { grid-template-columns: 1fr; gap: 2px; } .tr-sp { padding-top: 0; } .transcript-head h2 { white-space: normal; } }
-  </style>
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#0c0e0d;--panel:#141817;--panel2:#171c1a;--border:#242b28;--line:#1e2421;
+    --text:#f1f5f3;--muted:#9aa6a1;--faint:#6b756f;
+    --green:#10b981;--green-d:#34d399;--green-soft:#0c3b2c;--green-tint:#0e2a22;--hl:#0f4433;}}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:var(--nav-h)}
+  a{color:inherit}
+  .top{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;gap:14px;padding:0 20px}
+  .top .back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap}
+  .top .back:hover{border-color:var(--green);color:var(--green)}
+  .top h1{font-family:'Source Serif 4',serif;font-size:1.02rem;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top .tools{display:flex;gap:6px}
+  .iconbtn{width:34px;height:34px;border:1px solid var(--border);background:var(--panel);border-radius:8px;cursor:pointer;font-size:.95rem;color:var(--muted);display:flex;align-items:center;justify-content:center}
+  .iconbtn:hover{border-color:var(--green);color:var(--green)}
+  .wrap{max-width:1320px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .col-h{font-family:'Source Serif 4',serif;font-size:1.35rem;font-weight:700;margin-bottom:4px}
+  /* ---- LEFT: audio + audioscript ---- */
+  .audio-box{position:sticky;top:66px;z-index:20;background:var(--bg);padding-bottom:10px}
+  .player-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  audio{flex:1;min-width:220px;height:40px}
+  .speed{display:inline-flex;gap:3px}
+  .speed button{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:6px;padding:4px 9px;font:600 .72rem Inter;cursor:pointer}
+  .speed button.active{background:var(--green);color:#fff;border-color:var(--green)}
+  .transcript-card{margin-top:14px;border:1.5px solid var(--green-line);border-radius:var(--radius);overflow:hidden;background:var(--bg)}
+  .transcript-head{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;cursor:pointer;background:var(--green-tint)}
+  .transcript-head h3{font-size:.92rem;font-weight:700;color:var(--green-d)}
+  .transcript-head .chev{color:var(--green);font-size:.8rem}
+  .transcript-body{display:none;padding:14px 16px;max-height:none}
+  .transcript-card.open .transcript-body{display:block}
+  .tr-turn{padding:5px 8px;border-radius:7px;margin-bottom:3px;cursor:pointer;border-left:3px solid transparent}
+  .tr-turn:hover{background:var(--panel)}
+  .tr-turn.active{background:var(--green-tint);border-left-color:var(--green)}
+  .tr-sp{font-weight:700;font-size:.82rem}
+  .tr-tx{font-size:.92rem;line-height:1.7}
+  .tr-ans{background:var(--hl);border-radius:3px;padding:1px 2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .tr-q{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff;font-size:.66rem;font-weight:700;border-radius:5px;padding:1px 7px;margin:0 2px;vertical-align:middle;font-family:Inter;letter-spacing:.02em}
+  .tr-hint{font-size:.78rem;color:var(--faint);font-style:italic;padding:2px 8px 8px}
+  /* ---- RIGHT: questions ---- */
+  .q-instr-top{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+  .instruction{font-size:.96rem;margin-bottom:14px}
+  .instruction strong{font-weight:700}
+  .q-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:20px 0 10px}
+  .section-title-r{font-family:'Source Serif 4',serif;font-size:1.15rem;font-weight:700;text-align:center;margin:6px 0 14px}
+  /* notes card */
+  .notes-card{border:1.5px solid var(--green-line);border-radius:var(--radius);padding:16px 18px;margin:12px 0;background:var(--panel)}
+  .notes-card h4{font-family:'Source Serif 4',serif;font-size:1.02rem;font-weight:700;text-align:center;margin-bottom:12px}
+  .notes-card h5{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--green-d);margin:14px 0 6px;border-bottom:1px solid var(--green-soft);padding-bottom:4px}
+  .notes-card ul{list-style:none;padding-left:4px}
+  .notes-card ul li{padding:5px 0;font-size:.92rem;line-height:1.7}
+  .notes-card ul li::before{content:"•";color:var(--green);margin-right:7px}
+  .notes-card p{font-size:.92rem;margin:6px 0}
+  /* table */
+  .data-table-wrap{border:1.5px solid var(--green-line);border-radius:var(--radius);overflow:hidden;margin:12px 0}
+  .data-table-title{background:var(--green);color:#fff;text-align:center;padding:10px;font-family:'Source Serif 4',serif;font-weight:700}
+  .data-table{width:100%;border-collapse:collapse}
+  .data-table th{background:var(--green-tint);color:var(--green-d);padding:9px 12px;text-align:left;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--green-soft)}
+  .data-table td{padding:11px 12px;font-size:.86rem;vertical-align:top;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+  .data-table td:last-child,.data-table th:last-child{border-right:none}
+  .data-table td:first-child{font-weight:600}
+  .data-table tr:last-child td{border-bottom:none}
+  .data-table ul{list-style:none}.data-table ul li{padding:2px 0;font-size:.85rem}
+  .data-table ul li::before{content:"•";color:var(--green);margin-right:5px}
+  /* inputs */
+  input.ans-input{border:1.5px solid var(--border);border-radius:6px;padding:5px 9px;font:400 .88rem Inter;color:var(--text);background:var(--bg);outline:none;width:130px;vertical-align:middle}
+  input.ans-input:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+  input.ans-input.correct{border-color:var(--green);background:var(--green-tint)}
+  input.ans-input.incorrect{border-color:#dc2626;background:#fef2f2}
+  html[data-theme="dark"] input.ans-input.incorrect{background:#3a1d1d}
+  .qnum-prefix{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:22px;background:var(--green);color:#fff;border-radius:6px;padding:2px 7px;font-size:.72rem;font-weight:700;margin-right:5px}
+  /* mcq */
+  .mcq-group{margin:12px 0 16px}
+  .mcq-question{font-size:.92rem;font-weight:600;margin-bottom:8px;display:flex;gap:8px}
+  .mcq-question .qnum{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--green-soft);color:var(--green-d);font-size:.72rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+  .mcq-options{display:flex;flex-direction:column;gap:6px}
+  .mcq-option{display:flex;align-items:flex-start;gap:9px;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;font-size:.88rem;background:var(--panel);transition:all .13s}
+  .mcq-option:hover{border-color:var(--green);background:var(--green-tint)}
+  .mcq-option input{display:none}
+  .mcq-radio{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:1px;position:relative;display:flex;align-items:center;justify-content:center}
+  .mcq-option.selected{border-color:var(--green);background:var(--green-tint)}
+  .mcq-option.selected .mcq-radio{border-color:var(--green);background:var(--green)}
+  .mcq-option.selected .mcq-radio::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff;position:absolute}
+  .opt-letter{font-weight:700;color:var(--muted);min-width:14px;font-size:.82rem}
+  .mcq-option.selected .opt-letter{color:var(--green-d)}
+  /* checkbox groups */
+  .check-group{margin:12px 0 16px;border:1.5px solid var(--green-line);border-radius:var(--radius);padding:12px 14px;background:var(--panel)}
+  .check-group-hint{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:8px}
+  .check-option{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;font-size:.88rem;background:var(--bg);margin-bottom:6px}
+  .check-option:hover{border-color:var(--green);background:var(--green-tint)}
+  .check-option input{display:none}
+  .check-box{width:16px;height:16px;border-radius:4px;border:2px solid var(--border);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center}
+  .check-option.selected{border-color:var(--green);background:var(--green-tint)}
+  .check-option.selected .check-box{border-color:var(--green);background:var(--green)}
+  .check-option.selected .check-box::after{content:'✓';color:#fff;font-size:11px;font-weight:700;line-height:1}
+  .check-option.selected .opt-letter{color:var(--green-d)}
+  /* letter bank */
+  .letter-bank{border:1.5px solid var(--green-line);border-radius:var(--radius);background:var(--panel);padding:12px 16px;margin:8px 0 14px}
+  .letter-bank .row{padding:4px 0;font-size:.88rem}
+  .letter-bank .row strong{color:var(--green-d);font-weight:700;margin-right:6px;min-width:18px;display:inline-block}
+  /* label rows (matching) */
+  .label-row{display:flex;flex-direction:column;gap:8px;margin:8px 0 12px}
+  .label-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--panel)}
+  .label-item label{font-size:.9rem;font-weight:500;flex:1}
+  /* map */
+  .map-wrap{border:1.5px solid var(--green-line);border-radius:var(--radius);padding:12px;margin:12px 0;background:var(--panel);text-align:center}
+  .map-wrap img{max-width:100%;height:auto;border-radius:6px}
+  .map-title{font-family:'Source Serif 4',serif;font-weight:700;margin-bottom:8px}
+  /* flow chart */
+  .flowchart{display:flex;flex-direction:column;align-items:center;gap:4px;margin:12px 0}
+  .flow-step{border:1.5px solid var(--green-line);border-radius:var(--radius);padding:12px 16px;width:100%;max-width:420px;text-align:center;font-size:.9rem;background:var(--panel)}
+  .flow-step .qnum-prefix{margin-right:6px}
+  .flow-arrow{color:var(--green);font-size:1.1rem;font-weight:700}
+  .example-block{border:1px dashed var(--green-line);border-radius:8px;padding:10px 14px;margin:8px 0 14px;background:var(--green-tint);font-size:.86rem}
+  /* ---- bottom nav ---- */
+  .botnav{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:6px;z-index:70}
+  .botnav .navbtn{min-width:44px;height:38px;border:1px solid var(--border);background:var(--panel);border-radius:9px;font:600 .85rem Inter;color:var(--muted);cursor:pointer;padding:0 14px;display:inline-flex;align-items:center;gap:5px}
+  .botnav .navbtn:hover{border-color:var(--green);color:var(--green)}
+  .botnav .navbtn.active{background:var(--green);color:#fff;border-color:var(--green)}
+  .botnav .navbtn.wide{padding:0 16px}
+  .botnav a.navbtn{text-decoration:none}
+  /* modal */
+  .modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.2s;padding:20px}
+  .modal-ov.open{opacity:1;pointer-events:all}
+  .modal{background:var(--bg);border:1px solid var(--border);border-radius:16px;max-width:440px;width:100%;padding:30px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+  .modal .score{font-family:'Source Serif 4',serif;font-size:3rem;font-weight:700;color:var(--green);line-height:1}
+  .modal .of{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+  .modal .band{display:inline-block;background:var(--green-soft);color:var(--green-d);font-weight:700;padding:6px 18px;border-radius:20px;margin-bottom:18px}
+  .modal button{padding:9px 20px;border-radius:9px;border:1px solid var(--border);background:var(--panel);font:600 .85rem Inter;color:var(--text);cursor:pointer;margin:4px}
+  .modal button.primary{background:var(--green);color:#fff;border-color:var(--green)}
+  .review-list{text-align:left;max-height:60vh;overflow:auto;margin-top:8px}
+  .ans-row{display:grid;grid-template-columns:52px 1fr 1fr;gap:10px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;align-items:center;font-size:.85rem}
+  .ans-row.correct{border-color:var(--green);background:var(--green-tint)}
+  .ans-row.incorrect{border-color:#dc2626;background:#fef2f2}
+  html[data-theme="dark"] .ans-row.incorrect{background:#2a1717}
+  .ans-row .ql{font-family:'Source Serif 4',serif;font-weight:700;color:var(--muted)}
+  .ans-row .lbl{font-size:.64rem;text-transform:uppercase;color:var(--faint);font-weight:700}
+  .ans-row .yv{font-weight:600}
+  .ans-row.incorrect .yv{color:#dc2626;text-decoration:line-through}
+  .ans-row .cv{color:var(--green-d);font-weight:700}
+  ::selection{background:var(--hl)}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr;gap:16px}.audio-box{position:static}.top h1{font-size:.9rem}.tr-tx{font-size:.9rem}}
+</style>
 </head>
 <body>
-<a href="index.html" style="position:fixed;left:8px;top:70px;z-index:120;font:600 12px Inter,sans-serif;color:var(--accent);text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:5px 11px">← Cambridge 21</a>
-<!-- pangea8 loader -->
-<div id="pg-loader" role="status" aria-label="Loading pangea8"><svg viewBox="0 0 200 200" aria-hidden="true"><g class="pg-spark"><line class="pg-ray" style="--i:0" x1="130" y1="100" x2="178" y2="100"/><line class="pg-ray" style="--i:1" x1="121.2" y1="121.2" x2="155.2" y2="155.2"/><line class="pg-ray" style="--i:2" x1="100" y1="130" x2="100" y2="178"/><line class="pg-ray" style="--i:3" x1="78.8" y1="121.2" x2="44.8" y2="155.2"/><line class="pg-ray" style="--i:4" x1="70" y1="100" x2="22" y2="100"/><line class="pg-ray" style="--i:5" x1="78.8" y1="78.8" x2="44.8" y2="44.8"/><line class="pg-ray" style="--i:6" x1="100" y1="70" x2="100" y2="22"/><line class="pg-ray" style="--i:7" x1="121.2" y1="78.8" x2="155.2" y2="44.8"/></g></svg><div class="pg-word">pangea<b>8</b></div></div>
-<style>
-#pg-loader{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;align-content:center;gap:22px;background:var(--bg,#fff);transition:opacity .5s ease,visibility .5s ease}
-#pg-loader.pg-hide{opacity:0;visibility:hidden;pointer-events:none}
-#pg-loader svg{width:96px;height:96px;overflow:visible}
-#pg-loader .pg-spark{transform-box:view-box;transform-origin:100px 100px;animation:pgLspin 2.4s linear infinite}
-#pg-loader .pg-ray{stroke:#34E0A1;stroke-width:13;stroke-linecap:round;filter:drop-shadow(0 0 3px rgba(52,224,161,.55)) drop-shadow(0 0 9px rgba(52,224,161,.3));transform-box:view-box;transform-origin:100px 100px;animation:pgLtw 2.4s ease-in-out infinite;animation-delay:calc(var(--i) * -0.3s)}
-#pg-loader .pg-word{font-family:'Inter',system-ui,-apple-system,sans-serif;font-weight:600;font-size:19px;letter-spacing:.5px;color:var(--text-primary,#1a1a1a)}
-#pg-loader .pg-word b{color:#15c98c}
-@keyframes pgLspin{to{transform:rotate(360deg)}}
-@keyframes pgLtw{0%,100%{transform:scale(.74);stroke:#2bd49a;filter:drop-shadow(0 0 3px rgba(52,224,161,.55)) drop-shadow(0 0 9px rgba(52,224,161,.3))}50%{transform:scale(1);stroke:#34E0A1;filter:drop-shadow(0 0 5px #34E0A1) drop-shadow(0 0 14px rgba(52,224,161,.5))}}
-@media(prefers-reduced-motion:reduce){#pg-loader .pg-spark,#pg-loader .pg-ray{animation:none}#pg-loader .pg-ray{transform:scale(.92)}}
-</style>
-<script>(function(){var el=document.getElementById('pg-loader');if(!el)return;var t=Date.now(),M=600,h=0;function hide(){if(h)return;h=1;var w=Math.max(0,M-(Date.now()-t));setTimeout(function(){el.classList.add('pg-hide');setTimeout(function(){el.style.display='none'},500)},w)}if(document.readyState==='complete')hide();else window.addEventListener('load',hide);setTimeout(hide,8000);window.pangeaLoader={show:function(){h=0;el.style.display='grid';el.style.visibility='visible';el.classList.remove('pg-hide');t=Date.now()},hide:hide}})();</script>
-<!-- /pangea8 loader -->
-
-<div class="mode-overlay open" id="modeModal">
-  <div class="mode-modal">
-    <h2>Select Test Mode</h2>
-    <p class="lead">How would you like to take this listening test?</p>
-    <div class="mode-cards">
-      <div class="mode-card" onclick="selectMode('practice')">
-        <div class="icon">📚</div><h3>Practice Mode</h3>
-        <div class="tagline">Learn at your own pace</div>
-        <ul><li>Full audio controls (play / pause / seek)</li><li>Adjustable speed (0.75× → 1.5×)</li><li>Replay any section</li><li>Submit when ready</li></ul>
-      </div>
-      <div class="mode-card simulation" onclick="selectMode('simulation')">
-        <div class="icon">🎯</div><h3>Simulation Mode</h3>
-        <div class="tagline">Real exam conditions</div>
-        <ul><li>No audio controls</li><li>All four parts play in sequence</li><li>~30s natural gap between parts</li><li>2-minute final check, auto-submits</li></ul>
-      </div>
-    </div>
-  </div>
-</div>
-<header class="site-header">
-  <div class="header-inner">
-    <span class="header-title">Cambridge 21 — Test 1 Listening<span class="mode-badge" id="modeBadge" style="display:none">Practice</span></span>
-    <div class="header-actions">
-      <span class="progress-pill"><span id="progressCount">0</span>/40</span>
-      <button class="btn btn-ghost" onclick="eraseHighlights()">Clear Highlights</button>
-      <button class="btn btn-ghost" onclick="resetAllAnswers()">↻ Reset</button>
-      <button class="btn btn-ghost" onclick="changeMode()">↺ Mode</button>
-      <button class="btn btn-primary" onclick="submitAnswers()">✓ Submit</button>
-    </div>
+<header class="top">
+  <a class="back" href="index.html">← Cambridge 21</a>
+  <h1>Test 1 — Listening</h1>
+  <div class="tools">
+    <button class="iconbtn" title="Theme" onclick="toggleTheme()">◐</button>
+    <button class="iconbtn" title="Reset" onclick="resetAll()">↻</button>
   </div>
 </header>
-<div id="hl-popup" onmousedown="event.preventDefault()">
-  <span class="hl-btn highlight" onclick="applyHighlight()">✎ Highlight</span><span class="hl-btn clear" onclick="clearHighlightAt()">✕ Clear</span>
-</div>
-<div class="now-playing" id="nowPlaying"><span><span class="pulse"></span><span id="npText">Recording in progress</span></span><span id="npClock">00:00</span></div>
-<div class="review-banner" id="reviewBanner"><span><span class="pulse"></span>Checking time — auto-submits when timer ends</span><span id="reviewClock">02:00</span></div>
-<main class="page-wrap">
-  <div class="page-heading">
-    <h1>Cambridge 21 — Test 1 Listening</h1>
-    <p>40 questions across 4 sections. Cambridge IELTS 21 Academic — Test 1.</p>
-  </div>
-  <div class="start-banner" id="startBanner" style="display:none">
-    <h3>Ready to begin?</h3>
-    <p>Audio plays once and runs through all four sections. After the recording ends you'll have 2 minutes to check your answers before they're auto-submitted.</p>
-    <button class="btn-start" onclick="startSimulation()">▶ Start Test</button>
-  </div>
-  <div class="audio-sticky" id="audioSticky">
-    <span class="audio-label"><strong>Section <span id="audio-num">1</span></strong> audio:</span>
-    <audio id="player" controls onplay="pauseOtherAudios(this)" preload="metadata" style="width:100%">
-      <source id="audio-src" src="audio/C21T1_Section_1.mp3" type="audio/mpeg">
-    </audio>
-    <div class="speed-row">
-      <span class="label">Speed:</span>
-      <button class="speed-btn" onclick="setSpeed(0.75)">0.75×</button>
-      <button class="speed-btn active" onclick="setSpeed(1)">1×</button>
-      <button class="speed-btn" onclick="setSpeed(1.25)">1.25×</button>
-      <button class="speed-btn" onclick="setSpeed(1.5)">1.5×</button>
-    </div>
-  </div>
-  <div class="part-tabs">
-    <button class="part-tab active" data-part="1" onclick="switchPart(1)">Section 1<small>Q 1–10</small></button>
-    <button class="part-tab" data-part="2" onclick="switchPart(2)">Section 2<small>Q 11–20</small></button>
-    <button class="part-tab" data-part="3" onclick="switchPart(3)">Section 3<small>Q 21–30</small></button>
-    <button class="part-tab" data-part="4" onclick="switchPart(4)">Section 4<small>Q 31–40</small></button>
-  </div>
-  <section class="part-section active" id="part-1">
-    <div class="part-header"><span class="part-badge">Section 1</span><span class="part-range">Questions 1–10</span></div>
-    <div class="part-body">
-      <h2 class="section-title">Oyster Bay Sailing Club</h2>
-      
-  <p class="q-label">Questions 1–6</p>
-  <p class="instruction">Complete the table below.<br><strong>Write ONE WORD AND/OR A NUMBER for each answer.</strong></p>
-  <div class="data-table-wrap">
-    <div class="data-table-title">Oyster Bay Sailing Club Courses</div>
-    <table class="data-table compact">
-      <thead><tr><th>Name of course</th><th>What you learn</th><th>Cost</th><th>Other information</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>Taster day</td>
-          <td>introduction to sailing</td>
-          <td>£120 if booking one place</td>
-          <td>small groups (max <span class="qnum-prefix">1</span><input type="text" class="ans-input" data-q="1" oninput="updateProgress()" style="width:80px"> people)</td>
-        </tr>
-        <tr>
-          <td>Level 1</td>
-          <td><ul>
-            <li>basic theory e.g. understanding the <span class="qnum-prefix">2</span><input type="text" class="ans-input" data-q="2" oninput="updateProgress()" style="width:110px"> and tides</li>
-            <li>basic sailing skills including <span class="qnum-prefix">3</span><input type="text" class="ans-input" data-q="3" oninput="updateProgress()" style="width:110px"> information</li>
-          </ul></td>
-          <td><ul>
-            <li>£200</li>
-            <li><span class="qnum-prefix">4</span><input type="text" class="ans-input" data-q="4" oninput="updateProgress()" style="width:110px"> available for club members</li>
-            <li>all inclusive (plus a useful <span class="qnum-prefix">5</span><input type="text" class="ans-input" data-q="5" oninput="updateProgress()" style="width:110px"> )</li>
-          </ul></td>
-          <td>a <span class="qnum-prefix">6</span><input type="text" class="ans-input" data-q="6" oninput="updateProgress()" style="width:110px"> at the end of the course for all participants</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="q-label" style="margin-top:24px">Questions 7–10</p>
-  <p class="instruction">Complete the notes below.<br><strong>Write ONE WORD ONLY for each answer.</strong></p>
-  <div class="notes-card"><h4>General information</h4>
-    <ul>
-      <li>Participants must be able to swim.</li>
-      <li>Bring suitable clothing, a <span class="qnum-prefix">7</span><input type="text" class="ans-input" data-q="7" oninput="updateProgress()" style="width:130px"> and toiletries (e.g. shampoo).</li>
-      <li>There is a <span class="qnum-prefix">8</span><input type="text" class="ans-input" data-q="8" oninput="updateProgress()" style="width:130px"> at the club.</li>
-      <li>Online training <span class="qnum-prefix">9</span><input type="text" class="ans-input" data-q="9" oninput="updateProgress()" style="width:130px"> are recommended.</li>
-      <li><span class="qnum-prefix">10</span><input type="text" class="ans-input" data-q="10" oninput="updateProgress()" style="width:130px"> are available for course participants.</li>
-    </ul>
-  </div>
-
-    </div>
-  </section><section class="part-section" id="part-2">
-    <div class="part-header"><span class="part-badge">Section 2</span><span class="part-range">Questions 11–20</span></div>
-    <div class="part-body">
-      <h2 class="section-title">Working as a Makeup Trainee</h2>
-      
-  <p class="q-label">Questions 11–16</p>
-  <p class="instruction">Choose the correct letter, <strong>A, B</strong> or <strong>C</strong>.</p>
-  <div class="mcq-group">
-      <div class="mcq-question"><span class="qnum">11</span> What should trainees always expect to get when working on low budget short films?</div>
-      <div class="mcq-options"><label class="mcq-option" onclick="selectMCQ(this,'q11')"><input type="radio" name="q11"><span class="mcq-radio"></span><span class="opt-letter">A</span> travel expenses</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q11')"><input type="radio" name="q11"><span class="mcq-radio"></span><span class="opt-letter">B</span> a minimum wage</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q11')"><input type="radio" name="q11"><span class="mcq-radio"></span><span class="opt-letter">C</span> meals</label></div>
-    </div>
-  <div class="mcq-group">
-      <div class="mcq-question"><span class="qnum">12</span> According to the speaker, on big budget films trainees may get experience of</div>
-      <div class="mcq-options"><label class="mcq-option" onclick="selectMCQ(this,'q12')"><input type="radio" name="q12"><span class="mcq-radio"></span><span class="opt-letter">A</span> makeup for special effects.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q12')"><input type="radio" name="q12"><span class="mcq-radio"></span><span class="opt-letter">B</span> working with different ethnicities.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q12')"><input type="radio" name="q12"><span class="mcq-radio"></span><span class="opt-letter">C</span> creating a variety of hair styles.</label></div>
-    </div>
-  <div class="mcq-group">
-      <div class="mcq-question"><span class="qnum">13</span> The speaker says a problem for makeup artists is</div>
-      <div class="mcq-options"><label class="mcq-option" onclick="selectMCQ(this,'q13')"><input type="radio" name="q13"><span class="mcq-radio"></span><span class="opt-letter">A</span> dealing with difficult directors.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q13')"><input type="radio" name="q13"><span class="mcq-radio"></span><span class="opt-letter">B</span> being shouted at by their supervisor.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q13')"><input type="radio" name="q13"><span class="mcq-radio"></span><span class="opt-letter">C</span> waiting around for hours doing nothing.</label></div>
-    </div>
-  <div class="mcq-group">
-      <div class="mcq-question"><span class="qnum">14</span> How did the speaker feel when she met famous actors for the first time?</div>
-      <div class="mcq-options"><label class="mcq-option" onclick="selectMCQ(this,'q14')"><input type="radio" name="q14"><span class="mcq-radio"></span><span class="opt-letter">A</span> very shy</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q14')"><input type="radio" name="q14"><span class="mcq-radio"></span><span class="opt-letter">B</span> very proud</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q14')"><input type="radio" name="q14"><span class="mcq-radio"></span><span class="opt-letter">C</span> very disappointed</label></div>
-    </div>
-  <div class="mcq-group">
-      <div class="mcq-question"><span class="qnum">15</span> What advice does the speaker give about makeup kits?</div>
-      <div class="mcq-options"><label class="mcq-option" onclick="selectMCQ(this,'q15')"><input type="radio" name="q15"><span class="mcq-radio"></span><span class="opt-letter">A</span> Always carry a basic kit with you.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q15')"><input type="radio" name="q15"><span class="mcq-radio"></span><span class="opt-letter">B</span> Only buy the best products for a makeup kit.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q15')"><input type="radio" name="q15"><span class="mcq-radio"></span><span class="opt-letter">C</span> Ask other makeup artists to check your kit.</label></div>
-    </div>
-  <div class="mcq-group">
-      <div class="mcq-question"><span class="qnum">16</span> What advice does the speaker give about creating a portfolio?</div>
-      <div class="mcq-options"><label class="mcq-option" onclick="selectMCQ(this,'q16')"><input type="radio" name="q16"><span class="mcq-radio"></span><span class="opt-letter">A</span> Keep print and digital photos.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q16')"><input type="radio" name="q16"><span class="mcq-radio"></span><span class="opt-letter">B</span> Only include a small selection of photos.</label>
-<label class="mcq-option" onclick="selectMCQ(this,'q16')"><input type="radio" name="q16"><span class="mcq-radio"></span><span class="opt-letter">C</span> Get permission to use photos.</label></div>
-    </div>
-  <p class="q-label" style="margin-top:24px">Questions 17–20</p>
-  <p class="instruction">What ability is required for each of the following duties?<br>Write the correct letter, <strong>A, B</strong> or <strong>C</strong>, next to questions 17–20.</p>
-  <div class="letter-bank"><div class="row"><strong>A</strong> being well-organised</div>
-<div class="row"><strong>B</strong> being flexible</div>
-<div class="row"><strong>C</strong> working quickly</div></div>
-  <p class="q-label">Duties</p>
-  <div class="label-row">
-    <div class="label-item"><span class="qnum-prefix">17</span><label>Prepping an actor</label><input type="text" class="ans-input" data-q="17" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">18</span><label>Continuity</label><input type="text" class="ans-input" data-q="18" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">19</span><label>General</label><input type="text" class="ans-input" data-q="19" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">20</span><label>Applying makeup</label><input type="text" class="ans-input" data-q="20" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-  </div>
-
-    </div>
-  </section><section class="part-section" id="part-3">
-    <div class="part-header"><span class="part-badge">Section 3</span><span class="part-range">Questions 21–30</span></div>
-    <div class="part-body">
-      <h2 class="section-title">Ocean Biodiversity — Student Discussion</h2>
-      
-  <p class="q-label">Questions 21 and 22</p>
-  <p class="instruction">Choose <strong>TWO</strong> letters, <strong>A–E</strong>.<br>Which <strong>TWO</strong> features of the lecture on ocean biodiversity had the greatest impact on the students?</p>
-  <div class="check-group" data-questions="21,22" data-max="2">
-<label class="check-option" onclick="toggleCheck(event,this,'A')"><input type="checkbox" value="A"><span class="check-box"></span><span class="opt-letter">A</span> the references to local problems</label>
-<label class="check-option" onclick="toggleCheck(event,this,'B')"><input type="checkbox" value="B"><span class="check-box"></span><span class="opt-letter">B</span> the broad focus of the examples</label>
-<label class="check-option" onclick="toggleCheck(event,this,'C')"><input type="checkbox" value="C"><span class="check-box"></span><span class="opt-letter">C</span> the practical suggestions for solutions</label>
-<label class="check-option" onclick="toggleCheck(event,this,'D')"><input type="checkbox" value="D"><span class="check-box"></span><span class="opt-letter">D</span> the type of issues discussed</label>
-<label class="check-option" onclick="toggleCheck(event,this,'E')"><input type="checkbox" value="E"><span class="check-box"></span><span class="opt-letter">E</span> the implications for government policy</label>
-  </div>
-  <p class="q-label" style="margin-top:24px">Questions 23 and 24</p>
-  <p class="instruction">Choose <strong>TWO</strong> letters, <strong>A–E</strong>.<br>Which <strong>TWO</strong> details about the research project particularly impressed the students?</p>
-  <div class="check-group" data-questions="23,24" data-max="2">
-<label class="check-option" onclick="toggleCheck(event,this,'A')"><input type="checkbox" value="A"><span class="check-box"></span><span class="opt-letter">A</span> the team's previous successes</label>
-<label class="check-option" onclick="toggleCheck(event,this,'B')"><input type="checkbox" value="B"><span class="check-box"></span><span class="opt-letter">B</span> its wide geographical scale</label>
-<label class="check-option" onclick="toggleCheck(event,this,'C')"><input type="checkbox" value="C"><span class="check-box"></span><span class="opt-letter">C</span> the use of new technology</label>
-<label class="check-option" onclick="toggleCheck(event,this,'D')"><input type="checkbox" value="D"><span class="check-box"></span><span class="opt-letter">D</span> the extensive statistical evidence</label>
-<label class="check-option" onclick="toggleCheck(event,this,'E')"><input type="checkbox" value="E"><span class="check-box"></span><span class="opt-letter">E</span> the large range of specialists involved</label>
-  </div>
-  <p class="q-label" style="margin-top:24px">Questions 25–30</p>
-  <p class="instruction">What is the students' opinion of each of the following resources related to ocean biodiversity?<br>Choose <strong>SIX</strong> answers from the box and write the correct letter, <strong>A–H</strong>, next to questions 25–30.</p>
-  <div class="letter-bank"><div class="row" style="text-align:center"><strong style="min-width:0">Opinions</strong></div>
-<div class="row"><strong>A</strong> This is aimed at a very specialist audience.</div>
-<div class="row"><strong>B</strong> This is now rather outdated.</div>
-<div class="row"><strong>C</strong> This was an effective description of a new danger.</div>
-<div class="row"><strong>D</strong> This suggests possible ways to improve the situation.</div>
-<div class="row"><strong>E</strong> This does not give a balanced account.</div>
-<div class="row"><strong>F</strong> This is too predictable to be useful.</div>
-<div class="row"><strong>G</strong> This gives insufficient evidence for its claims.</div>
-<div class="row"><strong>H</strong> This gives a clear explanation of the problems.</div></div>
-  <p class="q-label">Resources</p>
-  <div class="label-row">
-    <div class="label-item"><span class="qnum-prefix">25</span><label>Article on invasive lionfish</label><input type="text" class="ans-input" data-q="25" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">26</span><label>Documentary on microplastics</label><input type="text" class="ans-input" data-q="26" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">27</span><label>Podcast on ocean pollution</label><input type="text" class="ans-input" data-q="27" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">28</span><label>Book on coastal ecosystems</label><input type="text" class="ans-input" data-q="28" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">29</span><label>Article on metal toxicity</label><input type="text" class="ans-input" data-q="29" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-    <div class="label-item"><span class="qnum-prefix">30</span><label>Podcast on floating marine cities</label><input type="text" class="ans-input" data-q="30" oninput="updateProgress()" style="width:60px; text-transform:uppercase" maxlength="1"></div>
-  </div>
-
-    </div>
-  </section><section class="part-section" id="part-4">
-    <div class="part-header"><span class="part-badge">Section 4</span><span class="part-range">Questions 31–40</span></div>
-    <div class="part-body">
-      <h2 class="section-title">Sources of Rubber</h2>
-      
-  <p class="q-label">Questions 31–40</p>
-  <p class="instruction">Complete the notes below.<br><strong>Write ONE WORD ONLY for each answer.</strong></p>
-  <div class="notes-card"><h4>Sources of rubber</h4>
-    <p>Three resources which are essential for industrial civilisation</p>
-    <ul>
-      <li><span class="qnum-prefix">31</span><input type="text" class="ans-input" data-q="31" oninput="updateProgress()" style="width:130px"></li>
-      <li>fossil fuels</li>
-      <li>rubber</li>
-    </ul>
-    <h5>Natural rubber</h5>
-    <p>This mainly comes from the Pará rubber tree, now cultivated in South-East Asia. The supply is limited because</p>
-    <ul>
-      <li>the growth of the tree is <span class="qnum-prefix">32</span><input type="text" class="ans-input" data-q="32" oninput="updateProgress()" style="width:130px"></li>
-      <li>production cannot easily be adjusted because of increasing or decreasing <span class="qnum-prefix">33</span><input type="text" class="ans-input" data-q="33" oninput="updateProgress()" style="width:130px"></li>
-      <li>the tree only grows near the <span class="qnum-prefix">34</span><input type="text" class="ans-input" data-q="34" oninput="updateProgress()" style="width:130px"></li>
-      <li>extracting the latex (rubber) is labour-intensive</li>
-      <li>it is very difficult to <span class="qnum-prefix">35</span><input type="text" class="ans-input" data-q="35" oninput="updateProgress()" style="width:130px"> rubber after production.</li>
-    </ul>
-    <h5>New threats include</h5>
-    <ul>
-      <li>lack of genetic diversity, leading to danger of disease caused by a <span class="qnum-prefix">36</span><input type="text" class="ans-input" data-q="36" oninput="updateProgress()" style="width:130px"></li>
-      <li>a shift to the cultivation of palm oil</li>
-      <li>extreme <span class="qnum-prefix">37</span><input type="text" class="ans-input" data-q="37" oninput="updateProgress()" style="width:130px"> events.</li>
-    </ul>
-    <h5>Synthetic rubber</h5>
-    <ul>
-      <li>may be used for engine parts and cooking utensils</li>
-      <li>is less <span class="qnum-prefix">38</span><input type="text" class="ans-input" data-q="38" oninput="updateProgress()" style="width:130px"> than natural rubber</li>
-      <li>is unsuitable for many purposes e.g. the tyres of aircraft.</li>
-    </ul>
-    <h5>An alternative source of natural rubber</h5>
-    <ul>
-      <li>A wild flower (a type of dandelion) has rubber in its <span class="qnum-prefix">39</span><input type="text" class="ans-input" data-q="39" oninput="updateProgress()" style="width:130px"> .</li>
-      <li>It can be grown in many locations and does not require good <span class="qnum-prefix">40</span><input type="text" class="ans-input" data-q="40" oninput="updateProgress()" style="width:130px"> .</li>
-    </ul>
-  </div>
-
-    </div>
-  </section>
-  <div class="submit-wrap" id="submitWrap" style="display:none"><button class="btn-submit" onclick="submitAnswers()">Submit Answers</button></div>
-  <section class="transcript-card" id="transcriptCard">
-    <div class="transcript-head" onclick="toggleTranscript()">
-      <h2>📖 Audioscript — Section <span id="trSecNum">1</span></h2>
-      <span class="tr-note">Follows the audio — tap any line to replay it</span>
-      <button class="tr-toggle" id="trToggle" type="button">Show</button>
-    </div>
-    <div class="transcript-body" id="transcriptBody"></div>
-  </section>
-</main>
-<div class="modal-overlay" id="resultsModal">
-  <div class="modal">
-    <div style="font-size:2rem; margin-bottom:8px">🎯</div>
-    <div class="modal-score" id="modalScore">–</div>
-    <div class="modal-total">out of 40</div>
-    <div class="modal-band" id="modalBand">Estimated Band –</div>
-    <br>
-    <button class="modal-close" onclick="openScriptFromResults()" style="background:var(--accent);color:#fff;border-color:var(--accent);margin-right:8px">📄 Review Answers</button>
-    <button class="modal-close" onclick="closeModal()">✕ Close</button>
-  </div>
-</div>
-<div class="script-modal-overlay" id="scriptModal">
-  <div class="script-modal">
-    <div class="script-modal-header"><h2>📄 Answer Key</h2><button class="script-modal-close-x" onclick="closeScript()">✕</button></div>
-    <div class="script-modal-body">
-      <div class="summary-stats">
-        <div class="stat-item stat-correct"><div class="stat-value" id="statCorrect">0</div><div class="stat-label">Correct</div></div>
-        <div class="stat-item stat-wrong"><div class="stat-value" id="statWrong">0</div><div class="stat-label">Incorrect</div></div>
-        <div class="stat-item stat-band"><div class="stat-value" id="statBand">–</div><div class="stat-label">Est. Band</div></div>
+<main class="wrap">
+  <!-- LEFT -->
+  <div class="left">
+    <div class="col-h" id="partTitle"></div>
+    <div class="audio-box">
+      <div class="player-row">
+        <audio id="player" controls preload="metadata"><source id="asrc" src="" type="audio/mpeg"></audio>
+        <div class="speed">
+          <button onclick="setSpeed(.75,this)">0.75×</button>
+          <button class="active" onclick="setSpeed(1,this)">1×</button>
+          <button onclick="setSpeed(1.25,this)">1.25×</button>
+        </div>
       </div>
-      <div id="answerRows"></div>
+    </div>
+    <div class="transcript-card open" id="trCard">
+      <div class="transcript-head" onclick="toggleTr()"><h3>Audioscript</h3><span class="chev" id="trChev">▾</span></div>
+      <div class="tr-hint">Green highlights show where each answer is heard · tap a line to replay it.</div>
+      <div class="transcript-body" id="trBody"></div>
     </div>
   </div>
-</div>
+  <!-- RIGHT -->
+  <div class="right" id="qPane"></div>
+</main>
+<nav class="botnav">
+  <button class="navbtn wide" onclick="submitAnswers()">Scores</button>
+  <button class="navbtn" data-part="1" onclick="switchPart(1)">1</button>
+  <button class="navbtn" data-part="2" onclick="switchPart(2)">2</button>
+  <button class="navbtn" data-part="3" onclick="switchPart(3)">3</button>
+  <button class="navbtn" data-part="4" onclick="switchPart(4)">4</button>
+  <a class="navbtn wide" href="t1-reading.html">Reading →</a>
+</nav>
+<div class="modal-ov" id="resModal"><div class="modal">
+  <div style="font-size:1.8rem">🎧</div>
+  <div class="score" id="mScore">–</div><div class="of">out of 40</div>
+  <div class="band" id="mBand">Band –</div><br>
+  <button class="primary" onclick="showReview()">Review answers</button>
+  <button onclick="closeModal()">Close</button>
+</div></div>
+<div class="modal-ov" id="revModal"><div class="modal" style="max-width:620px">
+  <h2 style="font-family:'Source Serif 4',serif;margin-bottom:12px">Answer key</h2>
+  <div class="review-list" id="revList"></div>
+  <button style="margin-top:12px" onclick="document.getElementById('revModal').classList.remove('open')">Close</button>
+</div></div>
 <script>
+const PARTS = {"1": "<h2 class=\"section-title\">Oyster Bay Sailing Club</h2>\n      \n  <p class=\"q-label\">Questions 1–6</p>\n  <p class=\"instruction\">Complete the table below.<br><strong>Write ONE WORD AND/OR A NUMBER for each answer.</strong></p>\n  <div class=\"data-table-wrap\">\n    <div class=\"data-table-title\">Oyster Bay Sailing Club Courses</div>\n    <table class=\"data-table compact\">\n      <thead><tr><th>Name of course</th><th>What you learn</th><th>Cost</th><th>Other information</th></tr></thead>\n      <tbody>\n        <tr>\n          <td>Taster day</td>\n          <td>introduction to sailing</td>\n          <td>£120 if booking one place</td>\n          <td>small groups (max <span class=\"qnum-prefix\">1</span><input type=\"text\" class=\"ans-input\" data-q=\"1\" oninput=\"updateProgress()\" style=\"width:80px\"> people)</td>\n        </tr>\n        <tr>\n          <td>Level 1</td>\n          <td><ul>\n            <li>basic theory e.g. understanding the <span class=\"qnum-prefix\">2</span><input type=\"text\" class=\"ans-input\" data-q=\"2\" oninput=\"updateProgress()\" style=\"width:110px\"> and tides</li>\n            <li>basic sailing skills including <span class=\"qnum-prefix\">3</span><input type=\"text\" class=\"ans-input\" data-q=\"3\" oninput=\"updateProgress()\" style=\"width:110px\"> information</li>\n          </ul></td>\n          <td><ul>\n            <li>£200</li>\n            <li><span class=\"qnum-prefix\">4</span><input type=\"text\" class=\"ans-input\" data-q=\"4\" oninput=\"updateProgress()\" style=\"width:110px\"> available for club members</li>\n            <li>all inclusive (plus a useful <span class=\"qnum-prefix\">5</span><input type=\"text\" class=\"ans-input\" data-q=\"5\" oninput=\"updateProgress()\" style=\"width:110px\"> )</li>\n          </ul></td>\n          <td>a <span class=\"qnum-prefix\">6</span><input type=\"text\" class=\"ans-input\" data-q=\"6\" oninput=\"updateProgress()\" style=\"width:110px\"> at the end of the course for all participants</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <p class=\"q-label\" style=\"margin-top:24px\">Questions 7–10</p>\n  <p class=\"instruction\">Complete the notes below.<br><strong>Write ONE WORD ONLY for each answer.</strong></p>\n  <div class=\"notes-card\"><h4>General information</h4>\n    <ul>\n      <li>Participants must be able to swim.</li>\n      <li>Bring suitable clothing, a <span class=\"qnum-prefix\">7</span><input type=\"text\" class=\"ans-input\" data-q=\"7\" oninput=\"updateProgress()\" style=\"width:130px\"> and toiletries (e.g. shampoo).</li>\n      <li>There is a <span class=\"qnum-prefix\">8</span><input type=\"text\" class=\"ans-input\" data-q=\"8\" oninput=\"updateProgress()\" style=\"width:130px\"> at the club.</li>\n      <li>Online training <span class=\"qnum-prefix\">9</span><input type=\"text\" class=\"ans-input\" data-q=\"9\" oninput=\"updateProgress()\" style=\"width:130px\"> are recommended.</li>\n      <li><span class=\"qnum-prefix\">10</span><input type=\"text\" class=\"ans-input\" data-q=\"10\" oninput=\"updateProgress()\" style=\"width:130px\"> are available for course participants.</li>\n    </ul>\n  </div>", "2": "<h2 class=\"section-title\">Working as a Makeup Trainee</h2>\n      \n  <p class=\"q-label\">Questions 11–16</p>\n  <p class=\"instruction\">Choose the correct letter, <strong>A, B</strong> or <strong>C</strong>.</p>\n  <div class=\"mcq-group\">\n      <div class=\"mcq-question\"><span class=\"qnum\">11</span> What should trainees always expect to get when working on low budget short films?</div>\n      <div class=\"mcq-options\"><label class=\"mcq-option\" onclick=\"selectMCQ(this,'q11')\"><input type=\"radio\" name=\"q11\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">A</span> travel expenses</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q11')\"><input type=\"radio\" name=\"q11\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">B</span> a minimum wage</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q11')\"><input type=\"radio\" name=\"q11\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">C</span> meals</label></div>\n    </div>\n  <div class=\"mcq-group\">\n      <div class=\"mcq-question\"><span class=\"qnum\">12</span> According to the speaker, on big budget films trainees may get experience of</div>\n      <div class=\"mcq-options\"><label class=\"mcq-option\" onclick=\"selectMCQ(this,'q12')\"><input type=\"radio\" name=\"q12\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">A</span> makeup for special effects.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q12')\"><input type=\"radio\" name=\"q12\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">B</span> working with different ethnicities.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q12')\"><input type=\"radio\" name=\"q12\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">C</span> creating a variety of hair styles.</label></div>\n    </div>\n  <div class=\"mcq-group\">\n      <div class=\"mcq-question\"><span class=\"qnum\">13</span> The speaker says a problem for makeup artists is</div>\n      <div class=\"mcq-options\"><label class=\"mcq-option\" onclick=\"selectMCQ(this,'q13')\"><input type=\"radio\" name=\"q13\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">A</span> dealing with difficult directors.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q13')\"><input type=\"radio\" name=\"q13\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">B</span> being shouted at by their supervisor.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q13')\"><input type=\"radio\" name=\"q13\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">C</span> waiting around for hours doing nothing.</label></div>\n    </div>\n  <div class=\"mcq-group\">\n      <div class=\"mcq-question\"><span class=\"qnum\">14</span> How did the speaker feel when she met famous actors for the first time?</div>\n      <div class=\"mcq-options\"><label class=\"mcq-option\" onclick=\"selectMCQ(this,'q14')\"><input type=\"radio\" name=\"q14\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">A</span> very shy</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q14')\"><input type=\"radio\" name=\"q14\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">B</span> very proud</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q14')\"><input type=\"radio\" name=\"q14\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">C</span> very disappointed</label></div>\n    </div>\n  <div class=\"mcq-group\">\n      <div class=\"mcq-question\"><span class=\"qnum\">15</span> What advice does the speaker give about makeup kits?</div>\n      <div class=\"mcq-options\"><label class=\"mcq-option\" onclick=\"selectMCQ(this,'q15')\"><input type=\"radio\" name=\"q15\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">A</span> Always carry a basic kit with you.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q15')\"><input type=\"radio\" name=\"q15\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">B</span> Only buy the best products for a makeup kit.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q15')\"><input type=\"radio\" name=\"q15\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">C</span> Ask other makeup artists to check your kit.</label></div>\n    </div>\n  <div class=\"mcq-group\">\n      <div class=\"mcq-question\"><span class=\"qnum\">16</span> What advice does the speaker give about creating a portfolio?</div>\n      <div class=\"mcq-options\"><label class=\"mcq-option\" onclick=\"selectMCQ(this,'q16')\"><input type=\"radio\" name=\"q16\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">A</span> Keep print and digital photos.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q16')\"><input type=\"radio\" name=\"q16\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">B</span> Only include a small selection of photos.</label>\n<label class=\"mcq-option\" onclick=\"selectMCQ(this,'q16')\"><input type=\"radio\" name=\"q16\"><span class=\"mcq-radio\"></span><span class=\"opt-letter\">C</span> Get permission to use photos.</label></div>\n    </div>\n  <p class=\"q-label\" style=\"margin-top:24px\">Questions 17–20</p>\n  <p class=\"instruction\">What ability is required for each of the following duties?<br>Write the correct letter, <strong>A, B</strong> or <strong>C</strong>, next to questions 17–20.</p>\n  <div class=\"letter-bank\"><div class=\"row\"><strong>A</strong> being well-organised</div>\n<div class=\"row\"><strong>B</strong> being flexible</div>\n<div class=\"row\"><strong>C</strong> working quickly</div></div>\n  <p class=\"q-label\">Duties</p>\n  <div class=\"label-row\">\n    <div class=\"label-item\"><span class=\"qnum-prefix\">17</span><label>Prepping an actor</label><input type=\"text\" class=\"ans-input\" data-q=\"17\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">18</span><label>Continuity</label><input type=\"text\" class=\"ans-input\" data-q=\"18\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">19</span><label>General</label><input type=\"text\" class=\"ans-input\" data-q=\"19\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">20</span><label>Applying makeup</label><input type=\"text\" class=\"ans-input\" data-q=\"20\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n  </div>", "3": "<h2 class=\"section-title\">Ocean Biodiversity — Student Discussion</h2>\n      \n  <p class=\"q-label\">Questions 21 and 22</p>\n  <p class=\"instruction\">Choose <strong>TWO</strong> letters, <strong>A–E</strong>.<br>Which <strong>TWO</strong> features of the lecture on ocean biodiversity had the greatest impact on the students?</p>\n  <div class=\"check-group\" data-questions=\"21,22\" data-max=\"2\">\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'A')\"><input type=\"checkbox\" value=\"A\"><span class=\"check-box\"></span><span class=\"opt-letter\">A</span> the references to local problems</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'B')\"><input type=\"checkbox\" value=\"B\"><span class=\"check-box\"></span><span class=\"opt-letter\">B</span> the broad focus of the examples</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'C')\"><input type=\"checkbox\" value=\"C\"><span class=\"check-box\"></span><span class=\"opt-letter\">C</span> the practical suggestions for solutions</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'D')\"><input type=\"checkbox\" value=\"D\"><span class=\"check-box\"></span><span class=\"opt-letter\">D</span> the type of issues discussed</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'E')\"><input type=\"checkbox\" value=\"E\"><span class=\"check-box\"></span><span class=\"opt-letter\">E</span> the implications for government policy</label>\n  </div>\n  <p class=\"q-label\" style=\"margin-top:24px\">Questions 23 and 24</p>\n  <p class=\"instruction\">Choose <strong>TWO</strong> letters, <strong>A–E</strong>.<br>Which <strong>TWO</strong> details about the research project particularly impressed the students?</p>\n  <div class=\"check-group\" data-questions=\"23,24\" data-max=\"2\">\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'A')\"><input type=\"checkbox\" value=\"A\"><span class=\"check-box\"></span><span class=\"opt-letter\">A</span> the team's previous successes</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'B')\"><input type=\"checkbox\" value=\"B\"><span class=\"check-box\"></span><span class=\"opt-letter\">B</span> its wide geographical scale</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'C')\"><input type=\"checkbox\" value=\"C\"><span class=\"check-box\"></span><span class=\"opt-letter\">C</span> the use of new technology</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'D')\"><input type=\"checkbox\" value=\"D\"><span class=\"check-box\"></span><span class=\"opt-letter\">D</span> the extensive statistical evidence</label>\n<label class=\"check-option\" onclick=\"toggleCheck(event,this,'E')\"><input type=\"checkbox\" value=\"E\"><span class=\"check-box\"></span><span class=\"opt-letter\">E</span> the large range of specialists involved</label>\n  </div>\n  <p class=\"q-label\" style=\"margin-top:24px\">Questions 25–30</p>\n  <p class=\"instruction\">What is the students' opinion of each of the following resources related to ocean biodiversity?<br>Choose <strong>SIX</strong> answers from the box and write the correct letter, <strong>A–H</strong>, next to questions 25–30.</p>\n  <div class=\"letter-bank\"><div class=\"row\" style=\"text-align:center\"><strong style=\"min-width:0\">Opinions</strong></div>\n<div class=\"row\"><strong>A</strong> This is aimed at a very specialist audience.</div>\n<div class=\"row\"><strong>B</strong> This is now rather outdated.</div>\n<div class=\"row\"><strong>C</strong> This was an effective description of a new danger.</div>\n<div class=\"row\"><strong>D</strong> This suggests possible ways to improve the situation.</div>\n<div class=\"row\"><strong>E</strong> This does not give a balanced account.</div>\n<div class=\"row\"><strong>F</strong> This is too predictable to be useful.</div>\n<div class=\"row\"><strong>G</strong> This gives insufficient evidence for its claims.</div>\n<div class=\"row\"><strong>H</strong> This gives a clear explanation of the problems.</div></div>\n  <p class=\"q-label\">Resources</p>\n  <div class=\"label-row\">\n    <div class=\"label-item\"><span class=\"qnum-prefix\">25</span><label>Article on invasive lionfish</label><input type=\"text\" class=\"ans-input\" data-q=\"25\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">26</span><label>Documentary on microplastics</label><input type=\"text\" class=\"ans-input\" data-q=\"26\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">27</span><label>Podcast on ocean pollution</label><input type=\"text\" class=\"ans-input\" data-q=\"27\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">28</span><label>Book on coastal ecosystems</label><input type=\"text\" class=\"ans-input\" data-q=\"28\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">29</span><label>Article on metal toxicity</label><input type=\"text\" class=\"ans-input\" data-q=\"29\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n    <div class=\"label-item\"><span class=\"qnum-prefix\">30</span><label>Podcast on floating marine cities</label><input type=\"text\" class=\"ans-input\" data-q=\"30\" oninput=\"updateProgress()\" style=\"width:60px; text-transform:uppercase\" maxlength=\"1\"></div>\n  </div>", "4": "<h2 class=\"section-title\">Sources of Rubber</h2>\n      \n  <p class=\"q-label\">Questions 31–40</p>\n  <p class=\"instruction\">Complete the notes below.<br><strong>Write ONE WORD ONLY for each answer.</strong></p>\n  <div class=\"notes-card\"><h4>Sources of rubber</h4>\n    <p>Three resources which are essential for industrial civilisation</p>\n    <ul>\n      <li><span class=\"qnum-prefix\">31</span><input type=\"text\" class=\"ans-input\" data-q=\"31\" oninput=\"updateProgress()\" style=\"width:130px\"></li>\n      <li>fossil fuels</li>\n      <li>rubber</li>\n    </ul>\n    <h5>Natural rubber</h5>\n    <p>This mainly comes from the Pará rubber tree, now cultivated in South-East Asia. The supply is limited because</p>\n    <ul>\n      <li>the growth of the tree is <span class=\"qnum-prefix\">32</span><input type=\"text\" class=\"ans-input\" data-q=\"32\" oninput=\"updateProgress()\" style=\"width:130px\"></li>\n      <li>production cannot easily be adjusted because of increasing or decreasing <span class=\"qnum-prefix\">33</span><input type=\"text\" class=\"ans-input\" data-q=\"33\" oninput=\"updateProgress()\" style=\"width:130px\"></li>\n      <li>the tree only grows near the <span class=\"qnum-prefix\">34</span><input type=\"text\" class=\"ans-input\" data-q=\"34\" oninput=\"updateProgress()\" style=\"width:130px\"></li>\n      <li>extracting the latex (rubber) is labour-intensive</li>\n      <li>it is very difficult to <span class=\"qnum-prefix\">35</span><input type=\"text\" class=\"ans-input\" data-q=\"35\" oninput=\"updateProgress()\" style=\"width:130px\"> rubber after production.</li>\n    </ul>\n    <h5>New threats include</h5>\n    <ul>\n      <li>lack of genetic diversity, leading to danger of disease caused by a <span class=\"qnum-prefix\">36</span><input type=\"text\" class=\"ans-input\" data-q=\"36\" oninput=\"updateProgress()\" style=\"width:130px\"></li>\n      <li>a shift to the cultivation of palm oil</li>\n      <li>extreme <span class=\"qnum-prefix\">37</span><input type=\"text\" class=\"ans-input\" data-q=\"37\" oninput=\"updateProgress()\" style=\"width:130px\"> events.</li>\n    </ul>\n    <h5>Synthetic rubber</h5>\n    <ul>\n      <li>may be used for engine parts and cooking utensils</li>\n      <li>is less <span class=\"qnum-prefix\">38</span><input type=\"text\" class=\"ans-input\" data-q=\"38\" oninput=\"updateProgress()\" style=\"width:130px\"> than natural rubber</li>\n      <li>is unsuitable for many purposes e.g. the tyres of aircraft.</li>\n    </ul>\n    <h5>An alternative source of natural rubber</h5>\n    <ul>\n      <li>A wild flower (a type of dandelion) has rubber in its <span class=\"qnum-prefix\">39</span><input type=\"text\" class=\"ans-input\" data-q=\"39\" oninput=\"updateProgress()\" style=\"width:130px\"> .</li>\n      <li>It can be grown in many locations and does not require good <span class=\"qnum-prefix\">40</span><input type=\"text\" class=\"ans-input\" data-q=\"40\" oninput=\"updateProgress()\" style=\"width:130px\"> .</li>\n    </ul>\n  </div>"};
+const TITLES = {"1": "Oyster Bay Sailing Club", "2": "Working as a Makeup Trainee", "3": "Ocean Biodiversity — Student Discussion", "4": "Sources of Rubber"};
+const audioTracks = {"1": "audio/C21T1_Section_1.mp3", "2": "audio/C21T1_Section_2.mp3", "3": "audio/C21T1_Section_3.mp3", "4": "audio/C21T1_Section_4.mp3"};
 const correctAnswers = {"1": ["10", "ten"], "2": ["weather"], "3": ["safety"], "4": ["discount", "discounts"], "5": ["dictionary"], "6": ["certificate"], "7": ["towel"], "8": ["cafe", "café"], "9": ["videos"], "10": ["lockers"], "11": "A", "12": "B", "13": "A", "14": "A", "15": "A", "16": "C", "17": "C", "18": "A", "19": "B", "20": "C", "25": "G", "26": "B", "27": "F", "28": "H", "29": "A", "30": "E", "31": ["metals", "metal"], "32": ["slow"], "33": ["demand"], "34": ["equator"], "35": ["recycle"], "36": ["fungus"], "37": ["weather"], "38": ["strong"], "39": ["roots"], "40": ["soil"]};
 const multiCorrect = {"21": {"inputs": ["21", "22"], "accept": ["B", "D"]}, "23": {"inputs": ["23", "24"], "accept": ["C", "E"]}};
-
-const audioTracks = {"1": "audio/C21T1_Section_1.mp3", "2": "audio/C21T1_Section_2.mp3", "3": "audio/C21T1_Section_3.mp3", "4": "audio/C21T1_Section_4.mp3"};
-function pauseOtherAudios(active) { document.querySelectorAll('audio').forEach(a => { if (a !== active && !a.paused) try { a.pause(); } catch(e){} }); }
-const player = document.getElementById('player');
-const audioSrc = document.getElementById('audio-src');
-const audioNum = document.getElementById('audio-num');
-player.addEventListener('play', () => pauseOtherAudios(player));
-player.addEventListener('playing', () => pauseOtherAudios(player));
-function setSpeed(rate) {
-  player.playbackRate = rate;
-  document.querySelectorAll('.speed-btn').forEach(b => b.classList.toggle('active', parseFloat(b.textContent) === rate));
-}
-function loadTrackForPart(n) { player.src = audioTracks[n]; audioNum.textContent = n; player.load(); }
-function switchPart(n) {
-  document.querySelectorAll('.part-tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.part-tab[data-part="${n}"]`).classList.add('active');
-  document.querySelectorAll('.part-section').forEach(s => s.classList.remove('active'));
-  document.getElementById('part-'+n).classList.add('active');
-  if (currentMode !== 'simulation') loadTrackForPart(n);
-  const sw = document.getElementById('submitWrap');
-  if (sw) sw.style.display = n === 4 ? 'block' : 'none';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-let currentMode = null, currentSimSection = 0, reviewInterval = null, simHasStarted = false;
-function selectMode(mode) {
-  currentMode = mode;
-  document.getElementById('modeModal').classList.remove('open');
-  const badge = document.getElementById('modeBadge');
-  badge.style.display = 'inline-block';
-  if (mode === 'simulation') {
-    document.body.classList.add('sim-mode'); document.body.classList.remove('practice-mode');
-    badge.textContent = 'Simulation'; badge.classList.add('sim');
-    document.getElementById('startBanner').style.display = 'block';
-    player.removeAttribute('controls');
-  } else {
-    document.body.classList.add('practice-mode'); document.body.classList.remove('sim-mode');
-    badge.textContent = 'Practice'; badge.classList.remove('sim');
-  }
-}
-function changeMode() {
-  if (!confirm('Change mode? Audio will reset (your answers stay).')) return;
-  try { player.pause(); player.currentTime = 0; } catch(e){}
-  if (reviewInterval) clearInterval(reviewInterval);
-  reviewInterval = null;
-  document.getElementById('nowPlaying').classList.remove('show');
-  document.getElementById('reviewBanner').classList.remove('show');
-  document.body.classList.remove('sim-mode','practice-mode','test-started');
-  player.setAttribute('controls','');
-  simHasStarted = false; currentSimSection = 0;
-  document.getElementById('modeModal').classList.add('open');
-}
-function startSimulation() {
-  if (simHasStarted) return;
-  simHasStarted = true;
-  document.body.classList.add('test-started');
-  switchPart(1);
-  playSimSection(0);
-}
-function playSimSection(i) {
-  if (i > 3) return;
-  currentSimSection = i;
-  const np = document.getElementById('nowPlaying');
-  np.classList.add('show');
-  switchPart(i+1);
-  loadTrackForPart(i+1);
-  document.getElementById('npText').textContent = `Section ${i+1} of 4 — Listening`;
-  player.ontimeupdate = () => {
-    const t = Math.floor(player.currentTime);
-    const m = String(Math.floor(t/60)).padStart(2,'0');
-    const s = String(t%60).padStart(2,'0');
-    document.getElementById('npClock').textContent = `${m}:${s}`;
-  };
-  player.onended = () => onSimSectionEnd(i);
-  player.play().catch(() => {
-    np.innerHTML = `<span><span class="pulse"></span>Tap to resume Section ${i+1}</span>`;
-    np.style.cursor = 'pointer';
-    np.onclick = () => { player.play(); np.style.cursor = ''; np.onclick = null; };
-  });
-}
-function onSimSectionEnd(i) {
-  if (currentMode !== 'simulation') return;
-  if (i < 3) playSimSection(i+1);
-  else { document.getElementById('nowPlaying').classList.remove('show'); startReviewCountdown(); }
-}
-function startReviewCountdown() {
-  const banner = document.getElementById('reviewBanner');
-  const clock = document.getElementById('reviewClock');
-  banner.classList.add('show');
-  let secs = 120;
-  const tick = () => {
-    const m = String(Math.floor(secs/60)).padStart(2,'0');
-    const s = String(secs%60).padStart(2,'0');
-    clock.textContent = `${m}:${s}`;
-    if (secs <= 0) { clearInterval(reviewInterval); banner.classList.remove('show'); submitAnswers(); return; }
-    secs--;
-  };
-  tick();
-  reviewInterval = setInterval(tick, 1000);
-}
-function getUserAnswers() {
-  const ua = {};
-  document.querySelectorAll('input[type="text"][data-q]').forEach(inp => { ua[inp.dataset.q] = inp.value.trim(); });
-  document.querySelectorAll('input[type="radio"]:checked').forEach(r => {
-    const m = r.name.match(/^q(\d+)$/);
-    if (!m) return;
-    const opt = r.closest('.mcq-option');
-    if (opt) {
-      const letter = opt.querySelector('.opt-letter');
-      if (letter) ua[m[1]] = letter.textContent.trim();
-    }
-  });
-  document.querySelectorAll('.check-group').forEach(group => {
-    const qs = (group.dataset.questions || '').split(',').map(s => s.trim()).filter(Boolean);
-    const sel = Array.from(group.querySelectorAll('input[type="checkbox"]:checked')).map(i => i.value);
-    qs.forEach((q, i) => { ua[q] = sel[i] || ''; });
-  });
-  return ua;
-}
-const normStr = s => (s ?? '').toString().trim().toLowerCase().replace(/[.,!?;:'"‘’“”()]/g,'').replace(/[-_]/g,' ').replace(/\s+/g,' ').trim();
-function isCorrect(u, c) {
-  if (u === undefined || u === null || u === '') return false;
-  const userNorm = normStr(u);
-  if (!userNorm) return false;
-  const digitsOnly = s => s.replace(/[^\d]/g,'');
-  const userDigits = digitsOnly(userNorm);
-  const tryMatch = v => {
-    const vNorm = normStr(v);
-    if (vNorm === userNorm) return true;
-    const vDigits = digitsOnly(vNorm);
-    if (userDigits && vDigits && userDigits.length >= 4 && userDigits === vDigits) return true;
-    return false;
-  };
-  if (Array.isArray(c)) return c.some(tryMatch);
-  return tryMatch(c);
-}
-function multiPoints(qKey, ua) {
-  const spec = multiCorrect[qKey];
-  if (!spec) return 0;
-  const slots = spec.inputs || [];
-  const userValues = slots.map(k => normStr(ua[k] || ''));
-  let pts = 0;
-  if (spec.accept) {
-    const acceptNorm = spec.accept.map(a => normStr(a));
-    const used = new Set();
-    userValues.forEach(uv => {
-      if (!uv) return;
-      for (let i = 0; i < acceptNorm.length; i++) {
-        if (used.has(i)) continue;
-        if (uv === acceptNorm[i]) { used.add(i); pts++; break; }
-      }
-    });
-  } else if (spec.groups) {
-    const usedGroups = new Set();
-    userValues.forEach(uv => {
-      if (!uv) return;
-      for (let i = 0; i < spec.groups.length; i++) {
-        if (usedGroups.has(i)) continue;
-        const accNorm = spec.groups[i].map(a => normStr(a));
-        if (accNorm.some(a => uv === a || uv.split(/\s+/).includes(a))) {
-          usedGroups.add(i); pts++; break;
-        }
-      }
-    });
-  }
-  return pts;
-}
-function computeSlotMatches(qKey, ua) {
-  const spec = multiCorrect[qKey];
-  if (!spec) return [];
-  const slots = spec.inputs || [];
-  const userValues = slots.map(k => normStr(ua[k] || ''));
-  const results = new Array(slots.length).fill(false);
-  if (spec.accept) {
-    const acceptNorm = spec.accept.map(a => normStr(a));
-    const used = new Set();
-    userValues.forEach((uv, idx) => {
-      if (!uv) return;
-      for (let i = 0; i < acceptNorm.length; i++) {
-        if (used.has(i)) continue;
-        if (uv === acceptNorm[i]) { used.add(i); results[idx] = true; return; }
-      }
-    });
-  } else if (spec.groups) {
-    const usedGroups = new Set();
-    userValues.forEach((uv, idx) => {
-      if (!uv) return;
-      for (let i = 0; i < spec.groups.length; i++) {
-        if (usedGroups.has(i)) continue;
-        const accNorm = spec.groups[i].map(a => normStr(a));
-        if (accNorm.some(a => uv === a || uv.split(/\s+/).includes(a))) {
-          usedGroups.add(i); results[idx] = true; return;
-        }
-      }
-    });
-  }
-  return results;
-}
-function multiCorrectDisplay(qKey) {
-  const spec = multiCorrect[qKey];
-  if (!spec) return '';
-  if (spec.accept) return spec.accept.join(', ') + ' (in any order)';
-  if (spec.groups) return spec.groups.map(g => g[0]).join(' / ') + ' (in either order)';
-  return '';
-}
-function displayCorrect(c) { return Array.isArray(c) ? c[0] : c; }
-function selectMCQ(el, name) {
-  document.querySelectorAll(`[name="${name}"]`).forEach(r => r.closest('.mcq-option').classList.remove('selected'));
-  el.classList.add('selected');
-  el.querySelector('input').checked = true;
-  updateProgress();
-}
-function toggleCheck(evt, label, letter) {
-  evt.preventDefault();
-  const cb = label.querySelector('input[type="checkbox"]');
-  const group = label.closest('.check-group');
-  const max = parseInt(group.dataset.max || '99', 10);
-  if (cb.checked) { cb.checked = false; label.classList.remove('selected'); updateProgress(); return; }
-  const currentlyChecked = group.querySelectorAll('input[type="checkbox"]:checked').length;
-  if (currentlyChecked >= max) return;
-  cb.checked = true; label.classList.add('selected'); updateProgress();
-}
-function updateProgress() {
-  let count = 0;
-  document.querySelectorAll('input[type="text"][data-q]').forEach(inp => { if (inp.value.trim()) count++; });
-  document.querySelectorAll('input[type="radio"]:checked').forEach(r => { if (/^q\d+$/.test(r.name)) count++; });
-  document.querySelectorAll('.check-group input[type="checkbox"]:checked').forEach(() => count++);
-  document.getElementById('progressCount').textContent = count;
-}
-function bandFor(c) {
-  if (c >= 39) return '9.0'; if (c >= 37) return '8.5'; if (c >= 35) return '8.0';
-  if (c >= 32) return '7.5'; if (c >= 30) return '7.0'; if (c >= 26) return '6.5';
-  if (c >= 23) return '6.0'; if (c >= 18) return '5.5'; if (c >= 16) return '5.0';
-  if (c >= 13) return '4.5'; if (c >= 10) return '4.0'; if (c > 0) return '<4'; return '–';
-}
-function buildAnswerKey() {
-  const ua = getUserAnswers();
-  const container = document.getElementById('answerRows');
-  container.innerHTML = '';
-  let correct = 0, wrong = 0;
-  const slotMatchMap = {}; const slotToBase = {};
-  Object.keys(multiCorrect).forEach(baseKey => {
-    slotMatchMap[baseKey] = computeSlotMatches(baseKey, ua);
-    (multiCorrect[baseKey].inputs || []).forEach(slot => { slotToBase[slot] = baseKey; });
-  });
-  for (let q = 1; q <= 40; q++) {
-    const qKey = String(q);
-    const baseKey = slotToBase[qKey];
-    let u, c, ok, has;
-    if (baseKey) {
-      const slots = multiCorrect[baseKey].inputs || [];
-      const idx = slots.indexOf(qKey);
-      u = ua[qKey] || ''; has = !!u;
-      ok = slotMatchMap[baseKey][idx];
-      c = multiCorrectDisplay(baseKey);
-    } else {
-      u = ua[qKey] || ua[q]; c = correctAnswers[q];
-      if (c === undefined) continue;
-      has = u !== undefined && u !== '';
-      ok = has && isCorrect(u, c);
-      c = displayCorrect(c);
-    }
-    const cls = !has ? 'empty' : (ok ? 'correct' : 'incorrect');
-    if (ok) correct++; else if (has) wrong++;
-    addAnswerRow(container, 'Q'+q, has ? u : null, c, cls);
-  }
-  document.querySelectorAll('input[type="text"][data-q]').forEach(inp => {
-    const q = inp.dataset.q;
-    inp.classList.remove('correct','incorrect');
-    if (!inp.value.trim()) return;
-    const baseKey = slotToBase[q];
-    if (baseKey) {
-      const idx = (multiCorrect[baseKey].inputs || []).indexOf(q);
-      inp.classList.add(slotMatchMap[baseKey][idx] ? 'correct' : 'incorrect');
-    } else {
-      const qInt = parseInt(q);
-      if (correctAnswers[qInt] !== undefined) inp.classList.add(isCorrect(inp.value.trim(), correctAnswers[qInt]) ? 'correct' : 'incorrect');
-    }
-  });
-  document.getElementById('statCorrect').textContent = correct;
-  document.getElementById('statWrong').textContent = wrong;
-  document.getElementById('statBand').textContent = bandFor(correct);
-}
-function addAnswerRow(container, qLabel, userVal, correctVal, cls) {
-  const userDisplay = userVal !== null && userVal !== '' ? userVal : '<span class="empty-val">— not answered —</span>';
-  const row = document.createElement('div');
-  row.className = 'answer-row '+cls;
-  row.innerHTML = `<div class="answer-q">${qLabel}</div><div class="answer-your"><div class="answer-label">Your</div><div class="answer-value">${userDisplay}</div></div><div class="answer-correct"><div class="answer-label">Correct</div><div class="answer-value">${correctVal}</div></div>`;
-  container.appendChild(row);
-}
-function submitAnswers() {
-  const ua = getUserAnswers();
-  let correct = 0;
-  const handled = new Set();
-  Object.keys(multiCorrect).forEach(baseKey => {
-    correct += multiPoints(baseKey, ua);
-    (multiCorrect[baseKey].inputs || []).forEach(slot => handled.add(slot));
-  });
-  for (let q = 1; q <= 40; q++) {
-    const qKey = String(q);
-    if (handled.has(qKey)) continue;
-    if (ua[qKey] && correctAnswers[q] !== undefined && isCorrect(ua[qKey], correctAnswers[q])) correct++;
-  }
-  document.getElementById('modalScore').textContent = correct;
-  document.getElementById('modalBand').textContent = 'Estimated Band ' + bandFor(correct);
-  document.body.classList.add('test-submitted');
-  document.getElementById('resultsModal').classList.add('open');
-  document.getElementById('reviewBanner').classList.remove('show');
-}
-function closeModal() { document.getElementById('resultsModal').classList.remove('open'); }
-function openScript() { buildAnswerKey(); document.getElementById('scriptModal').classList.add('open'); }
-function closeScript() { document.getElementById('scriptModal').classList.remove('open'); }
-function openScriptFromResults() { closeModal(); openScript(); }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeScript(); closeModal(); } });
-document.getElementById('scriptModal').addEventListener('click', e => { if (e.target.id === 'scriptModal') closeScript(); });
-const hlPopup = document.getElementById('hl-popup');
-let clickedHighlightEl = null;
-function isInsideForm(node) { while (node) { if (node.nodeType === 1) { const tag = node.tagName; if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || node.id === 'hl-popup') return true; } node = node.parentNode; } return false; }
-function setPopupMode(mode) { const hi = hlPopup.querySelector('.hl-btn.highlight'); const cl = hlPopup.querySelector('.hl-btn.clear'); if (mode === 'clear-only') { hi.style.display = 'none'; cl.style.display = 'inline-block'; } else { hi.style.display = 'inline-block'; cl.style.display = 'inline-block'; } }
-function placePopupNearRect(rect) { const left = Math.max(8, rect.left + window.scrollX + rect.width/2 - 70); hlPopup.style.top = (rect.bottom + window.scrollY + 6) + 'px'; hlPopup.style.left = left + 'px'; hlPopup.style.display = 'block'; }
-function showPopupForSelection() { const sel = window.getSelection(); if (!sel || sel.isCollapsed) { hlPopup.style.display = 'none'; return; } const text = sel.toString().trim(); if (!text) { hlPopup.style.display = 'none'; return; } if (isInsideForm(sel.anchorNode)) { hlPopup.style.display = 'none'; return; } clickedHighlightEl = null; setPopupMode('both'); placePopupNearRect(sel.getRangeAt(0).getBoundingClientRect()); }
-document.addEventListener('mousedown', e => { if (e.target.closest && e.target.closest('#hl-popup')) return; const hl = e.target.closest && e.target.closest('.highlighted'); if (hl) { clickedHighlightEl = hl; setTimeout(() => { const sel = window.getSelection(); if (sel && sel.isCollapsed && clickedHighlightEl) { setPopupMode('clear-only'); placePopupNearRect(clickedHighlightEl.getBoundingClientRect()); } }, 0); } else { clickedHighlightEl = null; } });
-document.addEventListener('mouseup', () => setTimeout(showPopupForSelection, 0));
-document.addEventListener('keyup', () => setTimeout(showPopupForSelection, 0));
-document.addEventListener('selectionchange', () => { const sel = window.getSelection(); if ((!sel || sel.isCollapsed || sel.toString().trim() === '') && !clickedHighlightEl) { hlPopup.style.display = 'none'; } });
-function applyHighlight() { const sel = window.getSelection(); if (!sel || sel.isCollapsed) return; const range = sel.getRangeAt(0); try { const span = document.createElement('span'); span.className = 'highlighted'; range.surroundContents(span); } catch(e) { try { const contents = range.extractContents(); const span = document.createElement('span'); span.className = 'highlighted'; span.appendChild(contents); range.insertNode(span); } catch(e2){} } sel.removeAllRanges(); hlPopup.style.display = 'none'; clickedHighlightEl = null; }
-function clearHighlightAt() { if (clickedHighlightEl && clickedHighlightEl.parentNode) { const el = clickedHighlightEl; const p = el.parentNode; while (el.firstChild) p.insertBefore(el.firstChild, el); p.removeChild(el); p.normalize(); clickedHighlightEl = null; hlPopup.style.display = 'none'; return; } const sel = window.getSelection(); if (sel && !sel.isCollapsed) { const range = sel.getRangeAt(0); const all = Array.from(document.querySelectorAll('.highlighted')); all.forEach(el => { let touches = false; try { touches = range.intersectsNode(el); } catch(e) { touches = false; } if (!touches) { try { const r = document.createRange(); r.selectNode(el); touches = !(range.compareBoundaryPoints(Range.END_TO_START, r) >= 0 || range.compareBoundaryPoints(Range.START_TO_END, r) <= 0); } catch(e) {} } if (touches) { const p = el.parentNode; while (el.firstChild) p.insertBefore(el.firstChild, el); p.removeChild(el); p.normalize(); } }); sel.removeAllRanges(); } hlPopup.style.display = 'none'; }
-function eraseHighlights() { document.querySelectorAll('.highlighted').forEach(el => { const p = el.parentNode; while (el.firstChild) p.insertBefore(el.firstChild, el); p.removeChild(el); }); }
-function resetAllAnswers() { if (!confirm('Remove ALL your answers and start fresh?')) return; document.querySelectorAll('input[type="text"][data-q]').forEach(inp => { inp.value = ''; inp.classList.remove('correct','incorrect'); }); document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false); document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false); document.querySelectorAll('.mcq-option.selected').forEach(o => o.classList.remove('selected')); document.querySelectorAll('.check-option.selected').forEach(o => o.classList.remove('selected')); eraseHighlights(); document.getElementById('progressCount').textContent = '0'; document.body.classList.remove('test-submitted'); }
-
 const TRANSCRIPTS = {"1": [{"sp": "WOMAN", "h": "Hello, Oyster Bay Sailing Club. How can I help you?", "t": 114.88}, {"sp": "MAN", "h": "Oh hi. I'd like to find out about sailing courses for beginners.", "t": 121.16}, {"sp": "WOMAN", "h": "No problem. Is it for yourself?", "t": 126.64}, {"sp": "MAN", "h": "Yes. I had a look online but I'm not sure which course would be best.", "t": 127.14}, {"sp": "WOMAN", "h": "OK. Well you might be interested in our Taster Days?", "t": 134.2}, {"sp": "MAN", "h": "Possibly.", "t": 139.32}, {"sp": "WOMAN", "h": "So these are for people who've never sailed before – it's basically an introduction to sailing to find out whether you enjoy it and want to carry on with it.", "t": 140.32}, {"sp": "MAN", "h": "And how much is that?", "t": 150.48}, {"sp": "WOMAN", "h": "It's £120 for the day – but it's reduced to £110 each if there are two of you.", "t": 152.48}, {"sp": "MAN", "h": "No, it would just be me.", "t": 159.72}, {"sp": "WOMAN", "h": "Oh that's fine. You'd be in a small group, usually about eight people but no more than <span class=\"tr-ans\">ten<sup class=\"tr-q\">Q1</sup></span> – and everyone's always very friendly.", "t": 161.64}, {"sp": "MAN", "h": "Uh huh. And are there any other suitable courses?", "t": 171.4}, {"sp": "WOMAN", "h": "The other option is the Level 1 course. These are two-day weekend courses and we run those all year round.", "t": 176.16}, {"sp": "MAN", "h": "OK. And what do you learn on that course?", "t": 184.72}, {"sp": "WOMAN", "h": "This is a mix of theory and practical skills. So you learn about things like the <span class=\"tr-ans\">weather<sup class=\"tr-q\">Q2</sup></span>, which is obviously really important and also the tides, as well as learning basic sailing skills. You go out into the harbour in special training dinghies for beginners, two people in each dinghy and an instructor. He or she will make sure you understand everything you need to know about <span class=\"tr-ans\">safety<sup class=\"tr-q\">Q3</sup></span>.", "t": 188.84}, {"sp": "MAN", "h": "It sounds like hard work!", "t": 219.28}, {"sp": "WOMAN", "h": "Yes, but you'll have a lot of fun too.", "t": 221.12}, {"sp": "MAN", "h": "And the cost of that one is…?", "t": 221.62}, {"sp": "WOMAN", "h": "£200. But it's a bit cheaper if you decide to join the club. There's a <span class=\"tr-ans\">discount<sup class=\"tr-q\">Q4</sup></span> for members.", "t": 222.12}, {"sp": "MAN", "h": "Well, I'm not sure about that yet.", "t": 234.52}, {"sp": "WOMAN", "h": "You've got plenty of time to decide.", "t": 237.32}, {"sp": "MAN", "h": "And does the cost include everything?", "t": 237.82}, {"sp": "WOMAN", "h": "Yes, everything's included and you also get a really good <span class=\"tr-ans\">dictionary<sup class=\"tr-q\">Q5</sup></span> explaining all the sailing terminology. A lot of people struggle with this at first. It's got lots of pictures, so I'm sure you'd find it really helpful. And on completion of the course you get a <span class=\"tr-ans\">certificate<sup class=\"tr-q\">Q6</sup></span>. Then you're ready to move on to the Level 2 course.", "t": 242.68}, {"sp": "MAN", "h": "Sounds good.", "t": 267.8}, {"sp": "WOMAN", "h": "I think that's all the info you need for now. Just a couple of general things. For example, it's really important that you know how to swim.", "t": 311.28}, {"sp": "MAN", "h": "Yes, I'm pretty confident in the water.", "t": 322.28}, {"sp": "WOMAN", "h": "Great. The other thing I should tell you is that we provide wetsuits and life jackets but you need to bring swimming trunks and some old trainers.", "t": 324.92}, {"sp": "MAN", "h": "And a <span class=\"tr-ans\">towel<sup class=\"tr-q\">Q7</sup></span>?", "t": 335.72}, {"sp": "WOMAN", "h": "Yes definitely. And you might want to bring your own toiletries, things like shampoo.", "t": 336.22}, {"sp": "MAN", "h": "OK. What about food and drink? Do I need to bring that or is there a <span class=\"tr-ans\">café<sup class=\"tr-q\">Q8</sup></span> at the club?", "t": 342.48}, {"sp": "WOMAN", "h": "Yes, you can get sandwiches, cakes and snacks there. The food's pretty reasonable.", "t": 349.48}, {"sp": "MAN", "h": "OK good. Well I think I'm interested in the Level 1 course. But I know absolutely nothing about sailing so is there anything I can do to prepare myself a bit?", "t": 355.48}, {"sp": "WOMAN", "h": "I recommend you watch some <span class=\"tr-ans\">videos<sup class=\"tr-q\">Q9</sup></span> we use for training. They're available online. I can send you the link. They'll give you an idea of what to expect.", "t": 367.52}, {"sp": "MAN", "h": "Perfect, thanks. That would be very helpful. Oh and just one other thing – I'll be cycling to the club and will need somewhere to put valuables. I'm just wondering if there are <span class=\"tr-ans\">lockers<sup class=\"tr-q\">Q10</sup></span> for people to use?", "t": 378.0}, {"sp": "WOMAN", "h": "Yes, there are plenty in the changing rooms.", "t": 388.76}, {"sp": "MAN", "h": "Great. OK well could you book me onto…", "t": 389.26}], "2": [{"sp": "MAN", "h": "Hello and welcome to the film making podcast. In this week's episode, Claire Lemarre talks to us about how to become a makeup artist. Claire's been working as a makeup artist in the film industry for over 20 years and has lots of useful advice about how to get started.", "t": 68.0}, {"sp": "WOMAN", "h": "Thanks Ian. Well, before you can become a makeup artist on films you have to spend about 2 years working as a makeup trainee.", "t": 95.0}, {"sp": "", "h": "A good place to get your first job would be on a low budget short film. Of course, this means that you'll be working for free. But it's often worth it for the experience. <span class=\"tr-ans\">Make sure your transport costs are covered<sup class=\"tr-q\">Q11</sup></span> – and remember, there's very unlikely to be any catering provided, so bring plenty of food.", "t": 105.0}, {"sp": "", "h": "If you're lucky, you might start out on a big budget film where you'll get the most useful experience. On productions like this, makeup and hair styling are separate departments – so you won't need to bring your curling tongs! <span class=\"tr-ans\">But you're likely to get the opportunity to work with a range of age groups, as well as different ethnicities<sup class=\"tr-q\">Q12</sup></span>. Doing makeup for special effects is highly specialised, so don't expect to be offered any practical experience in that.", "t": 128.0}, {"sp": "", "h": "One problem with working in the makeup department is that it's a high-pressure environment. There are very few times when you'll be bored or have nothing to do. It can be stressful but you'll see that the top makeup artists are very professional – <span class=\"tr-ans\">even when they're having to work with directors who are impatient, or unhappy<sup class=\"tr-q\">Q13</sup></span> with the makeup artist's work. Follow your supervisor's lead and try to remain calm at all times.", "t": 161.0}, {"sp": "", "h": "I've worked with many very famous actors over the years. <span class=\"tr-ans\">At first, I found it overwhelming and could hardly speak, I was so in awe<sup class=\"tr-q\">Q14</sup></span>. That's preferable, by the way, to becoming too excited and asking for selfies. Now meeting the talent is just a normal part of the job and to be honest most actors don't look that special without all the makeup!", "t": 191.0}, {"sp": "", "h": "<span class=\"tr-ans\">Every makeup trainee will need a makeup kit, which they'll be expected to have with them at all times. Just the essentials<sup class=\"tr-q\">Q15</sup></span> will do for the kinds of tasks you'll be given – it won't be anything complicated. It's worth looking at what the other makeup artists have in their kits – but whatever you do, don't borrow anything without asking first.", "t": 216.0}, {"sp": "", "h": "It's very important to build your portfolio. You should take photos of all the work you do and ideally show the different stages of makeup application if you can. <span class=\"tr-ans\">But remember you'll need to get approval<sup class=\"tr-q\">Q16</sup></span> from the makeup designer in charge of the department. As you'll be sending your portfolio digitally, you won't need to get photos printed.", "t": 239.0}, {"sp": "WOMAN", "h": "So what does a makeup trainee actually do? You need to think about whether you're the right kind of person to do the job and whether you'd enjoy it. So, to give you some idea, here are some of the things you might be required to do.", "t": 311.0}, {"sp": "", "h": "You may be asked to help prep an actor ready for makeup. Some actors will arrive having already cleansed and moisturized their skin. But sometimes you'll need to step in and <span class=\"tr-ans\">get this done without wasting any time<sup class=\"tr-q\">Q17</sup></span>, otherwise the makeup artist will get behind schedule.", "t": 327.0}, {"sp": "", "h": "Trainees play a useful role in continuity. It will be your responsibility to take photos, log them digitally and print out a hard copy to put in each actor's file. <span class=\"tr-ans\">This information needs to be kept in good order<sup class=\"tr-q\">Q18</sup></span> as a reshoot can mean replicating makeup months later.", "t": 347.0}, {"sp": "", "h": "General duties mean doing anything from getting the teas and coffees to putting on a wash. <span class=\"tr-ans\">Having a positive attitude and being willing to do whatever is asked<sup class=\"tr-q\">Q19</sup></span> of you will help you get your next film job.", "t": 368.0}, {"sp": "", "h": "You won't be asked to apply makeup to any of the principal cast, only the extras. If there are dozens of extras involved <span class=\"tr-ans\">you'll need to keep up a swift pace and not spend too long on each person<sup class=\"tr-q\">Q20</sup></span>. It takes quite a lot of confidence to be able to do this well.", "t": 383.0}, {"sp": "", "h": "OK now about terms and conditions…", "t": 400.0}], "3": [{"sp": "PHIL", "h": "That lecture from the visiting speaker yesterday was good, wasn't it?", "t": 58.08}, {"sp": "LUCY", "h": "Yeah. I learned a lot from her about ocean biodiversity. I've already done some reading on it, and I did an assignment on some of the problems associated with it last year, but <span class=\"tr-ans\">I especially liked the way her lecture focused on more long-term issues<sup class=\"tr-q\">Q21/22</sup></span>.", "t": 62.12}, {"sp": "PHIL", "h": "Yes, things that aren't currently receiving widespread attention but are likely to be important in the future. That impressed me too. It wasn't exactly a feel-good conclusion because it's hard to see any real solution for a lot of the problems.", "t": 79.4}, {"sp": "LUCY", "h": "No, though she did point to where policy changes could be made to protect our marine and coastal environments.", "t": 95.96}, {"sp": "PHIL", "h": "Mm. But that's just at a national level. <span class=\"tr-ans\">The examples she gave were at a more global level<sup class=\"tr-q\">Q21/22</sup></span>, and they really made it clear to me just how wide-ranging the threats to ocean biodiversity are.", "t": 103.56}, {"sp": "LUCY", "h": "Yes, me too.", "t": 116.72}, {"sp": "PHIL", "h": "The research project she described was impressive, wasn't it? I'd have thought it was quite unusual to have <span class=\"tr-ans\">so many experts working together<sup class=\"tr-q\">Q23/24</sup></span>.", "t": 117.88}, {"sp": "LUCY", "h": "<span class=\"tr-ans\">Yeah, and from such different backgrounds. Must have been a really exciting team to work with<sup class=\"tr-q\">Q23/24</sup></span>. I'd heard of a couple of them before – they were involved in research way back in 2009 warning about the dangers of ocean pollution.", "t": 126.52}, {"sp": "PHIL", "h": "But now people are much more aware of that, aren't they?", "t": 142.16}, {"sp": "LUCY", "h": "I suppose so.", "t": 145.44}, {"sp": "PHIL", "h": "Another thing about the research is that the team members came from all round the world. Though I suppose that's not unusual nowadays, now everyone can work remotely.", "t": 146.92}, {"sp": "LUCY", "h": "Right. I liked the way she didn't bombard us with figures – I mean, they were available, but she focused more on the general points they indicated.", "t": 157.52}, {"sp": "PHIL", "h": "Mm. <span class=\"tr-ans\">And the description of improvements in systems used for tracking marine animals and things like robots were really interesting<sup class=\"tr-q\">Q23/24</sup></span>.", "t": 163.92}, {"sp": "LUCY", "h": "<span class=\"tr-ans\">Yes, and her description of how robotics<sup class=\"tr-q\">Q23/24</sup></span> can be used to investigate threats to biodiversity.", "t": 177.12}, {"sp": "PHIL", "h": "Absolutely.", "t": 184.44}, {"sp": "PHIL", "h": "While you're here, can we talk about the list of resources we have to evaluate for the seminar tomorrow? I've had a look at them all, but it's been a bit of a rush.", "t": 219.0}, {"sp": "LUCY", "h": "Yeah. What did you think of that article on invasive lionfish? The one claiming they were expanding their habitat throughout the Mediterranean Sea.", "t": 249.92}, {"sp": "PHIL", "h": "Well, the writer went on about how dangerous they were in environmental terms, which is probably true, but <span class=\"tr-ans\">he didn't really provide much information<sup class=\"tr-q\">Q25</sup></span> to explain why.", "t": 259.8}, {"sp": "LUCY", "h": "I know what you mean.", "t": 271.48}, {"sp": "PHIL", "h": "I watched the documentary on microplastics, at least I started to, but then I found it was made ten years ago so I gave up.", "t": 273.24}, {"sp": "LUCY", "h": "I watched to the end but you're right, <span class=\"tr-ans\">it was showing its age<sup class=\"tr-q\">Q26</sup></span>. People had hardly heard of microplastics then, whereas now everyone knows about them and how dangerous they are.", "t": 282.56}, {"sp": "PHIL", "h": "Yeah. Did you listen to the podcast on ocean pollution?", "t": 294.16}, {"sp": "LUCY", "h": "Mm. I didn't get anything out of it though. Most of it was stating the obvious.", "t": 298.24}, {"sp": "PHIL", "h": "Yes, it mentioned pesticides and plastic and things, and it clearly made the point that they were a bad thing, but <span class=\"tr-ans\">everybody knows that anyway<sup class=\"tr-q\">Q27</sup></span>. Did you read that book on coastal ecosystems?", "t": 303.2}, {"sp": "LUCY", "h": "The one by John Harper? Yes, I found it hard going at first, it went into a lot of detail about things like the effects of offshore windfarms and fish farms, but actually I ended up with a much better understanding of the issues.", "t": 317.48}, {"sp": "PHIL", "h": "Yes, I agree and <span class=\"tr-ans\">I thought it was a well-written summary of those<sup class=\"tr-q\">Q28</sup></span>. And the diagrams helped a lot too.", "t": 333.2}, {"sp": "LUCY", "h": "<span class=\"tr-ans\">The article on metal toxicity was way above my head, I didn't know anything about how metals from industrial emissions react in the ocean<sup class=\"tr-q\">Q29</sup></span>… and I still don't understand it.", "t": 340.72}, {"sp": "PHIL", "h": "I gave up reading after the first chapter – I just couldn't follow it.", "t": 353.48}, {"sp": "LUCY", "h": "That podcast on floating marine cities was interesting, <span class=\"tr-ans\">though it presented a rather one-sided picture<sup class=\"tr-q\">Q30</sup></span>, I thought.", "t": 358.36}, {"sp": "PHIL", "h": "Yes, it focused on how this would benefit people and ignored the effects on the environment.", "t": 366.36}, {"sp": "LUCY", "h": "But anyway, shall we …", "t": 372.92}], "4": [{"sp": "LECTURER", "h": "Much of the world now lives in an industrial civilisation. But this has only become possible because we have the necessary natural resources. There are three types of natural resource without which industry could not exist. One of these is <span class=\"tr-ans\">metal<sup class=\"tr-q\">Q31</sup></span> – without that we'd have no machines and no transportation. Another is fossil fuels, which we need to power those machines. But there's a third resource that's essential to connect the different parts of a machine together with belts and pipes and shock absorbers, and that is rubber. It's now used in over 40,000 products, from waterproof footwear to surgical gloves.", "t": 60.0}, {"sp": "", "h": "At present, we have two types of rubber in common use. One is natural rubber, which nearly all comes from the Pará rubber tree. This was originally native to Brazil, but is now cultivated on plantations in South-East Asia. Recently, however, concern's been growing that supplies may soon be insufficient for the world's needs. So what exactly is limiting the supply of natural rubber?", "t": 119.36}, {"sp": "", "h": "Well, for one thing, rubber trees don't just spring up overnight. It can take eight to ten years for a tree to start producing rubber, so cultivating them's a <span class=\"tr-ans\">slow<sup class=\"tr-q\">Q32</sup></span> process. And this leads to another problem. With most crops, farmers don't have to think very far ahead, so they can easily change what crop they produce, or how much of a crop they produce, if they find the <span class=\"tr-ans\">demand<sup class=\"tr-q\">Q33</sup></span> for that crop is rising or falling. But if you have to plant eight or ten years ahead, that's much harder. And also the rubber tree's very choosy about where it grows. It needs the right temperature, the right amount of rainfall, and the right altitude – not too high and not too low. The result is that it can't be grown in the northern or southern parts of the globe, only around the <span class=\"tr-ans\">equator<sup class=\"tr-q\">Q34</sup></span>. Another problem is that the rubber is basically extracted in the same way as it's been done for hundreds of years, and that's by hand, by making small cuts in the trunk of the tree, and putting a little cup there to catch the latex, as the rubber is called. It's very labour-intensive. And it's not just the initial production that's limiting supplies. With other resources such as water and glass, when we've finished using them we can <span class=\"tr-ans\">recycle<sup class=\"tr-q\">Q35</sup></span> them, but although this is also possible with rubber, it's very difficult, so that also reduces the amount we have available.", "t": 151.84}, {"sp": "", "h": "And in the last few years, there have been new threats to the supply of natural rubber. One problem is linked to the fact that nearly all the rubber trees in South-East Asia are descended from just a small number of seeds brought from Brazil in the nineteenth century. This means that there's very little genetic diversity among the trees, which in turn makes them very vulnerable to disease. The most dangerous threat is a <span class=\"tr-ans\">fungus<sup class=\"tr-q\">Q36</sup></span>, which destroyed large numbers of rubber trees in Brazil, and which could cause devastation to plantations worldwide. Another problem is that farmers in South-East Asia are increasingly turning to the cultivation of palm oil, which is easier and more profitable for them. And finally, in recent years South-East Asia, like other parts of the world, has been repeatedly hit by extreme types of <span class=\"tr-ans\">weather<sup class=\"tr-q\">Q37</sup></span>, and this looks likely to continue in the future.", "t": 270.96}, {"sp": "", "h": "However, as well as using natural rubber, it's also possible to make rubber synthetically. This works very well for some purposes, for example, making engine parts, or silicone pots and pans used for cooking. But compared with natural rubber, it's not anything like as <span class=\"tr-ans\">strong<sup class=\"tr-q\">Q38</sup></span>, and this means it can't replace natural rubber in other products. For example, while a mixture of natural rubber and synthetic rubber works well in car tyres, only natural rubber can stand up to the extreme speeds of aircraft tyres during take-off and landing.", "t": 347.2}, {"sp": "", "h": "So for some time, scientists have been looking for alternative sources of natural rubber. One that's been known about for some time seems initially to be a rather unlikely source. It's a wild plant with yellow flowers that we normally regard as a weed when we see it in our gardens. But when it's pulled up and its <span class=\"tr-ans\">roots<sup class=\"tr-q\">Q39</sup></span> cut open, they're found to contain rubber.", "t": 394.48}, {"sp": "", "h": "Now, compared to the rubber tree, dandelions produce relatively small amounts of rubber, but unlike rubber trees, they're very adaptable. They'll grow in all sorts of places, and they don't need rich <span class=\"tr-ans\">soil<sup class=\"tr-q\">Q40</sup></span>.", "t": 424.48}, {"sp": "", "h": "So, at present, there are several projects underway investigating the possibility of using dandelions as a source of rubber. Another possibility is a desert shrub grown in Mexico and Texas, which is also…", "t": 439.12}]};
-const trCard = document.getElementById('transcriptCard');
-const trBody = document.getElementById('transcriptBody');
-function renderTranscript(n) {
-  document.getElementById('trSecNum').textContent = n;
-  trBody.innerHTML = (TRANSCRIPTS[n] || []).map(u =>
-    `<div class="tr-turn" data-t="${u.t}" onclick="trSeek(${u.t})"><div class="tr-sp">${u.sp}</div><div class="tr-tx">${u.h}</div></div>`
-  ).join('');
-  trLastActive = null;
-}
-function toggleTranscript() {
-  trCard.classList.toggle('open');
-  document.getElementById('trToggle').textContent = trCard.classList.contains('open') ? 'Hide' : 'Show';
-}
-function trSeek(t) {
-  if (currentMode === 'simulation' && !document.body.classList.contains('test-submitted')) return;
-  if (typeof t === 'number' && isFinite(t)) { player.currentTime = Math.max(0, t - 0.4); player.play().catch(()=>{}); }
-}
-const _origSwitchPart = switchPart;
-switchPart = function(n) { _origSwitchPart(n); renderTranscript(n); };
-let trLastActive = null;
-player.addEventListener('timeupdate', () => {
-  if (!trCard.classList.contains('open')) return;
-  const t = player.currentTime; let act = null;
-  for (const el of trBody.children) { if (parseFloat(el.dataset.t) <= t + 0.25) act = el; else break; }
-  if (act !== trLastActive) {
-    if (trLastActive) trLastActive.classList.remove('active');
-    if (act) {
-      act.classList.add('active');
-      if (act.offsetTop < trBody.scrollTop || act.offsetTop + act.offsetHeight > trBody.scrollTop + trBody.clientHeight)
-        trBody.scrollTo({ top: Math.max(0, act.offsetTop - 70), behavior: 'smooth' });
-    }
-    trLastActive = act;
-  }
-});
-renderTranscript(1);
+const player = document.getElementById('player');
+const asrc = document.getElementById('asrc');
+let curPart = 1;
 
+function toggleTheme(){ const r=document.documentElement; const d=r.getAttribute('data-theme')==='dark'; r.setAttribute('data-theme', d?'light':'dark'); try{localStorage.setItem('theme', d?'light':'dark')}catch(e){} }
+(function(){ try{ const t=localStorage.getItem('theme'); if(t) document.documentElement.setAttribute('data-theme',t);}catch(e){} })();
+
+function badge(q){ return q.replace(/\//g, ','); }
+function renderTranscript(n){
+  const host=document.getElementById('trBody');
+  host.innerHTML=(TRANSCRIPTS[n]||[]).map(u=>{
+    let h=u.h.replace(/<sup class="tr-q">Q([^<]+)<\/sup>/g,(m,q)=>`<span class="tr-q">${badge(q)}</span>`);
+    return `<div class="tr-turn" data-t="${u.t}" onclick="trSeek(${u.t})">${u.sp?`<span class="tr-sp">${u.sp}: </span>`:''}<span class="tr-tx">${h}</span></div>`;
+  }).join('');
+  trLast=null;
+}
+function toggleTr(){ const c=document.getElementById('trCard'); c.classList.toggle('open'); document.getElementById('trChev').textContent=c.classList.contains('open')?'▾':'▸'; }
+function trSeek(t){ if(typeof t==='number'&&isFinite(t)){ player.currentTime=Math.max(0,t-.4); player.play().catch(()=>{}); } }
+let trLast=null;
+player.addEventListener('timeupdate',()=>{
+  const c=document.getElementById('trCard'); if(!c.classList.contains('open'))return;
+  const body=document.getElementById('trBody'); const t=player.currentTime; let act=null;
+  for(const el of body.children){ if(parseFloat(el.dataset.t)<=t+.25) act=el; else break; }
+  if(act!==trLast){ if(trLast)trLast.classList.remove('active'); if(act){act.classList.add('active');} trLast=act; }
+});
+
+function loadTrack(n){ asrc.src=audioTracks[n]; player.load(); }
+function switchPart(n){
+  curPart=n;
+  document.querySelectorAll('.botnav .navbtn[data-part]').forEach(b=>b.classList.toggle('active',+b.dataset.part===n));
+  document.getElementById('partTitle').textContent='Part '+n+' · '+(TITLES[n]||'');
+  document.getElementById('qPane').innerHTML=PARTS[n];
+  renderTranscript(n);
+  loadTrack(n);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function setSpeed(r,btn){ player.playbackRate=r; document.querySelectorAll('.speed button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+
+/* answer widgets (referenced inline in question HTML) */
+function selectMCQ(el,name){ document.querySelectorAll(`[name="${name}"]`).forEach(r=>r.closest('.mcq-option').classList.remove('selected')); el.classList.add('selected'); el.querySelector('input').checked=true; }
+function toggleCheck(evt,label){ evt.preventDefault(); const cb=label.querySelector('input'); const g=label.closest('.check-group'); const max=parseInt(g.dataset.max||'99',10); if(cb.checked){cb.checked=false;label.classList.remove('selected');return;} if(g.querySelectorAll('input:checked').length>=max)return; cb.checked=true;label.classList.add('selected'); }
+function updateProgress(){}
+
+/* scoring */
+const norm=s=>(s??'').toString().trim().toLowerCase().replace(/[.,!?;:'"‘’“”()]/g,'').replace(/[-_]/g,' ').replace(/\s+/g,' ').trim();
+function isCorrect(u,c){ if(!u)return false; const un=norm(u); if(!un)return false; const dg=s=>s.replace(/[^\d]/g,''); const ud=dg(un);
+  const tm=v=>{const vn=norm(v); if(vn===un)return true; const vd=dg(vn); if(ud&&vd&&ud.length>=3&&ud===vd)return true; return false;};
+  return Array.isArray(c)?c.some(tm):tm(c); }
+function getUA(){ const ua={};
+  document.querySelectorAll('input[type="text"][data-q]').forEach(i=>ua[i.dataset.q]=i.value.trim());
+  document.querySelectorAll('input[type="radio"]:checked').forEach(r=>{const m=r.name.match(/^q(\d+)$/); if(m){const o=r.closest('.mcq-option'); if(o)ua[m[1]]=o.querySelector('.opt-letter').textContent.trim();}});
+  document.querySelectorAll('.check-group').forEach(g=>{const qs=(g.dataset.questions||'').split(',').map(s=>s.trim()).filter(Boolean); const sel=[...g.querySelectorAll('input:checked')].map(i=>i.value); qs.forEach((q,i)=>ua[q]=sel[i]||'');});
+  return ua; }
+/* persist across part switches: cache answers on switch */
+let cache={};
+function stash(){ Object.assign(cache,getUA()); }
+const _sp=switchPart; switchPart=function(n){ stash(); _sp(n); restore(); };
+function restore(){ document.querySelectorAll('input[type="text"][data-q]').forEach(i=>{ if(cache[i.dataset.q]!=null)i.value=cache[i.dataset.q]; });
+  document.querySelectorAll('.mcq-option').forEach(o=>{ const inp=o.querySelector('input'); const m=inp.name.match(/^q(\d+)$/); if(m&&cache[m[1]]===o.querySelector('.opt-letter').textContent.trim()){o.classList.add('selected');inp.checked=true;} });
+  document.querySelectorAll('.check-group').forEach(g=>{ const qs=(g.dataset.questions||'').split(',').map(s=>s.trim()); const want=qs.map(q=>cache[q]).filter(Boolean); g.querySelectorAll('.check-option').forEach(o=>{ const v=o.querySelector('input').value; if(want.includes(v)){o.classList.add('selected');o.querySelector('input').checked=true;} }); }); }
+function multiPts(key,ua){ const s=multiCorrect[key]; if(!s)return 0; const acc=s.accept.map(norm); const used=new Set(); let p=0; s.inputs.map(k=>norm(ua[k]||'')).forEach(uv=>{ if(!uv)return; for(let i=0;i<acc.length;i++){ if(used.has(i))continue; if(uv===acc[i]){used.add(i);p++;break;} } }); return p; }
+function score(){ stash(); const ua=cache; let c=0; const handled=new Set();
+  Object.keys(multiCorrect).forEach(k=>{ c+=multiPts(k,ua); multiCorrect[k].inputs.forEach(s=>handled.add(String(s))); });
+  for(let q=1;q<=40;q++){ if(handled.has(String(q)))continue; if(ua[q]&&correctAnswers[q]!==undefined&&isCorrect(ua[q],correctAnswers[q]))c++; }
+  return c; }
+function band(c){ if(c>=39)return'9.0';if(c>=37)return'8.5';if(c>=35)return'8.0';if(c>=32)return'7.5';if(c>=30)return'7.0';if(c>=26)return'6.5';if(c>=23)return'6.0';if(c>=18)return'5.5';if(c>=16)return'5.0';if(c>=13)return'4.5';if(c>=10)return'4.0';return'<4'; }
+function submitAnswers(){ const c=score(); document.getElementById('mScore').textContent=c; document.getElementById('mBand').textContent='Estimated Band '+band(c); document.getElementById('resModal').classList.add('open'); }
+function closeModal(){ document.getElementById('resModal').classList.remove('open'); }
+function showReview(){ closeModal(); const ua=cache; const box=document.getElementById('revList'); let h='';
+  const slotBase={}; Object.keys(multiCorrect).forEach(k=>multiCorrect[k].inputs.forEach(s=>slotBase[s]=k));
+  for(let q=1;q<=40;q++){ let u=ua[q]||'',cc,ok;
+    if(slotBase[q]){ const sp=multiCorrect[slotBase[q]]; cc=sp.accept.join(' / ')+' (any order)'; ok=u&&sp.accept.map(norm).includes(norm(u)); }
+    else { cc=correctAnswers[q]; if(cc===undefined)continue; ok=u&&isCorrect(u,cc); cc=Array.isArray(cc)?cc[0]:cc; }
+    const cls=!u?'':(ok?'correct':'incorrect');
+    h+=`<div class="ans-row ${cls}"><div class="ql">Q${q}</div><div><div class="lbl">You</div><div class="yv">${u||'—'}</div></div><div><div class="lbl">Answer</div><div class="cv">${cc}</div></div></div>`; }
+  box.innerHTML=h; document.getElementById('revModal').classList.add('open'); }
+function resetAll(){ if(!confirm('Clear all your answers?'))return; cache={}; document.querySelectorAll('input[type="text"][data-q]').forEach(i=>i.value=''); document.querySelectorAll('.mcq-option.selected,.check-option.selected').forEach(o=>o.classList.remove('selected')); document.querySelectorAll('input:checked').forEach(i=>i.checked=false); }
+
+switchPart(1);
 </script>
 <script src="https://maqsudjon-cell.github.io/ielts-hub/js/test-page-auto.js" defer></script>
-
 </body>
 </html>
