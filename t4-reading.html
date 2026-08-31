@@ -163,6 +163,15 @@ mark.uhl{background:var(--hl);padding:0;border-radius:1px;cursor:pointer;color:i
 ::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
 </style>
   <meta name="description" content="Free IELTS Reading practice test — Cambridge 21 Test 4 with answers: The problems and benefits created by the spread of the water hyacinth in Kenya, How could multilingualism benefit India's poorest…" />
+  <link rel="canonical" href="https://flarestamina.com/cambridge-21/t4-reading.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="flarestamina.com" />
+  <meta property="og:title" content="The problems and benefits created by the… — IELTS Reading answers" />
+  <meta property="og:description" content="Free IELTS Reading practice test — Cambridge 21 Test 4 with answers: The problems and benefits created by the spread of the water hyacinth in Kenya, How could multilingualism benefit India's poorest…" />
+  <meta property="og:url" content="https://flarestamina.com/cambridge-21/t4-reading.html" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://flarestamina.com/cambridge-21/t4-reading.html#resource","url":"https://flarestamina.com/cambridge-21/t4-reading.html","name":"The problems and benefits created by the… — IELTS Reading answers","description":"Free IELTS Reading practice test — Cambridge 21 Test 4 with answers: The problems and benefits created by the spread of the water hyacinth in Kenya, How could multilingualism benefit India's poorest…","inLanguage":"en","isAccessibleForFree":true,"learningResourceType":"Practice test","educationalUse":"Practice","teaches":"IELTS Reading","educationalLevel":"IELTS Academic","provider":{"@type":"EducationalOrganization","name":"Flarestamina","url":"https://flarestamina.com/"},"isPartOf":{"@type":"CollectionPage","name":"Cambridge IELTS 21 Academic","url":"https://flarestamina.com/cambridge-21/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Flarestamina","item":"https://flarestamina.com/"},{"@type":"ListItem","position":2,"name":"Cambridge IELTS 21","item":"https://flarestamina.com/cambridge-21/"},{"@type":"ListItem","position":3,"name":"The problems and benefits created by the… — IELTS Reading answers","item":"https://flarestamina.com/cambridge-21/t4-reading.html"}]}]}</script>
+  <script data-goatcounter="https://flarestamina.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <a href="index.html" style="position:fixed;left:10px;top:8px;z-index:5000;font:600 12px Inter,sans-serif;color:var(--navy);text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:5px 11px">← Cambridge 21</a>
@@ -176,7 +185,7 @@ mark.uhl{background:var(--hl);padding:0;border-radius:1px;cursor:pointer;color:i
 </div></div></div>
 <div id="screen-instructions" class="screen"><div class="center"><div class="card">
   <div class="brand-row"><span class="tg-dot">&#9654;</span> flarestamina.com</div>
-  <h1 class="landing-title">Reading Test Instructions</h1>
+  <h2 class="landing-title">Reading Test Instructions</h2>
   <p class="landing-desc">Read carefully before you begin. The 60-minute timer starts when you click <strong>Begin Test</strong>.</p>
   <ul class="rules">
     <li>Read <strong>3 passages</strong> and answer <strong>40 questions</strong> in <strong>60 minutes</strong>.</li>
@@ -222,7 +231,7 @@ mark.uhl{background:var(--hl);padding:0;border-radius:1px;cursor:pointer;color:i
   <div class="set-group" style="display:flex;gap:8px"><button class="btn" id="setReset">Reset</button><button class="btn" id="setClose">Close</button></div>
 </aside>
 <div id="screen-review" class="screen"><div class="scroll-body"><div class="wide">
-  <h1 style="color:var(--navy);margin-bottom:8px">Review Your Answers</h1>
+  <h2 style="color:var(--navy);margin-bottom:8px">Review Your Answers</h2>
   <p style="color:var(--muted)">Click any question number to return and change it.</p>
   <div class="rev-stats" id="rev-stats"></div><div id="rev-passes"></div>
   <div class="action-row" style="margin-top:8px"><button class="btn" onclick="backToTest()">Back to Test</button><button class="btn primary" onclick="showSubModal()">Submit Final Answers</button></div>
@@ -584,7 +593,7 @@ function showResults(){
   const tm=String(Math.floor(taken/60)).padStart(2,'0'),ts=String(taken%60).padStart(2,'0');
   let pcards='';[1,2,3].forEach(p=>{const pn=ids.filter(n=>pOf(n)===p);const ps=pn.filter(chk).length;pcards+='<div class="pcard"><div class="pcardn">Passage '+p+'</div><strong>'+ps+'</strong><span class="of"> / '+pn.length+'</span></div>'});
   let rows='';[1,2,3].forEach(p=>{ids.filter(n=>pOf(n)===p).forEach(n=>{const ok=chk(n);const ua=S.answers[n];const ustr=Array.isArray(ua)?ua.join(', '):(ua||'');rows+='<div class="ans-row '+(ok?'correct':'wrong')+'"><strong>Q'+n+'</strong><span>'+(ustr?'Your answer: <strong>'+esc(ustr)+'</strong>':'<span class="muted">No answer</span>')+'</span><span>Correct: <strong>'+esc(ANSWERS[n])+'</strong></span><span class="tick '+(ok?'g':'b')+'">'+(ok?'\u2713':'\u2717')+'</span></div>'})});
-  $('resultsContent').innerHTML='<h1 style="color:var(--navy);margin-bottom:16px">Reading Test Results</h1>'+
+  $('resultsContent').innerHTML='<h2 style="color:var(--navy);margin-bottom:16px">Reading Test Results</h2>'+
     '<div class="score-hero"><div class="band-card"><span>Band Score</span><div class="band">'+bandV+'</div></div>'+
     '<div class="stats"><div class="stat">Raw score<strong>'+score+' / '+ids.length+'</strong></div><div class="stat">Time taken<strong>'+tm+':'+ts+'</strong></div><div class="stat">Passages<strong>3</strong></div><div class="stat">Questions<strong>'+ids.length+'</strong></div></div></div>'+
     '<div class="pcards">'+pcards+'</div>'+
